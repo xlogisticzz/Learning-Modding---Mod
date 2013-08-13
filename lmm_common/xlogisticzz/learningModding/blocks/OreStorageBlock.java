@@ -21,7 +21,6 @@ public class OreStorageBlock extends BlockOreStorage {
         this.setResistance(par5);
         this.setUnlocalizedName(par6);
         name = par7;
-
     }
 
     @Override

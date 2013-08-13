@@ -1,8 +1,8 @@
 package xlogisticzz.learningModding.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
+import xlogisticzz.learningModding.creativeTab.CreativeTab;
 import xlogisticzz.learningModding.lib.Constants;
 import xlogisticzz.learningModding.lib.Ids;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -18,16 +18,16 @@ public class ModBlocks {
 
     public static void init() {
         titaniumore = new OreBlock(Ids.TITANIUMORE, 3,
-                Block.soundStoneFootstep, "titaniumOre", CreativeTabs.tabBlock,
-                "titanium_ore");
+                Block.soundStoneFootstep, "titaniumOre",
+                CreativeTab.tabLearningModding, "titanium_ore");
         rubyore = new OreBlock(Ids.RUBYORE, 1, Block.soundLadderFootstep,
-                "rubyOre", CreativeTabs.tabBlock, "ruby_ore");
+                "rubyOre", CreativeTab.tabLearningModding, "ruby_ore");
         titaniumblock = new OreStorageBlock(Ids.TITANIUMBLOCK,
-                Block.soundMetalFootstep, CreativeTabs.tabBlock, 6.0F, 12.0F,
-                "titaniumBlock", "titanium_block");
+                Block.soundMetalFootstep, CreativeTab.tabLearningModding, 6.0F,
+                12.0F, "titaniumBlock", "titanium_block");
         rubyblock = new OreStorageBlock(Ids.RUBYBLOCK,
-                Block.soundMetalFootstep, CreativeTabs.tabBlock, 5.0F, 10.0F,
-                "rubyBlock", "ruby_block");
+                Block.soundMetalFootstep, CreativeTab.tabLearningModding, 5.0F,
+                10.0F, "rubyBlock", "ruby_block");
 
         // Titanium Ore Details
         LanguageRegistry.addName(titaniumore, Constants.BLOCKS.TITANIUMORENAME);

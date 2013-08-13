@@ -2,6 +2,7 @@ package xlogisticzz.learningModding;
 
 import java.io.File;
 
+import xlogisticzz.learningModding.Crafting.Vanilla;
 import xlogisticzz.learningModding.blocks.ModBlocks;
 import xlogisticzz.learningModding.configuration.ConfigurationHandler;
 import xlogisticzz.learningModding.item.ModItems;
@@ -14,6 +15,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Constants.MOD.MODID, name = Constants.MOD.MODID, version = Constants.MOD.VERSION)
 @NetworkMod(channels = Constants.MOD.CHANNEL_NAME, clientSideRequired = true, serverSideRequired = false)
@@ -41,7 +43,10 @@ public class LearningModding {
 
         // vanilla recipes
 
-        xlogisticzz.learningModding.Crafting.Vanilla.init();
+        Vanilla.init();
+
+        LanguageRegistry.instance().addStringLocalization(
+                "itemGroup.tabLearningModding", "en_US", "Learning Modding");
 
     }
 

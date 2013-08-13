@@ -19,8 +19,26 @@ public class Ids {
     // Defaults
     public static int TITANIUMINGOT_DEFAULT = 1000;
     public static int RUBY_DEFAULT = 1001;
+    public static int RUBY_SWORD_DEFAULT = 1002;
+    public static int RUBY_PICKAXE_DEFAULT = 1003;
+    public static int RUBY_SPADE_DEFAULT = 1004;
+    public static int RUBY_AXE_DEFAULT = 1005;
+    public static int RUBY_HOE_DEFAULT = 1006;
+    public static int RUBY_HELMET_DEFAULT = 1007;
+    public static int RUBY_CHESTPLATE_DEFAULT = 1008;
+    public static int RUBY_LEGGINGS_DEFAULT = 1009;
+    public static int RUBY_BOOTS_DEFAULT = 1010;
 
     // Current
     public static int TITANIUMINGOT;
     public static int RUBY;
+    public static int RUBY_SWORD;
+    public static int RUBY_PICKAXE;
+    public static int RUBY_SPADE;
+    public static int RUBY_AXE;
+    public static int RUBY_HOE;
+    public static int RUBY_HELMET;
+    public static int RUBY_CHESTPLATE;
+    public static int RUBY_LEGGINGS;
+    public static int RUBY_BOOTS;
 }

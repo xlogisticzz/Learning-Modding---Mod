@@ -30,6 +30,24 @@ public class ConfigurationHandler {
                 "Titanium Ingot ID", Ids.TITANIUMINGOT_DEFAULT).getInt();
         Ids.RUBY = configuration.get(Configuration.CATEGORY_ITEM, "Ruby ID",
                 Ids.RUBY_DEFAULT).getInt();
+        Ids.RUBY_SWORD = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Sword ID", Ids.RUBY_SWORD_DEFAULT).getInt();
+        Ids.RUBY_PICKAXE = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Pickaxe ID", Ids.RUBY_PICKAXE_DEFAULT).getInt();
+        Ids.RUBY_SPADE = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Shovel ID", Ids.RUBY_SPADE_DEFAULT).getInt();
+        Ids.RUBY_AXE = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Axe ID", Ids.RUBY_AXE_DEFAULT).getInt();
+        Ids.RUBY_HOE = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Hoe ID", Ids.RUBY_HOE_DEFAULT).getInt();
+        Ids.RUBY_HELMET = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Helmet ID", Ids.RUBY_HELMET_DEFAULT).getInt();
+        Ids.RUBY_CHESTPLATE = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Chestplate ID", Ids.RUBY_CHESTPLATE_DEFAULT).getInt();
+        Ids.RUBY_LEGGINGS = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Leggings ID", Ids.RUBY_LEGGINGS_DEFAULT).getInt();
+        Ids.RUBY_BOOTS = configuration.get(Configuration.CATEGORY_ITEM,
+                "Ruby Boots ID", Ids.RUBY_BOOTS_DEFAULT).getInt();
 
         configuration.save();
 

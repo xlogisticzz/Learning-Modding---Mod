@@ -2,21 +2,24 @@ package xlogisticzz.learningModding.item;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemHoe;
 import xlogisticzz.learningModding.lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Items extends net.minecraft.item.Item {
+public class ModHoe extends ItemHoe {
 
     public String name;
 
-    public Items(int par1, CreativeTabs par2, int par3, String par4, String par5) {
-        super(par1);
-
-        this.setCreativeTab(par2);
-        this.setMaxStackSize(par3);
+    public ModHoe(int par1, EnumToolMaterial par2EnumToolMaterial,
+            CreativeTabs par3, int par4, String par5, String par6) {
+        super(par1, par2EnumToolMaterial);
+        this.setCreativeTab(par3);
+        this.setMaxDamage(par4);
+        this.setMaxStackSize(1);
         this.setUnlocalizedName(par5);
-        name = par4;
+        name = par6;
     }
 
     @Override
@@ -26,4 +29,5 @@ public class Items extends net.minecraft.item.Item {
         itemIcon = reg.registerIcon(Constants.MOD.MODID + ":" + name);
 
     }
+
 }
