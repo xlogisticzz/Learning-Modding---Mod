@@ -12,8 +12,7 @@ public class ModSpade extends ItemSpade {
 
     public String name;
 
-    public ModSpade(int par1, EnumToolMaterial par2EnumToolMaterial,
-            CreativeTabs par2, int par3, String par4, String par5) {
+    public ModSpade(int par1, EnumToolMaterial par2EnumToolMaterial, CreativeTabs par2, int par3, String par4, String par5) {
         super(par1, par2EnumToolMaterial);
         this.setCreativeTab(par2);
         this.setMaxDamage(par3);
@@ -26,7 +25,7 @@ public class ModSpade extends ItemSpade {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
 
-        itemIcon = reg.registerIcon(Constants.MOD.MODID + ":" + name);
+        itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
 
     }
 }

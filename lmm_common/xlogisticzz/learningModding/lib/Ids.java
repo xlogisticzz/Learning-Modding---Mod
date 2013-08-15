@@ -28,6 +28,7 @@ public class Ids {
     public static int RUBY_CHESTPLATE_DEFAULT = 1008;
     public static int RUBY_LEGGINGS_DEFAULT = 1009;
     public static int RUBY_BOOTS_DEFAULT = 1010;
+    public static int RUBY_WAND_DEFAULT = 1011;
 
     // Current
     public static int TITANIUMINGOT;
@@ -41,4 +42,5 @@ public class Ids {
     public static int RUBY_CHESTPLATE;
     public static int RUBY_LEGGINGS;
     public static int RUBY_BOOTS;
+    public static int RUBY_WAND;
 }

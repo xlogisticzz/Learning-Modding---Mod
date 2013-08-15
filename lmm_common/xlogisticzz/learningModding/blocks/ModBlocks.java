@@ -12,43 +12,39 @@ public class ModBlocks {
 
     // Mod Blocks
     public static OreBlock titaniumore;
-    public static OreBlock rubyore;
+    public static rubyOreBlock rubyore;
     public static OreStorageBlock titaniumblock;
     public static OreStorageBlock rubyblock;
 
     public static void init() {
-        titaniumore = new OreBlock(Ids.TITANIUMORE, 3,
-                Block.soundStoneFootstep, "titaniumOre",
-                CreativeTab.tabLearningModding, "titanium_ore");
-        rubyore = new OreBlock(Ids.RUBYORE, 1, Block.soundLadderFootstep,
-                "rubyOre", CreativeTab.tabLearningModding, "ruby_ore");
-        titaniumblock = new OreStorageBlock(Ids.TITANIUMBLOCK,
-                Block.soundMetalFootstep, CreativeTab.tabLearningModding, 6.0F,
-                12.0F, "titaniumBlock", "titanium_block");
-        rubyblock = new OreStorageBlock(Ids.RUBYBLOCK,
-                Block.soundMetalFootstep, CreativeTab.tabLearningModding, 5.0F,
-                10.0F, "rubyBlock", "ruby_block");
+        titaniumore = new OreBlock(Ids.TITANIUMORE, 3, Block.soundStoneFootstep, Constants.UnLocalisedNames.TITANIUM_ORE, CreativeTab.tabLearningModding, Constants.Icons.TITANIUM_ORE);
+        rubyore = new rubyOreBlock(Ids.RUBYORE, 1, Block.soundLadderFootstep, Constants.UnLocalisedNames.RUBY_ORE, CreativeTab.tabLearningModding, Constants.Icons.RUBY_ORE);
+        titaniumblock = new OreStorageBlock(Ids.TITANIUMBLOCK, Block.soundMetalFootstep, CreativeTab.tabLearningModding, 6.0F, 12.0F, Constants.UnLocalisedNames.TITANIUM_BLOCK, Constants.Icons.TITANIUM_BLOCK);
+        rubyblock = new OreStorageBlock(Ids.RUBYBLOCK, Block.soundMetalFootstep, CreativeTab.tabLearningModding, 5.0F, 10.0F, Constants.UnLocalisedNames.RUBY_BLOCK, Constants.Icons.RUBY_BLOCK);
+
+    }
+
+    public static void initInfo() {
 
         // Titanium Ore Details
-        LanguageRegistry.addName(titaniumore, Constants.BLOCKS.TITANIUMORENAME);
+        LanguageRegistry.addName(titaniumore, Constants.BlockNames.TITANIUM_ORE_NAME);
         MinecraftForge.setBlockHarvestLevel(titaniumore, "pickaxe", 3);
-        GameRegistry.registerBlock(titaniumore, "titaniumOre");
+        GameRegistry.registerBlock(titaniumore, Constants.UnLocalisedNames.TITANIUM_ORE);
 
         // Ruby Ore Details
-        LanguageRegistry.addName(rubyore, Constants.BLOCKS.RUBYORENAME);
+        LanguageRegistry.addName(rubyore, Constants.BlockNames.RUBY_ORE_NAME);
         MinecraftForge.setBlockHarvestLevel(rubyore, "pickaxe", 2);
-        GameRegistry.registerBlock(rubyore, "rubyOre");
+        GameRegistry.registerBlock(rubyore, Constants.UnLocalisedNames.RUBY_ORE);
 
         // Titanium Block Details
-        LanguageRegistry.addName(titaniumblock,
-                Constants.BLOCKS.TITANIUMBLOCKNAME);
+        LanguageRegistry.addName(titaniumblock, Constants.BlockNames.TITANIUM_BLOCK_NAME);
         MinecraftForge.setBlockHarvestLevel(titaniumblock, "pickaxe", 3);
-        GameRegistry.registerBlock(titaniumblock, "titaniumBlock");
+        GameRegistry.registerBlock(titaniumblock, Constants.UnLocalisedNames.TITANIUM_BLOCK);
 
         // Ruby Block Details
-        LanguageRegistry.addName(rubyblock, Constants.BLOCKS.RUBYBLOCKNAME);
+        LanguageRegistry.addName(rubyblock, Constants.BlockNames.RUBY_BLOCK_NAME);
         MinecraftForge.setBlockHarvestLevel(rubyblock, "pickaxe", 2);
-        GameRegistry.registerBlock(rubyblock, "rubyBlock");
+        GameRegistry.registerBlock(rubyblock, Constants.UnLocalisedNames.RUBY_BLOCK);
 
     }
 

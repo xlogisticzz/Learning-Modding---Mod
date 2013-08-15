@@ -6,8 +6,7 @@ import xlogisticzz.learningModding.item.ModItems;
 
 public class CreativeTab {
 
-    public static CreativeTabs tabLearningModding = new CreativeTabs(
-            "tabLearningModding") {
+    public static CreativeTabs tabLearningModding = new CreativeTabs("tabLearningModding") {
         @Override
         public ItemStack getIconItemStack() {
             return new ItemStack(ModItems.ruby, 1, 0);

@@ -12,8 +12,7 @@ public class ModAxe extends ItemAxe {
 
     public String name;
 
-    public ModAxe(int par1, EnumToolMaterial par2EnumToolMaterial,
-            CreativeTabs par3, int par4, String par5, String par6) {
+    public ModAxe(int par1, EnumToolMaterial par2EnumToolMaterial, CreativeTabs par3, int par4, String par5, String par6) {
         super(par1, par2EnumToolMaterial);
         this.setCreativeTab(par3);
         this.setMaxDamage(par4);
@@ -26,7 +25,7 @@ public class ModAxe extends ItemAxe {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
 
-        itemIcon = reg.registerIcon(Constants.MOD.MODID + ":" + name);
+        itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
 
     }
 }

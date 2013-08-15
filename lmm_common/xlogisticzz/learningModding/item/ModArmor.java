@@ -12,11 +12,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ModArmor extends ItemArmor {
 
-    public String texturePath = Constants.MOD.MODID + ":";
-    public String iconPath = Constants.MOD.MODID + ":";
+    public String texturePath = Constants.Mod.MODID + ":";
+    public String iconPath = Constants.Mod.MODID + ":";
 
-    public ModArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial,
-            int par3, int par4, String type, CreativeTabs par5) {
+    public ModArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, String type, CreativeTabs par5) {
         super(par1, par2EnumArmorMaterial, par3, par4);
 
         this.setMaxStackSize(1);
@@ -54,8 +53,7 @@ public class ModArmor extends ItemArmor {
     }
 
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-            int layer) {
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
 
         return texturePath;
     }

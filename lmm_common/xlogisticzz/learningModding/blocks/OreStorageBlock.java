@@ -12,8 +12,7 @@ public class OreStorageBlock extends BlockOreStorage {
 
     public String name;
 
-    public OreStorageBlock(int par1, StepSound par2, CreativeTabs par3,
-            float par4, float par5, String par6, String par7) {
+    public OreStorageBlock(int par1, StepSound par2, CreativeTabs par3, float par4, float par5, String par6, String par7) {
         super(par1);
         this.setStepSound(par2);
         this.setCreativeTab(par3);
@@ -27,7 +26,7 @@ public class OreStorageBlock extends BlockOreStorage {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
 
-        blockIcon = reg.registerIcon(Constants.MOD.MODID + ":" + name);
+        blockIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
 
     }
 

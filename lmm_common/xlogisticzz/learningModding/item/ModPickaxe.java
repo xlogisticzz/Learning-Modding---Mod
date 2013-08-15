@@ -12,8 +12,7 @@ public class ModPickaxe extends ItemPickaxe {
 
     public String name;
 
-    public ModPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial,
-            float par3, float par4, CreativeTabs par5, String par6, String par7) {
+    public ModPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial, float par3, float par4, CreativeTabs par5, String par6, String par7, int par8) {
         super(par1, par2EnumToolMaterial);
         damageVsEntity = par3;
         efficiencyOnProperMaterial = par4;
@@ -21,13 +20,14 @@ public class ModPickaxe extends ItemPickaxe {
         this.setMaxStackSize(1);
         this.setUnlocalizedName(par6);
         name = par7;
+        this.setMaxDamage(par8);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
 
-        itemIcon = reg.registerIcon(Constants.MOD.MODID + ":" + name);
+        itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
 
     }
 
