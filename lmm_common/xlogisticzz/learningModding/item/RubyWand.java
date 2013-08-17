@@ -44,16 +44,32 @@ public class RubyWand extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
-        itemIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.WAND);
-        chargedIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.WAND_CHARGED);
+        itemIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.RUBY_WAND);
+        chargedIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.RUBY_WAND_CHARGED);
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, EntityPlayer player, List info, boolean useExtraInfo) {
-        info.add("This fun thing has been used " + itemstack.getItemDamage() + " times");
-        if (isCharged(itemstack.getItemDamage())) {
-            info.add("This item is charged");
+
+        switch (itemstack.getItemDamage()) {
+
+            case 1:
+                info.add("This wand is 20% charged");
+                break;
+            case 2:
+                info.add("This wand is 40% charged");
+                break;
+            case 3:
+                info.add("This wand is 60% charged");
+                break;
+            case 4:
+                info.add("This wand is 80% charged");
+                break;
+            case 5:
+                info.add("This wand is 100% charged");
+                break;
         }
     }
 
@@ -68,6 +84,6 @@ public class RubyWand extends Item {
     }
 
     private boolean isCharged(int dmg) {
-        return dmg >= 10;
+        return dmg >= 5;
     }
 }

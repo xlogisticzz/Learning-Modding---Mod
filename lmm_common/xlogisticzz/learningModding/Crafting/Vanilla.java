@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import xlogisticzz.learningModding.blocks.ModBlocks;
 import xlogisticzz.learningModding.item.ModItems;
+import xlogisticzz.learningModding.lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Vanilla {
@@ -16,6 +17,8 @@ public class Vanilla {
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby, 9), ModBlocks.rubyblock);
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.titanitumIngot, 9), ModBlocks.titaniumblock);
 
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.wand), new Object[] { "  X", " / ", " / ", 'X', ModItems.ruby, '/', Item.stick });
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubyWand), new Object[] { "  X", " / ", "/  ", 'X', ModItems.rubyWand, '/', Item.stick });
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubySword), new Object[] { " X ", " X ", " S ", 'X', ModItems.ruby, 'S', Item.stick });
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubyPickaxe), new Object[] { "XXX", " S ", " S ", 'X', ModItems.ruby, 'S', Item.stick });
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubySpade), new Object[] { " X ", " S ", " S ", 'X', ModItems.ruby, 'S', Item.stick });
@@ -30,6 +33,15 @@ public class Vanilla {
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubyBoots), new Object[] { "   ", "X X", "X X", 'X', ModItems.ruby });
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubyBoots), new Object[] { "X X", "X X", "   ", 'X', ModItems.ruby });
 
+        for (int i = 0; i < Constants.ItemNames.DEATHSTONES_NAMES.length; i++) {
+            ItemStack input = new ItemStack(ModItems.deathstone, 1, i);
+            if (i == Constants.ItemNames.DEATHSTONES_NAMES.length - 1) {
+                ItemStack output = new ItemStack(ModItems.deathstone, 1, 0);
+                GameRegistry.addShapelessRecipe(output, input);
+            } else {
+                ItemStack output = new ItemStack(ModItems.deathstone, 1, i + 1);
+                GameRegistry.addShapelessRecipe(output, input);
+            }
+        }
     }
-
 }

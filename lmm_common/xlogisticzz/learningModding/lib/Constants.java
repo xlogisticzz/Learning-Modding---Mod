@@ -1,6 +1,5 @@
 package xlogisticzz.learningModding.lib;
 
-
 public class Constants {
 
     public class Mod {
@@ -28,7 +27,7 @@ public class Constants {
         public static final String RUBY_BLOCK_NAME = "Ruby Block";
     }
 
-    public class ItemNames {
+    public static class ItemNames {
 
         public static final String RUBY_NAME = "Ruby";
         public static final String TITANIUM_INGOT_NAME = "Titanium Ingot";
@@ -42,14 +41,17 @@ public class Constants {
         public static final String RUBY_LEGGINGS_NAME = "Ruby Leggings";
         public static final String RUBY_BOOTS_NAME = "Ruby Boots";
         public static final String RUBY_WAND_NAME = "Ruby Wand";
+        public static final String[] CARD_NAMES = { "Arrow Card", "Border Card", "Cross Card" };
+        public static final String[] DEATHSTONES_NAMES = { "Deathstone Creeper", "Deathstone Enderman", "Deathstone Pig", "Deathstone Player", "Deathstone Skeleton" };
+        public static final String WAND_NAME = "Wand";
 
     }
 
-    public class Icons {
+    public static class Icons {
 
         // Items
-        public static final String WAND = "uncharged_wand";
-        public static final String WAND_CHARGED = "charged_wand";
+        public static final String RUBY_WAND = "uncharged_wand";
+        public static final String RUBY_WAND_CHARGED = "charged_wand";
         public static final String RUBY = "ruby";
         public static final String TITANIUM_INGOT = "titanium_ingot";
         public static final String RUBY_PICKAXE = "ruby_pickaxe";
@@ -57,7 +59,9 @@ public class Constants {
         public static final String RUBY_SPADE = "ruby_spade";
         public static final String RUBY_AXE = "ruby_axe";
         public static final String RUBY_HOE = "ruby_hoe";
-
+        public static final String[] CARD_ICONS = { "card_arrow", "card_box", "card_cross" };
+        public static final String[] DEATHSTONES_ICONS = { "deathstone_creeper", "deathstone_enderman", "deathstone_pig", "deathstone_player", "deathstone_skeleton" };
+        public static final String WAND = "wand";
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";
         public static final String RUBY_BLOCK = "ruby_block";
@@ -81,6 +85,9 @@ public class Constants {
         public static final String RUBY_LEGGINGS = "rubyLeggings";
         public static final String RUBY_BOOTS = "rubyBoots";
         public static final String RUBY_WAND = "rubyWand";
+        public static final String CARD = "card";
+        public static final String DEATHSTONE = "deathstone";
+        public static final String WAND = "wand";
 
         // Blocks
         public static final String RUBY_ORE = "rubyOre";

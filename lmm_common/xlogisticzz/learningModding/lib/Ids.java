@@ -29,6 +29,9 @@ public class Ids {
     public static int RUBY_LEGGINGS_DEFAULT = 1009;
     public static int RUBY_BOOTS_DEFAULT = 1010;
     public static int RUBY_WAND_DEFAULT = 1011;
+    public static int CARD_DEFAULT = 1012;
+    public static int DEATHSTONES_DEFAULT = 1013;
+    public static int WAND_DEFAULT = 1014;
 
     // Current
     public static int TITANIUMINGOT;
@@ -43,4 +46,8 @@ public class Ids {
     public static int RUBY_LEGGINGS;
     public static int RUBY_BOOTS;
     public static int RUBY_WAND;
+    public static int CARD;
+    public static int DEATHSTONES;
+    public static int WAND;
+
 }
