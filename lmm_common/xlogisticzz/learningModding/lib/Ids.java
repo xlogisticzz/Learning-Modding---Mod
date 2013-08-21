@@ -8,30 +8,41 @@ public class Ids {
     public static int RUBYORE_DEFAULT = 501;
     public static int TITANIUMBLOCK_DEFAULT = 502;
     public static int RUBYBLOCK_DEFAULT = 503;
+    public static int MACHINEBLOCK_DEFAULT = 504;
+    public static int GLASS_CONNECTED_DEFAULT = 505;
+    public static int TESTBLOCK_DEFAULT = 506;
+    public static int MARKERS_DEFAULT = 507;
+
+    
 
     // Current
     public static int TITANIUMORE;
     public static int RUBYORE;
     public static int TITANIUMBLOCK;
     public static int RUBYBLOCK;
+    public static int MACHINEBLOCK;
+    public static int GLASS_CONNECTED;
+    public static int TESTBLOCK;
+    public static int MARKERS;
 
+    
     // Item IDs
     // Defaults
-    public static int TITANIUMINGOT_DEFAULT = 1000;
-    public static int RUBY_DEFAULT = 1001;
-    public static int RUBY_SWORD_DEFAULT = 1002;
-    public static int RUBY_PICKAXE_DEFAULT = 1003;
-    public static int RUBY_SPADE_DEFAULT = 1004;
-    public static int RUBY_AXE_DEFAULT = 1005;
-    public static int RUBY_HOE_DEFAULT = 1006;
-    public static int RUBY_HELMET_DEFAULT = 1007;
-    public static int RUBY_CHESTPLATE_DEFAULT = 1008;
-    public static int RUBY_LEGGINGS_DEFAULT = 1009;
-    public static int RUBY_BOOTS_DEFAULT = 1010;
-    public static int RUBY_WAND_DEFAULT = 1011;
-    public static int CARD_DEFAULT = 1012;
-    public static int DEATHSTONES_DEFAULT = 1013;
-    public static int WAND_DEFAULT = 1014;
+    public static int TITANIUMINGOT_DEFAULT = 5000;
+    public static int RUBY_DEFAULT = 5001;
+    public static int RUBY_SWORD_DEFAULT = 5002;
+    public static int RUBY_PICKAXE_DEFAULT = 5003;
+    public static int RUBY_SPADE_DEFAULT = 5004;
+    public static int RUBY_AXE_DEFAULT = 5005;
+    public static int RUBY_HOE_DEFAULT = 5006;
+    public static int RUBY_HELMET_DEFAULT = 5007;
+    public static int RUBY_CHESTPLATE_DEFAULT = 5008;
+    public static int RUBY_LEGGINGS_DEFAULT = 5009;
+    public static int RUBY_BOOTS_DEFAULT = 5010;
+    public static int RUBY_WAND_DEFAULT = 5011;
+    public static int CARD_DEFAULT = 5012;
+    public static int DEATHSTONES_DEFAULT = 5013;
+    public static int WAND_DEFAULT = 5014;
 
     // Current
     public static int TITANIUMINGOT;
@@ -49,5 +60,7 @@ public class Ids {
     public static int CARD;
     public static int DEATHSTONES;
     public static int WAND;
+    
+
 
 }
