@@ -1,11 +1,11 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import net.minecraft.item.ItemBlock;
 
-public class ItemMachine extends ItemBlock {
+public class ItemMarker extends ItemBlock {
 
-    public ItemMachine(int id) {
-        super(id);
+    public ItemMarker(int par1) {
+        super(par1);
         this.setHasSubtypes(true);
     }
 

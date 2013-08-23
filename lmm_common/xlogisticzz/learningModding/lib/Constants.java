@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.lib;
+package xlogisticzz.learningModding.Lib;
 
 public class Constants {
 
@@ -14,8 +14,8 @@ public class Constants {
 
     public class Proxies {
 
-        public static final String CLIENT = "xlogisticzz.learningModding.proxy.ClientProxy";
-        public static final String COMMON = "xlogisticzz.learningModding.proxy.CommonProxy";
+        public static final String CLIENT = "xlogisticzz.learningModding.Proxies.ClientProxy";
+        public static final String COMMON = "xlogisticzz.learningModding.Proxies.CommonProxy";
 
     }
 
@@ -29,6 +29,9 @@ public class Constants {
         public static final String GLASS_CONNECTED = "Glass Connected";
         public static final String TEST_BLOCK = "Test Block";
         public static final String MARKERS_NAME = "Marker";
+        public static final String BOMB_NAME = "Bomb";
+        public static final String SUPER_BOMB_NAME = "Super Bomb";
+
     }
 
     public static class ItemNames {
@@ -80,6 +83,9 @@ public class Constants {
         public static final String[] GLASS_CONNECTED = { "Glass", "Glass_1_d", "Glass_1_l", "Glass_1_r", "Glass_1_u", "Glass_2_dl", "Glass_2_dr", "Glass_2_lr", "Glass_2_ud", "Glass_2_ul", "Glass_2_ur", "Glass_3_dlr", "Glass_3_udl", "Glass_3_udr", "Glass_3_ulr", "Glass_4" };
         public static final String[] TEST = {"0","1","2","3","4","5"};
         public static final String[] MARKERS = { "marker_blue", "marker_blue_marked", "marker_brown", "marker_brown_marked", "marker_green", "marker_green_marked", "marker_grey", "marker_grey_marked", "marker_orange", "marker_orange_marked", "marker_purple", "marker_purple_marked", "marker_red", "marker_red_marked", "marker_yellow", "marker_yellow_marked" };
+        public static final String BOMB = "bomb";
+        public static final String BOMB_IDLE = "bomb_idle";
+        public static final String SUPER_BOMB = "super_bomb";
 
 
     }
@@ -112,6 +118,9 @@ public class Constants {
         public static final String GLASS_CONNECTED = "glassConnected";
         public static final String TEST_BLOCK = "testBlock";
         public static final String MARKERS = "markers";
+        public static final String BOMB = "bomb";
+        public static final String SUPER_BOMB = "superBomb";
+
 
 
     }

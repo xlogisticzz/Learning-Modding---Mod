@@ -1,20 +1,22 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import xlogisticzz.learningModding.lib.Constants;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemSpade;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ModItem extends net.minecraft.item.Item {
+public class ItemModSpade extends ItemSpade {
 
     public String name;
 
-    public ModItem(int par1, CreativeTabs par2, int par3, String par4, String par5) {
-        super(par1);
-
+    public ItemModSpade(int par1, EnumToolMaterial par2EnumToolMaterial, CreativeTabs par2, int par3, String par4, String par5) {
+        super(par1, par2EnumToolMaterial);
         this.setCreativeTab(par2);
-        this.setMaxStackSize(par3);
+        this.setMaxDamage(par3);
+        this.setMaxStackSize(1);
         this.setUnlocalizedName(par4);
         name = par5;
     }

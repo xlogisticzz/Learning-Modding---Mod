@@ -1,18 +1,18 @@
-package xlogisticzz.learningModding.blocks;
+package xlogisticzz.learningModding.Blocks;
 
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.StepSound;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class OreStorageBlock extends BlockOreStorage {
+public class BlockModOreStorage extends BlockOreStorage {
 
     public String name;
 
-    public OreStorageBlock(int par1, StepSound par2, CreativeTabs par3, float par4, float par5, String par6, String par7) {
+    public BlockModOreStorage(int par1, StepSound par2, CreativeTabs par3, float par4, float par5, String par6, String par7) {
         super(par1);
         this.setStepSound(par2);
         this.setCreativeTab(par3);

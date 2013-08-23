@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -6,16 +6,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ModArmor extends ItemArmor {
+public class ItemModArmor extends ItemArmor {
 
     public String texturePath = Constants.Mod.MODID + ":";
     public String iconPath = Constants.Mod.MODID + ":";
 
-    public ModArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, String type, CreativeTabs par5) {
+    public ItemModArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, String type, CreativeTabs par5) {
         super(par1, par2EnumArmorMaterial, par3, par4);
 
         this.setMaxStackSize(1);

@@ -1,7 +1,7 @@
-package xlogisticzz.learningModding.blocks;
+package xlogisticzz.learningModding.Blocks;
 
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -10,12 +10,12 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
-public class TestBlock extends Block {
+public class BlockTest extends Block {
 
     private Icon[] icons;
-    public TestBlock(int par1) {
+    public BlockTest(int par1) {
         super(par1, Material.iron);
-        this.setCreativeTab(CreativeTab.tabLearningModding);
+        this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setUnlocalizedName(Constants.UnLocalisedNames.TEST_BLOCK);
 
     }
@@ -31,9 +31,31 @@ public class TestBlock extends Block {
     }
     
     @Override
-    public Icon getIcon(int par1 , int par2){
-        return icons[0];
+    public Icon getIcon(int side , int meta){
         
+        switch(side){
+        
+            case 0 :
+                return icons[0];
+            
+            case 1 :
+                return icons[1];
+               
+            case 2 :
+                return icons[2];
+                
+            case 3 :
+                return icons[3];
+                
+            case 4 :
+                return icons[4];  
+                
+            case 5 :
+                return icons[5];
+                
+            default :
+                return icons[0];
+        }
     }
 
     @Override

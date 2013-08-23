@@ -1,24 +1,24 @@
-package xlogisticzz.learningModding.blocks;
+package xlogisticzz.learningModding.Blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GlassConnected extends Block {
+public class BlockGlassConnected extends Block {
 
     public int render;
     private Icon[] icons;
 
-    public GlassConnected(int par1, boolean par2) {
+    public BlockGlassConnected(int par1, boolean par2) {
         super(par1, Material.glass);
         this.setStepSound(soundGlassFootstep);
-        this.setCreativeTab(CreativeTab.tabLearningModding);
+        this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         render = par2 ? 1 : 0;
         this.setUnlocalizedName(Constants.UnLocalisedNames.GLASS_CONNECTED);
         this.setHardness(0.4f);

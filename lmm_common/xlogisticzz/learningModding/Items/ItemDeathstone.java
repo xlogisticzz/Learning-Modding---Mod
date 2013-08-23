@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,7 +25,7 @@ public class ItemDeathstone extends Item {
 
     public ItemDeathstone(int par1) {
         super(par1);
-        this.setCreativeTab(CreativeTab.tabLearningModding);
+        this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setHasSubtypes(true);
     }
 

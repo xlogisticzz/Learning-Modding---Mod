@@ -1,18 +1,18 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemPickaxe;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ModPickaxe extends ItemPickaxe {
+public class ItemModPickaxe extends ItemPickaxe {
 
     public String name;
 
-    public ModPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial, float par3, float par4, CreativeTabs par5, String par6, String par7, int par8) {
+    public ItemModPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial, float par3, float par4, CreativeTabs par5, String par6, String par7, int par8) {
         super(par1, par2EnumToolMaterial);
         damageVsEntity = par3;
         efficiencyOnProperMaterial = par4;

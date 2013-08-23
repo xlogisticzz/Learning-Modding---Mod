@@ -1,24 +1,24 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemSword;
-import xlogisticzz.learningModding.lib.Constants;
+import net.minecraft.item.ItemHoe;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ModSword extends ItemSword {
+public class ItemModHoe extends ItemHoe {
 
     public String name;
 
-    public ModSword(int par1, EnumToolMaterial par2EnumToolMaterial, CreativeTabs par2, int par3, String par4, String par5) {
+    public ItemModHoe(int par1, EnumToolMaterial par2EnumToolMaterial, CreativeTabs par3, int par4, String par5, String par6) {
         super(par1, par2EnumToolMaterial);
-        this.setCreativeTab(par2);
-        this.setMaxDamage(par3);
+        this.setCreativeTab(par3);
+        this.setMaxDamage(par4);
         this.setMaxStackSize(1);
-        this.setUnlocalizedName(par4);
-        name = par5;
+        this.setUnlocalizedName(par5);
+        name = par6;
     }
 
     @Override

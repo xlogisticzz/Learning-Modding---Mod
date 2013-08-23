@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.lib;
+package xlogisticzz.learningModding.Lib;
 
 public class Ids {
 
@@ -12,6 +12,9 @@ public class Ids {
     public static int GLASS_CONNECTED_DEFAULT = 505;
     public static int TESTBLOCK_DEFAULT = 506;
     public static int MARKERS_DEFAULT = 507;
+    public static int BOMB_DEFAULT = 508;
+    public static int SUPERBOMB_DEFAULT = 509;
+
 
     
 
@@ -24,6 +27,8 @@ public class Ids {
     public static int GLASS_CONNECTED;
     public static int TESTBLOCK;
     public static int MARKERS;
+    public static int BOMB;
+    public static int SUPERBOMB;
 
     
     // Item IDs

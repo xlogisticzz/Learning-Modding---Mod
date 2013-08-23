@@ -1,10 +1,10 @@
-package xlogisticzz.learningModding.creativeTab;
+package xlogisticzz.learningModding;
 
+import xlogisticzz.learningModding.Items.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xlogisticzz.learningModding.item.ModItems;
 
-public class CreativeTab {
+public class LearningModdingCreativeTab {
 
     public static CreativeTabs tabLearningModding = new CreativeTabs("tabLearningModding") {
         @Override

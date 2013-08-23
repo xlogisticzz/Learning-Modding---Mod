@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.item;
+package xlogisticzz.learningModding.Items;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xlogisticzz.learningModding.blocks.ModBlocks;
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Blocks.ModBlocks;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,7 +22,7 @@ public class ItemCard extends Item {
 
     public ItemCard(int par1) {
         super(par1);
-        this.setCreativeTab(CreativeTab.tabLearningModding);
+        this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setHasSubtypes(true);
 
     }

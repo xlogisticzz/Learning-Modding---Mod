@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.blocks;
+package xlogisticzz.learningModding.Blocks;
 
 import java.util.List;
 
@@ -10,18 +10,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MarkerBlock extends Block{
+public class BlockMarker extends Block{
 
     public Icon[] icons;
 
-    public MarkerBlock(int par1) {
+    public BlockMarker(int par1) {
         super(par1, Material.iron);
-        this.setCreativeTab(CreativeTab.tabLearningModding);
+        this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setHardness(2.5F);
         this.setUnlocalizedName(Constants.UnLocalisedNames.MARKERS);
     }

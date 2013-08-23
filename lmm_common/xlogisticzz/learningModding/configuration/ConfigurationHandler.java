@@ -1,10 +1,10 @@
-package xlogisticzz.learningModding.configuration;
+package xlogisticzz.learningModding.Configuration;
 
 import java.io.File;
 
 import net.minecraftforge.common.Configuration;
-import xlogisticzz.learningModding.lib.Constants;
-import xlogisticzz.learningModding.lib.Ids;
+import xlogisticzz.learningModding.Lib.Constants;
+import xlogisticzz.learningModding.Lib.Ids;
 
 public class ConfigurationHandler {
 
@@ -25,6 +25,8 @@ public class ConfigurationHandler {
         Ids.GLASS_CONNECTED = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Glass Id", Ids.GLASS_CONNECTED_DEFAULT).getInt();
         Ids.TESTBLOCK = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Test Id", Ids.TESTBLOCK_DEFAULT).getInt();
         Ids.MARKERS = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Marker Id", Ids.MARKERS_DEFAULT).getInt();
+        Ids.BOMB = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Bomb Id", Ids.BOMB_DEFAULT).getInt();
+        Ids.SUPERBOMB = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Super Bomb Id", Ids.SUPERBOMB_DEFAULT).getInt();
 
         
         // Item IDs

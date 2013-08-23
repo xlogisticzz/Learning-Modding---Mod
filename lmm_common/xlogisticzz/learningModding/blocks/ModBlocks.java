@@ -1,37 +1,43 @@
-package xlogisticzz.learningModding.blocks;
+package xlogisticzz.learningModding.Blocks;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.item.ItemMachine;
-import xlogisticzz.learningModding.item.ItemMarker;
-import xlogisticzz.learningModding.lib.Constants;
-import xlogisticzz.learningModding.lib.Ids;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Items.ItemMachine;
+import xlogisticzz.learningModding.Items.ItemMarker;
+import xlogisticzz.learningModding.Lib.Constants;
+import xlogisticzz.learningModding.Lib.Ids;
+import xlogisticzz.learningModding.TileEntites.TileEntityBomb;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
 
     // Mod Blocks
-    public static OreBlock titaniumore;
-    public static rubyOreBlock rubyore;
-    public static OreStorageBlock titaniumblock;
-    public static OreStorageBlock rubyblock;
-    public static MachineBlock machineblock;
-    public static Block glassConnected;
-    public static TestBlock testIconBlock; 
-    public static MarkerBlock markerBlock; 
+    public static BlockModOre titaniumore;
+    public static BlockRubyOre rubyore;
+    public static BlockModOreStorage titaniumblock;
+    public static BlockModOreStorage rubyblock;
+    public static BlockMachine machineblock;
+    public static BlockGlassConnected glassConnected;
+    public static BlockTest testIconBlock; 
+    public static BlockMarker markerBlock; 
+    public static BlockBomb bomb;
+    public static BlockSuperBomb superBomb;
+
 
 
     public static void init() {
-        titaniumore = new OreBlock(Ids.TITANIUMORE, 3, Block.soundStoneFootstep, Constants.UnLocalisedNames.TITANIUM_ORE, CreativeTab.tabLearningModding, Constants.Icons.TITANIUM_ORE);
-        rubyore = new rubyOreBlock(Ids.RUBYORE, 1, Block.soundLadderFootstep, Constants.UnLocalisedNames.RUBY_ORE, CreativeTab.tabLearningModding, Constants.Icons.RUBY_ORE);
-        titaniumblock = new OreStorageBlock(Ids.TITANIUMBLOCK, Block.soundMetalFootstep, CreativeTab.tabLearningModding, 6.0F, 12.0F, Constants.UnLocalisedNames.TITANIUM_BLOCK, Constants.Icons.TITANIUM_BLOCK);
-        rubyblock = new OreStorageBlock(Ids.RUBYBLOCK, Block.soundMetalFootstep, CreativeTab.tabLearningModding, 5.0F, 10.0F, Constants.UnLocalisedNames.RUBY_BLOCK, Constants.Icons.RUBY_BLOCK);
-        machineblock = new MachineBlock(Ids.MACHINEBLOCK);
-        glassConnected = new GlassConnected(Ids.GLASS_CONNECTED, false);
-        testIconBlock = new TestBlock(Ids.TESTBLOCK);
-        markerBlock = new MarkerBlock(Ids.MARKERS);
+        titaniumore = new BlockModOre(Ids.TITANIUMORE, 3, Block.soundStoneFootstep, Constants.UnLocalisedNames.TITANIUM_ORE, LearningModdingCreativeTab.tabLearningModding, Constants.Icons.TITANIUM_ORE);
+        rubyore = new BlockRubyOre(Ids.RUBYORE, 1, Block.soundLadderFootstep, Constants.UnLocalisedNames.RUBY_ORE, LearningModdingCreativeTab.tabLearningModding, Constants.Icons.RUBY_ORE);
+        titaniumblock = new BlockModOreStorage(Ids.TITANIUMBLOCK, Block.soundMetalFootstep, LearningModdingCreativeTab.tabLearningModding, 6.0F, 12.0F, Constants.UnLocalisedNames.TITANIUM_BLOCK, Constants.Icons.TITANIUM_BLOCK);
+        rubyblock = new BlockModOreStorage(Ids.RUBYBLOCK, Block.soundMetalFootstep, LearningModdingCreativeTab.tabLearningModding, 5.0F, 10.0F, Constants.UnLocalisedNames.RUBY_BLOCK, Constants.Icons.RUBY_BLOCK);
+        machineblock = new BlockMachine(Ids.MACHINEBLOCK);
+        glassConnected = new BlockGlassConnected(Ids.GLASS_CONNECTED, false);
+        testIconBlock = new BlockTest(Ids.TESTBLOCK);
+        markerBlock = new BlockMarker(Ids.MARKERS);
+        bomb = new BlockBomb(Ids.BOMB);
+        superBomb = new BlockSuperBomb(Ids.SUPERBOMB);
     }
 
     public static void initInfo() {
@@ -72,7 +78,15 @@ public class ModBlocks {
         //Markers
         LanguageRegistry.addName(markerBlock, Constants.BlockNames.MARKERS_NAME);
         GameRegistry.registerBlock(markerBlock, ItemMarker.class, Constants.UnLocalisedNames.MARKERS);
-
+        
+        //Bomb
+        LanguageRegistry.addName(bomb, Constants.BlockNames.BOMB_NAME);
+        GameRegistry.registerBlock(bomb, ItemMarker.class, Constants.UnLocalisedNames.BOMB);
+        GameRegistry.registerTileEntity(TileEntityBomb.class, Constants.UnLocalisedNames.BOMB + "TileEntity");
+      
+        //Super Bomb
+        LanguageRegistry.addName(superBomb, Constants.BlockNames.SUPER_BOMB_NAME);
+        GameRegistry.registerBlock(superBomb, ItemMarker.class, Constants.UnLocalisedNames.SUPER_BOMB);
     }
 
 }

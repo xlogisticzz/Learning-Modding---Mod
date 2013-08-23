@@ -1,4 +1,4 @@
-package xlogisticzz.learningModding.blocks;
+package xlogisticzz.learningModding.Blocks;
 
 import java.util.List;
 
@@ -11,12 +11,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xlogisticzz.learningModding.creativeTab.CreativeTab;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.LearningModdingCreativeTab;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MachineBlock extends Block {
+public class BlockMachine extends Block {
 
     @SideOnly(Side.CLIENT)
     private Icon topIcon;
@@ -27,9 +27,9 @@ public class MachineBlock extends Block {
     @SideOnly(Side.CLIENT)
     private Icon disableIcon;
 
-    public MachineBlock(int par1) {
+    public BlockMachine(int par1) {
         super(par1, Material.iron);
-        this.setCreativeTab(CreativeTab.tabLearningModding);
+        this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setHardness(2.5F);
         this.setUnlocalizedName(Constants.UnLocalisedNames.MACHINE_BLOCK);
     }

@@ -2,13 +2,13 @@ package xlogisticzz.learningModding;
 
 import java.io.File;
 
+import xlogisticzz.learningModding.Blocks.ModBlocks;
+import xlogisticzz.learningModding.Configuration.ConfigurationHandler;
 import xlogisticzz.learningModding.Crafting.Vanilla;
-import xlogisticzz.learningModding.blocks.ModBlocks;
-import xlogisticzz.learningModding.configuration.ConfigurationHandler;
-import xlogisticzz.learningModding.item.ModItems;
-import xlogisticzz.learningModding.lib.Constants;
-import xlogisticzz.learningModding.network.PacketHandler;
-import xlogisticzz.learningModding.proxy.CommonProxy;
+import xlogisticzz.learningModding.Items.ModItems;
+import xlogisticzz.learningModding.Lib.Constants;
+import xlogisticzz.learningModding.Network.PacketHandler;
+import xlogisticzz.learningModding.Proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;

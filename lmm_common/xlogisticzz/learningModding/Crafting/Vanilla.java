@@ -2,9 +2,9 @@ package xlogisticzz.learningModding.Crafting;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import xlogisticzz.learningModding.blocks.ModBlocks;
-import xlogisticzz.learningModding.item.ModItems;
-import xlogisticzz.learningModding.lib.Constants;
+import xlogisticzz.learningModding.Blocks.ModBlocks;
+import xlogisticzz.learningModding.Items.ModItems;
+import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Vanilla {
