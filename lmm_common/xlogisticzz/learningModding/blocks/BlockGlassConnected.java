@@ -171,7 +171,7 @@ public class BlockGlassConnected extends Block {
                     return icons[1];
                 }
                 break;
-            // ?
+            // north
             case 2:
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2, par3 + 1, par4))) {
                     isOpenUp = true;
@@ -217,7 +217,7 @@ public class BlockGlassConnected extends Block {
                     return icons[1];
                 }
                 break;
-            // ?
+            // south
             case 3:
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2, par3 + 1, par4))) {
                     isOpenUp = true;
@@ -263,7 +263,7 @@ public class BlockGlassConnected extends Block {
                     return icons[1];
                 }
                 break;
-            // ?
+            // west
             case 4:
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2, par3 + 1, par4))) {
                     isOpenUp = true;
@@ -309,7 +309,7 @@ public class BlockGlassConnected extends Block {
                     return icons[1];
                 }
                 break;
-            // ?
+            // east
             case 5:
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2, par3 + 1, par4))) {
                     isOpenUp = true;
