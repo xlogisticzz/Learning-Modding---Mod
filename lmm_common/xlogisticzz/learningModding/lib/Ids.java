@@ -14,9 +14,8 @@ public class Ids {
     public static int MARKERS_DEFAULT = 507;
     public static int BOMB_DEFAULT = 508;
     public static int SUPERBOMB_DEFAULT = 509;
-
-
-    
+    public static int NUMBER_DEFAULT = 510;
+    public static int CLICKER_DEFAULT = 511;
 
     // Current
     public static int TITANIUMORE;
@@ -29,8 +28,9 @@ public class Ids {
     public static int MARKERS;
     public static int BOMB;
     public static int SUPERBOMB;
+    public static int NUMBER;
+    public static int CLICKER;
 
-    
     // Item IDs
     // Defaults
     public static int TITANIUMINGOT_DEFAULT = 5000;
@@ -65,7 +65,5 @@ public class Ids {
     public static int CARD;
     public static int DEATHSTONES;
     public static int WAND;
-    
-
 
 }

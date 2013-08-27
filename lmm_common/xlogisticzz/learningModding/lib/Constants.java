@@ -31,6 +31,8 @@ public class Constants {
         public static final String MARKERS_NAME = "Marker";
         public static final String BOMB_NAME = "Bomb";
         public static final String SUPER_BOMB_NAME = "Super Bomb";
+        public static final String NUMBER_NAME = "Number Block";
+        public static final String CLICKER_NAME = "Clicker Block";
 
     }
 
@@ -51,7 +53,6 @@ public class Constants {
         public static final String[] CARD_NAMES = { "Arrow Card", "Border Card", "Cross Card" };
         public static final String[] DEATHSTONES_NAMES = { "Deathstone Creeper", "Deathstone Enderman", "Deathstone Pig", "Deathstone Player", "Deathstone Skeleton" };
         public static final String WAND_NAME = "Wand";
-        
 
     }
 
@@ -81,12 +82,14 @@ public class Constants {
         public static final String MACHINE_DISABLED = "machine_disabled";
         public static final String[] MACHINE_SIDES = { "machine_side", "machine_side_arrow", "machine_side_box", "machine_side_cross" };
         public static final String[] GLASS_CONNECTED = { "Glass", "Glass_1_d", "Glass_1_l", "Glass_1_r", "Glass_1_u", "Glass_2_dl", "Glass_2_dr", "Glass_2_lr", "Glass_2_ud", "Glass_2_ul", "Glass_2_ur", "Glass_3_dlr", "Glass_3_udl", "Glass_3_udr", "Glass_3_ulr", "Glass_4" };
-        public static final String[] TEST = {"0","1","2","3","4","5"};
+        public static final String[] TEST = { "0", "1", "2", "3", "4", "5" };
         public static final String[] MARKERS = { "marker_blue", "marker_blue_marked", "marker_brown", "marker_brown_marked", "marker_green", "marker_green_marked", "marker_grey", "marker_grey_marked", "marker_orange", "marker_orange_marked", "marker_purple", "marker_purple_marked", "marker_red", "marker_red_marked", "marker_yellow", "marker_yellow_marked" };
         public static final String BOMB = "bomb";
         public static final String BOMB_IDLE = "bomb_idle";
         public static final String SUPER_BOMB = "super_bomb";
-
+        public static final String[] NUMBERS = { "number_1", "number_2", "number_3", "number_4", "number_5", "number_6", "number_7", "number_8", "number_9", "number_10", "number_11", "number_12", "number_13", "number_14", "number_15", "number_16", "number_17", "number_18" };
+        public static final String CLICKER = "clicker";
+        public static final String CLICKER_LINKED = "clicker_linked";
 
     }
 
@@ -120,14 +123,15 @@ public class Constants {
         public static final String MARKERS = "markers";
         public static final String BOMB = "bomb";
         public static final String SUPER_BOMB = "superBomb";
-
-
+        public static final String NUMBER = "number";
+        public static final String CLICKER = "clicker";
 
     }
 
     public static class Misc {
 
         public static final int RUBY_DURABILITY = 1000;
+        public static final int NUMBER_COUNT = 18;
 
     }
 

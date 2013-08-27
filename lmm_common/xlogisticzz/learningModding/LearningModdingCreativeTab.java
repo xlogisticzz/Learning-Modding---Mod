@@ -1,8 +1,8 @@
 package xlogisticzz.learningModding;
 
-import xlogisticzz.learningModding.Items.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import xlogisticzz.learningModding.Items.ModItems;
 
 public class LearningModdingCreativeTab {
 

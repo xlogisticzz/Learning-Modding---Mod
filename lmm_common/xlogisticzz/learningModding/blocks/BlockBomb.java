@@ -16,10 +16,10 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBomb extends BlockContainer {
-    
+
     @SideOnly(Side.CLIENT)
     private Icon idleIcon;
-    
+
     public BlockBomb(int par1) {
         super(par1, Material.tnt);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
@@ -35,18 +35,30 @@ public class BlockBomb extends BlockContainer {
         idleIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB_IDLE);
 
     }
-    
+
     @SideOnly(Side.CLIENT)
     @Override
     public Icon getIcon(int side, int metadata) {
-        return metadata == 0 ? blockIcon : idleIcon;
+
+        if (metadata < 3) {
+            return blockIcon;
+        } else {
+            return idleIcon;
+        }
     }
-    
+
     @Override
     public int idDropped(int meta, Random random, int fortune) {
-        return -1;
+
+        if (meta == 0) {
+            return blockID;
+        } else if (meta == 1) {
+            return blockID;
+        } else {
+            return -1;
+        }
     }
-    
+
     @Override
     public TileEntity createNewTileEntity(World world) {
         return new TileEntityBomb();

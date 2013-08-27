@@ -57,8 +57,8 @@ public class BlockMachine extends Block {
     @Override
     public void onEntityWalking(World par1World, int x, int y, int z, Entity par5Entity) {
         if (!par1World.isRemote && par1World.getBlockMetadata(x, y, z) % 2 == 0) {
-                spawnGravel(par1World, x, y + 20, z);
-                spawnGravel(par1World, x, y + 21, z);
+            spawnGravel(par1World, x, y + 20, z);
+            spawnGravel(par1World, x, y + 21, z);
         }
     }
 

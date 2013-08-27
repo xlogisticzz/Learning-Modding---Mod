@@ -71,8 +71,8 @@ public class ItemCard extends Item {
             int newMeta = type * 2 + disabled;
 
             world.setBlockMetadataWithNotify(x, y, z, newMeta, 3);
-            
-            if (!player.capabilities.isCreativeMode){
+
+            if (!player.capabilities.isCreativeMode) {
                 stack.stackSize--;
             }
             return true;

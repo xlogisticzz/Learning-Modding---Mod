@@ -15,7 +15,7 @@ import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMarker extends Block{
+public class BlockMarker extends Block {
 
     public Icon[] icons;
 
@@ -28,24 +28,23 @@ public class BlockMarker extends Block{
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister){
+    public void registerIcons(IconRegister par1IconRegister) {
         icons = new Icon[Constants.Icons.MARKERS.length];
-        
-        for(int i = 0; i < Constants.Icons.MARKERS.length; i++){
-            
+
+        for (int i = 0; i < Constants.Icons.MARKERS.length; i++) {
+
             icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":markers/" + Constants.Icons.MARKERS[i]);
         }
     }
-    
 
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int metadata) {
-        
+
         return icons[metadata];
 
     }
-    
+
     @Override
     public boolean onBlockActivated(World par1World, int x, int y, int z, EntityPlayer par5EntityPlayer, int side, float offsetX, float offsetY, float offsetZ) {
         if (!par1World.isRemote) {
@@ -61,7 +60,7 @@ public class BlockMarker extends Block{
         }
         return true;
     }
-    
+
     @Override
     public int damageDropped(int metadata) {
         return metadata;
