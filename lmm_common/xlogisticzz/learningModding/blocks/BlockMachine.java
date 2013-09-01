@@ -18,6 +18,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMachine extends Block {
 
+    /*Icons */
     @SideOnly(Side.CLIENT)
     private Icon topIcon;
     @SideOnly(Side.CLIENT)
@@ -27,6 +28,7 @@ public class BlockMachine extends Block {
     @SideOnly(Side.CLIENT)
     private Icon disableIcon;
 
+    /* Main Constructor */
     public BlockMachine(int par1) {
         super(par1, Material.iron);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
@@ -34,6 +36,7 @@ public class BlockMachine extends Block {
         this.setUnlocalizedName(Constants.UnLocalisedNames.MACHINE_BLOCK);
     }
 
+    /* Register the Icons */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister IconRegister) {
@@ -47,13 +50,14 @@ public class BlockMachine extends Block {
         }
 
     }
-
+    /* Creates gravel at a set x , y , z Coord */
     private void spawnGravel(World world, int x, int y, int z) {
         if (world.isAirBlock(x, y, z)) {
             world.setBlock(x, y, z, Block.gravel.blockID);
         }
     }
-
+    
+    /* When an Entity walks ontop of the block it spawns gravel above the block */
     @Override
     public void onEntityWalking(World par1World, int x, int y, int z, Entity par5Entity) {
         if (!par1World.isRemote && par1World.getBlockMetadata(x, y, z) % 2 == 0) {
@@ -62,6 +66,7 @@ public class BlockMachine extends Block {
         }
     }
 
+    /* When the lock receives a block update check if is being powered and spawn gravel */
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int id) {
         int meta = world.getBlockMetadata(x, y, z);
@@ -93,6 +98,7 @@ public class BlockMachine extends Block {
 
     }
 
+    /* Get the icon based upon metadata */
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int metadata) {
@@ -112,6 +118,7 @@ public class BlockMachine extends Block {
 
     }
 
+    /* When the Block is clicked toggle weather it is disabled or not */
     @Override
     public boolean onBlockActivated(World par1World, int x, int y, int z, EntityPlayer par5EntityPlayer, int side, float offsetX, float offsetY, float offsetZ) {
         if (!par1World.isRemote) {
@@ -128,11 +135,13 @@ public class BlockMachine extends Block {
         return true;
     }
 
+    /* The item dropped is based upon its metadata. This is used to drop different types of the machine when broken */
     @Override
     public int damageDropped(int metadata) {
         return metadata;
     }
 
+    /* Put the different types of the machine when enabled in the creative inventory */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public void getSubBlocks(int id, CreativeTabs par2CreativeTabs, List par3List) {

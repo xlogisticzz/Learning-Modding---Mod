@@ -17,8 +17,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMarker extends Block {
 
+    /* Icons */
     public Icon[] icons;
 
+    /* Main Constructor */
     public BlockMarker(int par1) {
         super(par1, Material.iron);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
@@ -26,6 +28,7 @@ public class BlockMarker extends Block {
         this.setUnlocalizedName(Constants.UnLocalisedNames.MARKERS);
     }
 
+    /* Register Icons */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
@@ -37,6 +40,7 @@ public class BlockMarker extends Block {
         }
     }
 
+    /* Get the Icon for the Marker Based on the Metadata */
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int metadata) {
@@ -45,6 +49,7 @@ public class BlockMarker extends Block {
 
     }
 
+    /* When the block is Right clicked toggle the state of the block */
     @Override
     public boolean onBlockActivated(World par1World, int x, int y, int z, EntityPlayer par5EntityPlayer, int side, float offsetX, float offsetY, float offsetZ) {
         if (!par1World.isRemote) {
@@ -61,11 +66,14 @@ public class BlockMarker extends Block {
         return true;
     }
 
+    
+    /* Drop the different types of markers weather marked or not when broken */
     @Override
     public int damageDropped(int metadata) {
         return metadata;
     }
 
+    /* add all of the unmarked blocks to the creative tab */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public void getSubBlocks(int id, CreativeTabs par2CreativeTabs, List par3List) {

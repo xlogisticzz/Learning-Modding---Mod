@@ -48,6 +48,8 @@ public class Ids {
     public static int CARD_DEFAULT = 5012;
     public static int DEATHSTONES_DEFAULT = 5013;
     public static int WAND_DEFAULT = 5014;
+    public static int SPAWNSPACESHIP_DEFAULT = 5015;
+
 
     // Current
     public static int TITANIUMINGOT;
@@ -65,5 +67,6 @@ public class Ids {
     public static int CARD;
     public static int DEATHSTONES;
     public static int WAND;
+    public static int SPAWNSPACESHIP;
 
 }

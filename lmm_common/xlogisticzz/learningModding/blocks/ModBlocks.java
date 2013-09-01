@@ -15,7 +15,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
 
-    // Mod Blocks
+    /* Declaree the Mod Blocks */
     public static BlockModOre titaniumore;
     public static BlockRubyOre rubyore;
     public static BlockModOreStorage titaniumblock;
@@ -29,6 +29,7 @@ public class ModBlocks {
     public static BlockNumber numbers;
     public static BlockClicker clicker;
 
+    /* Init the Mod Blocks */
     public static void init() {
         titaniumore = new BlockModOre(Ids.TITANIUMORE, 3, Block.soundStoneFootstep, Constants.UnLocalisedNames.TITANIUM_ORE, LearningModdingCreativeTab.tabLearningModding, Constants.Icons.TITANIUM_ORE);
         rubyore = new BlockRubyOre(Ids.RUBYORE, 1, Block.soundLadderFootstep, Constants.UnLocalisedNames.RUBY_ORE, LearningModdingCreativeTab.tabLearningModding, Constants.Icons.RUBY_ORE);
@@ -45,6 +46,7 @@ public class ModBlocks {
 
     }
 
+    /* Register the blocks to the game */
     public static void initInfo() {
 
         // Titanium Ore Details

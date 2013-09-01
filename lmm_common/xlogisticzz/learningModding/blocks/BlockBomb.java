@@ -17,9 +17,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBomb extends BlockContainer {
 
+    /* Icon for when the block is Idle */
     @SideOnly(Side.CLIENT)
     private Icon idleIcon;
 
+    /* Main Block constructor */
     public BlockBomb(int par1) {
         super(par1, Material.tnt);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
@@ -28,6 +30,7 @@ public class BlockBomb extends BlockContainer {
         this.setUnlocalizedName(Constants.UnLocalisedNames.BOMB);
     }
 
+    /* Registering Icons */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
@@ -36,6 +39,7 @@ public class BlockBomb extends BlockContainer {
 
     }
 
+    /* Fetching Icons for rendering based on metdata */
     @SideOnly(Side.CLIENT)
     @Override
     public Icon getIcon(int side, int metadata) {
@@ -47,6 +51,7 @@ public class BlockBomb extends BlockContainer {
         }
     }
 
+    /* the id of the Block / Item dropped */
     @Override
     public int idDropped(int meta, Random random, int fortune) {
 
@@ -59,6 +64,7 @@ public class BlockBomb extends BlockContainer {
         }
     }
 
+    /* Creating the new tile Entity */
     @Override
     public TileEntity createNewTileEntity(World world) {
         return new TileEntityBomb();

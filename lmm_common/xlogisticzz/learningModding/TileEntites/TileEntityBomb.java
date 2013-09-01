@@ -22,6 +22,10 @@ public class TileEntityBomb extends TileEntity {
     public boolean isBlockIdle() {
         return timer < 0;
     }
+    
+    public void setActive(){
+        activated = true;
+    }
 
     @Override
     public void updateEntity() {

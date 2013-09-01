@@ -12,8 +12,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockTest extends Block {
 
+    /* Icons */
     private Icon[] icons;
 
+    /* Main Constructor */
     public BlockTest(int par1) {
         super(par1, Material.iron);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
@@ -21,16 +23,13 @@ public class BlockTest extends Block {
 
     }
 
+    /* Don't render this block as a normal block */
     @Override
     public boolean renderAsNormalBlock() {
         return false;
     }
 
-    @Override
-    public int getRenderBlockPass() {
-        return 0;
-    }
-
+    /* Get the Icon based upon the side */
     @Override
     public Icon getIcon(int side, int meta) {
 
@@ -59,6 +58,7 @@ public class BlockTest extends Block {
         }
     }
 
+    /* Get the texture based upon the side */
     @Override
     public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
 
@@ -88,6 +88,7 @@ public class BlockTest extends Block {
         }
     }
 
+    /* register the Icons */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {

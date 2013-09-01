@@ -12,9 +12,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGlassConnected extends Block {
 
+    
+    /* Icons and other variables */
     public int render;
     private Icon[] icons;
 
+    /* Main Constructor */
     public BlockGlassConnected(int par1, boolean par2) {
         super(par1, Material.glass);
         this.setStepSound(soundGlassFootstep);
@@ -24,33 +27,39 @@ public class BlockGlassConnected extends Block {
         this.setHardness(0.4f);
     }
 
+    /* Set Block Not Opaque */
     @Override
     public boolean isOpaqueCube() {
         return false;
     }
 
+    /* Tell Minecraft not to render this block normally */
     @Override
     public boolean renderAsNormalBlock() {
         return false;
     }
 
+    
     @Override
     public int getRenderBlockPass() {
         return render;
     }
 
+    /* Tell Minecraft weather or not to render the side of the block based upon the block next to the block on the specific side */
     @Override
     public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
         int id = par1IBlockAccess.getBlockId(par2, par3, par4);
         return id == blockID ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
     }
 
+    /* Get the icon when in hand (normal glass) */
     @Override
     public Icon getIcon(int par1, int par2) {
         return icons[0];
 
     }
 
+    /* Register the Icons */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
@@ -61,11 +70,13 @@ public class BlockGlassConnected extends Block {
         }
     }
 
+    /* Returns true if block ID given is the same as the block ID of this block */
     public boolean shouldConnect(int par1) {
 
         return par1 == blockID;
     }
 
+    /* Gets the block texture based on the blocks next to it. */
     // Args: iBlockAccess, x, y, z, side(0 == bottom, 1 == top , 2 == north , 3
     // == south , 4 == west, 5 == east)
     @Override
@@ -74,6 +85,7 @@ public class BlockGlassConnected extends Block {
         return getConnectedBlockTexture(par1IBlockAccess, par2, par3, par4, par5, icons);
     }
 
+    /* Checks to see what texture should be used on each side based upon adjacent blocks */
     public Icon getConnectedBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5, Icon[] icons) {
         boolean isOpenUp = false, isOpenDown = false, isOpenLeft = false, isOpenRight = false;
 

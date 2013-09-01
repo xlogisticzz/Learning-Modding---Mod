@@ -23,6 +23,7 @@ public class ItemWand extends Item {
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setUnlocalizedName(Constants.UnLocalisedNames.WAND);
         this.setMaxDamage(1);
+        this.setFull3D();
     }
 
     @Override

@@ -10,9 +10,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockModOre extends BlockOre {
 
+    /* Name of the Texture */
     public String name;
-    public int dropped;
 
+    /* Main Constructor */
     public BlockModOre(int par1, float par2, StepSound par3, String par4, CreativeTabs par5, String par6) {
         super(par1);
         this.setHardness(par2);
@@ -20,9 +21,9 @@ public class BlockModOre extends BlockOre {
         this.setUnlocalizedName(par4);
         this.setCreativeTab(par5);
         name = par6;
-        dropped = par1;
     }
 
+    /* Register Icons */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {

@@ -4,7 +4,8 @@ import java.io.File;
 
 import xlogisticzz.learningModding.Blocks.ModBlocks;
 import xlogisticzz.learningModding.Configuration.ConfigurationHandler;
-import xlogisticzz.learningModding.Crafting.Vanilla;
+import xlogisticzz.learningModding.Crafting.Recipies;
+import xlogisticzz.learningModding.Entities.ModEntities;
 import xlogisticzz.learningModding.Items.ModItems;
 import xlogisticzz.learningModding.Lib.Constants;
 import xlogisticzz.learningModding.Network.PacketHandler;
@@ -24,13 +25,17 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(channels = Constants.Mod.CHANNEL_NAME, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class LearningModding {
 
-    // Says where the client and server 'proxy' code is loaded.
+    /* Says where the client and server 'proxy' code is loaded. */
     @SidedProxy(clientSide = Constants.Proxies.CLIENT, serverSide = Constants.Proxies.COMMON)
     public static CommonProxy proxy;
 
+    
+    /* Mod instance */
     @Instance
     public static LearningModding instance;
 
+    
+    /* PreInitialization */
     @EventHandler
     public void PreInt(FMLPreInitializationEvent event) {
 
@@ -43,22 +48,28 @@ public class LearningModding {
         proxy.initRenderers();
 
     }
-
+    
+    /* Initialization */
     @EventHandler
-    public void load(FMLInitializationEvent event) {
+    public void load(FMLInitializationEvent event) {        
+        ModEntities.init();
         ModItems.initLang();
         ModBlocks.initInfo();
-        Vanilla.init();
+        Recipies.initVanilla();
+        ModEntities.initInfo();
+
 
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabLearningModding", "en_US", "Learning Modding");
 
     }
-
+    
+    /* PostInitialization */
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
     }
 
+    /* When the server starts */
     @EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
 

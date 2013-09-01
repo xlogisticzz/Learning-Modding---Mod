@@ -1,5 +1,9 @@
 package xlogisticzz.learningModding.Proxies;
 
+import xlogisticzz.learningModding.Client.RenderSpaceship;
+import xlogisticzz.learningModding.Entities.EntitySpaceship;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+
 public class ClientProxy extends CommonProxy {
 
     @Override
@@ -9,7 +13,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void initRenderers() {
-        // init the rendering stuff
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpaceship.class, new RenderSpaceship());
     }
 
 }

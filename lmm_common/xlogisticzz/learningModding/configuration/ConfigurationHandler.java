@@ -8,15 +8,18 @@ import xlogisticzz.learningModding.Lib.Ids;
 
 public class ConfigurationHandler {
 
+    /* Declare the configuration */
     public static Configuration configuration;
 
+    /* init the config */
     public static void init(File configFile) {
 
+        /* Populate the configuration variable with our config file pulled from the reInit event in the main mod class */
         configuration = new Configuration(configFile);
 
         configuration.load();
 
-        // Block IDs
+        /* Set Ids equal to what is in the config or default */
         Ids.TITANIUMORE = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Titanium Ore ID", Ids.TITANIUMORE_DEFAULT).getInt();
         Ids.RUBYORE = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Ruby Ore ID", Ids.RUBYORE_DEFAULT).getInt();
         Ids.RUBYBLOCK = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Ruby Block ID", Ids.RUBYBLOCK_DEFAULT).getInt();
@@ -42,6 +45,7 @@ public class ConfigurationHandler {
         Ids.CARD = configuration.getItem(Configuration.CATEGORY_ITEM, "Card Id", Ids.CARD_DEFAULT).getInt() - 256;
         Ids.DEATHSTONES = configuration.getItem(Configuration.CATEGORY_ITEM, "Deathstones ID", Ids.DEATHSTONES_DEFAULT).getInt() - 256;
         Ids.WAND = configuration.getItem(Configuration.CATEGORY_ITEM, "Wand ID", Ids.WAND_DEFAULT).getInt() - 256;
+        Ids.SPAWNSPACESHIP = configuration.getItem(Configuration.CATEGORY_ITEM, "Spawn Spaceship  ID", Ids.SPAWNSPACESHIP_DEFAULT).getInt() - 256;
 
         // Ruby Armor
         Ids.RUBY_HELMET = configuration.getItem("Armor", "Ruby Helmet ID", Ids.RUBY_HELMET_DEFAULT).getInt() - 256;
@@ -54,6 +58,8 @@ public class ConfigurationHandler {
         Constants.Armor.RUBY_LEGGINGS_REDUCTION = configuration.get("Armor", "Ruby Leggings Damage Reduction", Constants.Armor.RUBY_LEGGINGS_REDUCTION_DEFAULT).getInt();
         Constants.Armor.RUBY_BOOTS_REDUCTION = configuration.get("Armor", "Ruby Boots Damage Reduction", Constants.Armor.RUBY_BOOTS_REDUCTION_DEFAULT).getInt();
 
+        
+        /* Save the config */
         configuration.save();
 
     }

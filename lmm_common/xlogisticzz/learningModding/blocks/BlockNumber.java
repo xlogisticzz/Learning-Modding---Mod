@@ -14,8 +14,13 @@ import xlogisticzz.learningModding.TileEntites.TileEntityNumbers;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockNumber extends BlockContainer {
-
+public class BlockNumber extends BlockContainer { 
+    
+    /* Icons */
+    @SideOnly(Side.CLIENT)
+    private Icon[] icons;
+    
+    /* Main Constructor */
     protected BlockNumber(int id) {
         super(id, Material.rock);
         setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
@@ -23,15 +28,14 @@ public class BlockNumber extends BlockContainer {
         setStepSound(Block.soundStoneFootstep);
         setUnlocalizedName(Constants.UnLocalisedNames.NUMBER);
     }
-
+    
+    /* Create Tile Entity when block is placed */
     @Override
     public TileEntity createNewTileEntity(World world) {
         return new TileEntityNumbers();
     }
 
-    @SideOnly(Side.CLIENT)
-    private Icon[] icons;
-
+    /* Register Icons */
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IconRegister register) {
@@ -41,6 +45,7 @@ public class BlockNumber extends BlockContainer {
         }
     }
 
+    /* Get block texture based on number variable in the tile entity */
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getBlockTexture(IBlockAccess world, int x, int y, int z, int side) {
@@ -48,7 +53,7 @@ public class BlockNumber extends BlockContainer {
         return icons[tile.getNumber()];
     }
 
-    // a default icon
+    /* Default Icon */
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {

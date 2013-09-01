@@ -23,6 +23,7 @@ public class ItemRubyWand extends Item {
         setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         setMaxStackSize(1);
         setUnlocalizedName(Constants.UnLocalisedNames.RUBY_WAND);
+        this.setFull3D();
     }
 
     @Override

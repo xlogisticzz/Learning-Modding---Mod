@@ -7,16 +7,19 @@ import xlogisticzz.learningModding.Items.ModItems;
 import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class Vanilla {
+public class Recipies {
 
-    public static void init() {
+    public static void initVanilla() {
 
+        /* Register Furnace Recipies */
         GameRegistry.addSmelting(ModBlocks.titaniumore.blockID, new ItemStack(ModItems.titanitumIngot), 10);
+        /* Register Block Recipies */
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.rubyblock), new Object[] { "XXX", "XXX", "XXX", 'X', ModItems.ruby });
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.titaniumblock), new Object[] { "XXX", "XXX", "XXX", 'X', ModItems.titanitumIngot });
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby, 9), ModBlocks.rubyblock);
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.titanitumIngot, 9), ModBlocks.titaniumblock);
 
+        /* Register Item Recipies */
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.wand), new Object[] { "  X", " / ", " / ", 'X', ModItems.ruby, '/', Item.stick });
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubyWand), new Object[] { "  X", " / ", "/  ", 'X', ModItems.rubyWand, '/', Item.stick });
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.rubySword), new Object[] { " X ", " X ", " S ", 'X', ModItems.ruby, 'S', Item.stick });

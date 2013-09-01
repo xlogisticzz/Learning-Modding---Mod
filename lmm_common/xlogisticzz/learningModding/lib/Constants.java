@@ -53,6 +53,7 @@ public class Constants {
         public static final String[] CARD_NAMES = { "Arrow Card", "Border Card", "Cross Card" };
         public static final String[] DEATHSTONES_NAMES = { "Deathstone Creeper", "Deathstone Enderman", "Deathstone Pig", "Deathstone Player", "Deathstone Skeleton" };
         public static final String WAND_NAME = "Wand";
+        public static final String SPAWN_SPACESHIP_NAME = "Spawn Spaceship";
 
     }
 
@@ -71,6 +72,7 @@ public class Constants {
         public static final String[] CARD_ICONS = { "card_arrow", "card_box", "card_cross" };
         public static final String[] DEATHSTONES_ICONS = { "deathstone_creeper", "deathstone_enderman", "deathstone_pig", "deathstone_player", "deathstone_skeleton" };
         public static final String WAND = "wand";
+        public static final String SPAWN_SPACESHIP = "spawn_Spaceship";
 
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";
@@ -111,7 +113,7 @@ public class Constants {
         public static final String CARD = "card";
         public static final String DEATHSTONE = "deathstone";
         public static final String WAND = "wand";
-
+        public static final String SPAWN_SPACESHIP = "spawnSpaceship";
         // Blocks
         public static final String RUBY_ORE = "rubyOre";
         public static final String RUBY_BLOCK = "rubyBlock";
@@ -125,6 +127,7 @@ public class Constants {
         public static final String SUPER_BOMB = "superBomb";
         public static final String NUMBER = "number";
         public static final String CLICKER = "clicker";
+       
 
     }
 
