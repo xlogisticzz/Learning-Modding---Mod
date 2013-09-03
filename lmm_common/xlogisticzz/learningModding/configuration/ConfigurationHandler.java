@@ -53,8 +53,9 @@ public class ConfigurationHandler {
         Ids.CARD = configuration.getItem(Configuration.CATEGORY_ITEM, "Card Id", Ids.CARD_DEFAULT).getInt() - 256;
         Ids.DEATHSTONES = configuration.getItem(Configuration.CATEGORY_ITEM, "Deathstones ID", Ids.DEATHSTONES_DEFAULT).getInt() - 256;
         Ids.WAND = configuration.getItem(Configuration.CATEGORY_ITEM, "Wand ID", Ids.WAND_DEFAULT).getInt() - 256;
-        Ids.SPAWNSPACESHIP = configuration.getItem(Configuration.CATEGORY_ITEM, "Spawn Spaceship  ID", Ids.SPAWNSPACESHIP_DEFAULT).getInt() - 256;
-        Ids.ENTITYLAUNCHER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Launcher  ID", Ids.ENTITYLAUNCHER_DEFAULT).getInt() - 256;
+        Ids.SPAWN_SPACESHIP = configuration.getItem(Configuration.CATEGORY_ITEM, "Spawn Spaceship ID", Ids.SPAWN_SPACESHIP_DEFAULT).getInt() - 256;
+        Ids.ENTITY_LAUNCHER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Launcher ID", Ids.ENTITY_LAUNCHER_DEFAULT).getInt() - 256;
+        Ids.PIG_CONVERTER = configuration.getItem(Configuration.CATEGORY_ITEM, "Pig Converter ID", Ids.PIG_CONVERTER_DEFAULT).getInt() - 256;
         
         // Ruby Armor
         Ids.RUBY_HELMET = configuration.getItem("Armor", "Ruby Helmet ID", Ids.RUBY_HELMET_DEFAULT).getInt() - 256;

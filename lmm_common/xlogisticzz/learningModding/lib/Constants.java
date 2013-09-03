@@ -66,6 +66,7 @@ public class Constants {
         public static final String WAND_NAME = "Wand";
         public static final String SPAWN_SPACESHIP_NAME = "Spawn Spaceship";
         public static final String ENTITY_LAUNCHER_NAME = "Entity Launcher";
+        public static final String PIG_CONVERTER_NAME = "Pig Converter";
         
     }
     
@@ -86,6 +87,7 @@ public class Constants {
         public static final String WAND = "wand";
         public static final String SPAWN_SPACESHIP = "spawn_spaceship";
         public static final String ENTITY_LAUNCHER = "entity_launcher";
+        public static final String PIG_CONVERTER = "pig_converter";
         
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";
@@ -128,6 +130,7 @@ public class Constants {
         public static final String WAND = "wand";
         public static final String SPAWN_SPACESHIP = "spawnSpaceship";
         public static final String ENTITY_LAUNCHER = "entityLauncher";
+        public static final String PIG_CONVERTER = "pigConverter";
         
         // Blocks
         public static final String RUBY_ORE = "rubyOre";

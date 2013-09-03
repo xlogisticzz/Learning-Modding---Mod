@@ -59,8 +59,9 @@ public class Ids {
     public static int CARD_DEFAULT = 5012;
     public static int DEATHSTONES_DEFAULT = 5013;
     public static int WAND_DEFAULT = 5014;
-    public static int SPAWNSPACESHIP_DEFAULT = 5015;
-    public static int ENTITYLAUNCHER_DEFAULT = 5016;
+    public static int SPAWN_SPACESHIP_DEFAULT = 5015;
+    public static int ENTITY_LAUNCHER_DEFAULT = 5016;
+    public static int PIG_CONVERTER_DEFAULT = 5017;
     
     // Current
     public static int TITANIUMINGOT;
@@ -78,7 +79,8 @@ public class Ids {
     public static int CARD;
     public static int DEATHSTONES;
     public static int WAND;
-    public static int SPAWNSPACESHIP;
-    public static int ENTITYLAUNCHER;
+    public static int SPAWN_SPACESHIP;
+    public static int ENTITY_LAUNCHER;
+    public static int PIG_CONVERTER;
     
 }

@@ -40,6 +40,7 @@ public class ModItems {
     public static ItemWand wand;
     public static ItemSpawnSpaceship spawnSpaceship;
     public static ItemEntityLauncher entityLauncher;
+    public static ItemPigConverter pigConverter;
     
     public static EnumToolMaterial materialRuby = EnumHelper.addToolMaterial("ruby", 3, Constants.Misc.RUBY_DURABILITY, 4.1F, 3.0F, 40);
     public static EnumArmorMaterial materialArmorRuby = EnumHelper.addArmorMaterial("ruby", Constants.Misc.RUBY_DURABILITY, new int[] { Constants.Armor.RUBY_HELMET_REDUCTION, Constants.Armor.RUBY_CHESTPLATE_REDUCTION, Constants.Armor.RUBY_LEGGINGS_REDUCTION, Constants.Armor.RUBY_BOOTS_REDUCTION }, 40);
@@ -57,8 +58,9 @@ public class ModItems {
         card = new ItemCard(Ids.CARD);
         deathstone = new ItemDeathstone(Ids.DEATHSTONES);
         wand = new ItemWand(Ids.WAND);
-        spawnSpaceship = new ItemSpawnSpaceship(Ids.SPAWNSPACESHIP);
-        entityLauncher = new ItemEntityLauncher(Ids.ENTITYLAUNCHER);
+        spawnSpaceship = new ItemSpawnSpaceship(Ids.SPAWN_SPACESHIP);
+        entityLauncher = new ItemEntityLauncher(Ids.ENTITY_LAUNCHER);
+        pigConverter = new ItemPigConverter(Ids.PIG_CONVERTER);
         rubyHelmet = new ItemModArmor(Ids.RUBY_HELMET, materialArmorRuby, 0, 0, "ruby", LearningModdingCreativeTab.tabLearningModding);
         rubyChestplate = new ItemModArmor(Ids.RUBY_CHESTPLATE, materialArmorRuby, 0, 1, "ruby", LearningModdingCreativeTab.tabLearningModding);
         rubyLeggings = new ItemModArmor(Ids.RUBY_LEGGINGS, materialArmorRuby, 0, 2, "ruby", LearningModdingCreativeTab.tabLearningModding);
@@ -74,7 +76,8 @@ public class ModItems {
         LanguageRegistry.addName(wand, Constants.ItemNames.WAND_NAME);
         LanguageRegistry.addName(spawnSpaceship, Constants.ItemNames.SPAWN_SPACESHIP_NAME);
         LanguageRegistry.addName(entityLauncher, Constants.ItemNames.ENTITY_LAUNCHER_NAME);
-
+        LanguageRegistry.addName(pigConverter, Constants.ItemNames.PIG_CONVERTER_NAME);
+        
         LanguageRegistry.addName(rubyPickaxe, Constants.ItemNames.RUBY_PICKAXE_NAME);
         LanguageRegistry.addName(rubySpade, Constants.ItemNames.RUBY_SPADE_NAME);
         LanguageRegistry.addName(rubySword, Constants.ItemNames.RUBY_SWORD_NAME);
