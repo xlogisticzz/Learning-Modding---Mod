@@ -1,7 +1,18 @@
 package xlogisticzz.learningModding.Lib;
 
-public class Ids {
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
+public class Ids {
+    
     // Block IDs
     // Defaults
     public static int TITANIUMORE_DEFAULT = 500;
@@ -16,7 +27,7 @@ public class Ids {
     public static int SUPERBOMB_DEFAULT = 509;
     public static int NUMBER_DEFAULT = 510;
     public static int CLICKER_DEFAULT = 511;
-
+    
     // Current
     public static int TITANIUMORE;
     public static int RUBYORE;
@@ -30,7 +41,7 @@ public class Ids {
     public static int SUPERBOMB;
     public static int NUMBER;
     public static int CLICKER;
-
+    
     // Item IDs
     // Defaults
     public static int TITANIUMINGOT_DEFAULT = 5000;
@@ -49,8 +60,8 @@ public class Ids {
     public static int DEATHSTONES_DEFAULT = 5013;
     public static int WAND_DEFAULT = 5014;
     public static int SPAWNSPACESHIP_DEFAULT = 5015;
-
-
+    public static int ENTITYLAUNCHER_DEFAULT = 5016;
+    
     // Current
     public static int TITANIUMINGOT;
     public static int RUBY;
@@ -68,5 +79,6 @@ public class Ids {
     public static int DEATHSTONES;
     public static int WAND;
     public static int SPAWNSPACESHIP;
-
+    public static int ENTITYLAUNCHER;
+    
 }

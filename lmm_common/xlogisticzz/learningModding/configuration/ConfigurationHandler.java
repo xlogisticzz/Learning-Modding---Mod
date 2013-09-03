@@ -6,20 +6,28 @@ import net.minecraftforge.common.Configuration;
 import xlogisticzz.learningModding.Lib.Constants;
 import xlogisticzz.learningModding.Lib.Ids;
 
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class ConfigurationHandler {
-
-    /* Declare the configuration */
+    
     public static Configuration configuration;
-
-    /* init the config */
+    
     public static void init(File configFile) {
-
-        /* Populate the configuration variable with our config file pulled from the reInit event in the main mod class */
+    
         configuration = new Configuration(configFile);
-
+        
         configuration.load();
-
-        /* Set Ids equal to what is in the config or default */
+        
+        // Blcoks
         Ids.TITANIUMORE = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Titanium Ore ID", Ids.TITANIUMORE_DEFAULT).getInt();
         Ids.RUBYORE = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Ruby Ore ID", Ids.RUBYORE_DEFAULT).getInt();
         Ids.RUBYBLOCK = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Ruby Block ID", Ids.RUBYBLOCK_DEFAULT).getInt();
@@ -32,7 +40,7 @@ public class ConfigurationHandler {
         Ids.SUPERBOMB = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Super Bomb Id", Ids.SUPERBOMB_DEFAULT).getInt();
         Ids.NUMBER = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Numbers Id", Ids.NUMBER_DEFAULT).getInt();
         Ids.CLICKER = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Clicker Id", Ids.CLICKER_DEFAULT).getInt();
-
+        
         // Item IDs
         Ids.TITANIUMINGOT = configuration.getItem(Configuration.CATEGORY_ITEM, "Titanium Ingot ID", Ids.TITANIUMINGOT_DEFAULT).getInt() - 256;
         Ids.RUBY = configuration.getItem(Configuration.CATEGORY_ITEM, "Ruby ID", Ids.RUBY_DEFAULT).getInt() - 256;
@@ -46,21 +54,21 @@ public class ConfigurationHandler {
         Ids.DEATHSTONES = configuration.getItem(Configuration.CATEGORY_ITEM, "Deathstones ID", Ids.DEATHSTONES_DEFAULT).getInt() - 256;
         Ids.WAND = configuration.getItem(Configuration.CATEGORY_ITEM, "Wand ID", Ids.WAND_DEFAULT).getInt() - 256;
         Ids.SPAWNSPACESHIP = configuration.getItem(Configuration.CATEGORY_ITEM, "Spawn Spaceship  ID", Ids.SPAWNSPACESHIP_DEFAULT).getInt() - 256;
-
+        Ids.ENTITYLAUNCHER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Launcher  ID", Ids.ENTITYLAUNCHER_DEFAULT).getInt() - 256;
+        
         // Ruby Armor
         Ids.RUBY_HELMET = configuration.getItem("Armor", "Ruby Helmet ID", Ids.RUBY_HELMET_DEFAULT).getInt() - 256;
         Ids.RUBY_CHESTPLATE = configuration.getItem("Armor", "Ruby Chestplate ID", Ids.RUBY_CHESTPLATE_DEFAULT).getInt() - 256;
         Ids.RUBY_LEGGINGS = configuration.getItem("Armor", "Ruby Leggings ID", Ids.RUBY_LEGGINGS_DEFAULT).getInt() - 256;
         Ids.RUBY_BOOTS = configuration.getItem("Armor", "Ruby Boots ID", Ids.RUBY_BOOTS_DEFAULT).getInt() - 256;
-
+        
         Constants.Armor.RUBY_HELMET_REDUCTION = configuration.get("Armor", "Ruby Helmet Damage Reduction", Constants.Armor.RUBY_HELMET_REDUCTION_DEFAULT).getInt();
         Constants.Armor.RUBY_CHESTPLATE_REDUCTION = configuration.get("Armor", "Ruby Chestplate Damage Reduction", Constants.Armor.RUBY_CHESTPLATE_REDUCTION_DEFAULT).getInt();
         Constants.Armor.RUBY_LEGGINGS_REDUCTION = configuration.get("Armor", "Ruby Leggings Damage Reduction", Constants.Armor.RUBY_LEGGINGS_REDUCTION_DEFAULT).getInt();
         Constants.Armor.RUBY_BOOTS_REDUCTION = configuration.get("Armor", "Ruby Boots Damage Reduction", Constants.Armor.RUBY_BOOTS_REDUCTION_DEFAULT).getInt();
-
         
         /* Save the config */
         configuration.save();
-
+        
     }
 }

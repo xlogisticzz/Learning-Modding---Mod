@@ -1,9 +1,20 @@
 package xlogisticzz.learningModding.Lib;
 
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Constants {
-
+    
     public class Mod {
-
+        
         public static final String MODID = "learningmodding";
         public static final String NAME = "Learning Modding";
         public static final String VERSION = "0.162.1.1"; // major version, mc
@@ -11,16 +22,16 @@ public class Constants {
                                                           // version, build
         public static final String CHANNEL_NAME = MODID;
     }
-
+    
     public class Proxies {
-
+        
         public static final String CLIENT = "xlogisticzz.learningModding.Proxies.ClientProxy";
         public static final String COMMON = "xlogisticzz.learningModding.Proxies.CommonProxy";
-
+        
     }
-
+    
     public static class BlockNames {
-
+        
         public static final String TITANIUM_ORE_NAME = "Titanium Ore";
         public static final String RUBY_ORE_NAME = "Ruby Ore";
         public static final String TITANIUM_BLOCK_NAME = "Titanium Block";
@@ -33,11 +44,11 @@ public class Constants {
         public static final String SUPER_BOMB_NAME = "Super Bomb";
         public static final String NUMBER_NAME = "Number Block";
         public static final String CLICKER_NAME = "Clicker Block";
-
+        
     }
-
+    
     public static class ItemNames {
-
+        
         public static final String RUBY_NAME = "Ruby";
         public static final String TITANIUM_INGOT_NAME = "Titanium Ingot";
         public static final String RUBY_PICKAXE_NAME = "Ruby Pickaxe";
@@ -54,11 +65,12 @@ public class Constants {
         public static final String[] DEATHSTONES_NAMES = { "Deathstone Creeper", "Deathstone Enderman", "Deathstone Pig", "Deathstone Player", "Deathstone Skeleton" };
         public static final String WAND_NAME = "Wand";
         public static final String SPAWN_SPACESHIP_NAME = "Spawn Spaceship";
-
+        public static final String ENTITY_LAUNCHER_NAME = "Entity Launcher";
+        
     }
-
+    
     public static class Icons {
-
+        
         // Items
         public static final String RUBY_WAND = "uncharged_wand";
         public static final String RUBY_WAND_CHARGED = "charged_wand";
@@ -72,8 +84,9 @@ public class Constants {
         public static final String[] CARD_ICONS = { "card_arrow", "card_box", "card_cross" };
         public static final String[] DEATHSTONES_ICONS = { "deathstone_creeper", "deathstone_enderman", "deathstone_pig", "deathstone_player", "deathstone_skeleton" };
         public static final String WAND = "wand";
-        public static final String SPAWN_SPACESHIP = "spawn_Spaceship";
-
+        public static final String SPAWN_SPACESHIP = "spawn_spaceship";
+        public static final String ENTITY_LAUNCHER = "entity_launcher";
+        
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";
         public static final String RUBY_BLOCK = "ruby_block";
@@ -92,11 +105,11 @@ public class Constants {
         public static final String[] NUMBERS = { "number_1", "number_2", "number_3", "number_4", "number_5", "number_6", "number_7", "number_8", "number_9", "number_10", "number_11", "number_12", "number_13", "number_14", "number_15", "number_16", "number_17", "number_18" };
         public static final String CLICKER = "clicker";
         public static final String CLICKER_LINKED = "clicker_linked";
-
+        
     }
-
+    
     public class UnLocalisedNames {
-
+        
         // Items
         public static final String RUBY = "ruby";
         public static final String TITANIUM_INGOT = "titaniumIngot";
@@ -114,6 +127,8 @@ public class Constants {
         public static final String DEATHSTONE = "deathstone";
         public static final String WAND = "wand";
         public static final String SPAWN_SPACESHIP = "spawnSpaceship";
+        public static final String ENTITY_LAUNCHER = "entityLauncher";
+        
         // Blocks
         public static final String RUBY_ORE = "rubyOre";
         public static final String RUBY_BLOCK = "rubyBlock";
@@ -127,19 +142,18 @@ public class Constants {
         public static final String SUPER_BOMB = "superBomb";
         public static final String NUMBER = "number";
         public static final String CLICKER = "clicker";
-       
-
+        
     }
-
+    
     public static class Misc {
-
+        
         public static final int RUBY_DURABILITY = 1000;
         public static final int NUMBER_COUNT = 18;
-
+        
     }
-
+    
     public static class Armor {
-
+        
         public static int RUBY_HELMET_REDUCTION;
         public static final int RUBY_HELMET_REDUCTION_DEFAULT = 4;
         public static int RUBY_BOOTS_REDUCTION;
@@ -148,6 +162,6 @@ public class Constants {
         public static final int RUBY_CHESTPLATE_REDUCTION_DEFAULT = 10;
         public static int RUBY_LEGGINGS_REDUCTION;
         public static final int RUBY_LEGGINGS_REDUCTION_DEFAULT = 8;
-
+        
     }
 }

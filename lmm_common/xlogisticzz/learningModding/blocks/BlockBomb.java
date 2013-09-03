@@ -15,59 +15,67 @@ import xlogisticzz.learningModding.TileEntites.TileEntityBomb;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBomb extends BlockContainer {
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
-    /* Icon for when the block is Idle */
+public class BlockBomb extends BlockContainer {
+    
     @SideOnly(Side.CLIENT)
     private Icon idleIcon;
-
-    /* Main Block constructor */
+    
     public BlockBomb(int par1) {
+    
         super(par1, Material.tnt);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setHardness(2.4F);
         this.setStepSound(Block.soundPowderFootstep);
         this.setUnlocalizedName(Constants.UnLocalisedNames.BOMB);
     }
-
-    /* Registering Icons */
+    
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
+    
         blockIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB);
         idleIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB_IDLE);
-
+        
     }
-
-    /* Fetching Icons for rendering based on metdata */
+    
     @SideOnly(Side.CLIENT)
     @Override
     public Icon getIcon(int side, int metadata) {
-
-        if (metadata < 3) {
+    
+        if (metadata < 3){
             return blockIcon;
-        } else {
+        }else{
             return idleIcon;
         }
     }
-
-    /* the id of the Block / Item dropped */
+    
     @Override
     public int idDropped(int meta, Random random, int fortune) {
-
-        if (meta == 0) {
+    
+        if (meta == 0){
             return blockID;
-        } else if (meta == 1) {
+        }else if (meta == 1){
             return blockID;
-        } else {
+        }else{
             return -1;
         }
     }
-
-    /* Creating the new tile Entity */
+    
     @Override
     public TileEntity createNewTileEntity(World world) {
+    
         return new TileEntityBomb();
     }
-
+    
 }

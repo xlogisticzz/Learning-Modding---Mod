@@ -3,18 +3,28 @@ package xlogisticzz.learningModding.Entities;
 import xlogisticzz.learningModding.LearningModding;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-public class ModEntities {
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
-    /* Register Entities */
+public class ModEntities {
+    
     public static void init() {
+    
         EntityRegistry.registerModEntity(EntitySpaceship.class, "EntitySpaceship", 0, LearningModding.instance, 80, 3, true);
         EntityRegistry.registerModEntity(EntityBomb.class, "EntityBomb", 1, LearningModding.instance, 80, 3, false);
-
+        EntityRegistry.registerModEntity(EntityLaunched.class, "EntityLaunched", 2, LearningModding.instance, 80, 3, true);
     }
     
-    /* Register Entity Info */
     public static void initInfo() {
-        
+    
     }
-
+    
 }

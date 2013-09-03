@@ -16,9 +16,19 @@ import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMachine extends Block {
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
-    /*Icons */
+public class BlockMachine extends Block {
+    
     @SideOnly(Side.CLIENT)
     private Icon topIcon;
     @SideOnly(Side.CLIENT)
@@ -27,66 +37,67 @@ public class BlockMachine extends Block {
     private Icon[] sideIcons;
     @SideOnly(Side.CLIENT)
     private Icon disableIcon;
-
-    /* Main Constructor */
+    
     public BlockMachine(int par1) {
+    
         super(par1, Material.iron);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         this.setHardness(2.5F);
         this.setUnlocalizedName(Constants.UnLocalisedNames.MACHINE_BLOCK);
     }
-
-    /* Register the Icons */
+    
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister IconRegister) {
+    
         topIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_TOP);
         bottomIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_BOTTOM);
         disableIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_DISABLED);
-
+        
         sideIcons = new Icon[Constants.Icons.MACHINE_SIDES.length];
-        for (int i = 0; i < Constants.Icons.MACHINE_SIDES.length; i++) {
+        for (int i = 0; i < Constants.Icons.MACHINE_SIDES.length; i++){
             sideIcons[i] = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_SIDES[i]);
         }
-
+        
     }
-    /* Creates gravel at a set x , y , z Coord */
+    
     private void spawnGravel(World world, int x, int y, int z) {
-        if (world.isAirBlock(x, y, z)) {
+    
+        if (world.isAirBlock(x, y, z)){
             world.setBlock(x, y, z, Block.gravel.blockID);
         }
     }
     
-    /* When an Entity walks ontop of the block it spawns gravel above the block */
     @Override
     public void onEntityWalking(World par1World, int x, int y, int z, Entity par5Entity) {
-        if (!par1World.isRemote && par1World.getBlockMetadata(x, y, z) % 2 == 0) {
+    
+        if (!par1World.isRemote && par1World.getBlockMetadata(x, y, z) % 2 == 0){
             spawnGravel(par1World, x, y + 20, z);
             spawnGravel(par1World, x, y + 21, z);
         }
     }
-
-    /* When the lock receives a block update check if is being powered and spawn gravel */
+    
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int id) {
+    
         int meta = world.getBlockMetadata(x, y, z);
-        if (!world.isRemote && world.isBlockIndirectlyGettingPowered(x, y, z) && meta % 2 == 0) {
+        if (!world.isRemote && world.isBlockIndirectlyGettingPowered(x, y, z) && meta % 2 == 0){
             switch (meta / 2) {
-                case 1:
-                    for (int i = 0; i < 5; i++) {
+                case 1 :
+                    for (int i = 0; i < 5; i++){
                         spawnGravel(world, x, y + 20 + i, z);
                     }
                     break;
-                case 2:
-                    for (int i = -1; i <= 1; i++) {
+                case 2 :
+                    for (int i = -1; i <= 1; i++){
                         spawnGravel(world, x + i, y + 20, z - 2);
                         spawnGravel(world, x + i, y + 20, z + 2);
                         spawnGravel(world, x - 2, y + 20, z + i);
                         spawnGravel(world, x + 2, y + 20, z + i);
                     }
                     break;
-                case 3:
-                    for (int i = 1; i <= 3; i++) {
+                case 3 :
+                    for (int i = 1; i <= 3; i++){
                         spawnGravel(world, x + i, y + 20, z);
                         spawnGravel(world, x - i, y + 20, z);
                         spawnGravel(world, x, y + 20, z + i);
@@ -95,59 +106,68 @@ public class BlockMachine extends Block {
                     break;
             }
         }
-
+        
     }
-
+    
     /* Get the icon based upon metadata */
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int metadata) {
-
+    
         switch (side) {
-
-            case 0:
+        
+            case 0 :
                 return bottomIcon;
-
-            case 1:
+                
+            case 1 :
                 return metadata % 2 == 1 ? disableIcon : topIcon;
-
-            default:
+                
+            default :
                 return sideIcons[metadata / 2];
-
+                
         }
-
+        
     }
-
+    
     /* When the Block is clicked toggle weather it is disabled or not */
     @Override
     public boolean onBlockActivated(World par1World, int x, int y, int z, EntityPlayer par5EntityPlayer, int side, float offsetX, float offsetY, float offsetZ) {
-        if (!par1World.isRemote) {
+    
+        if (!par1World.isRemote){
             int metadata = par1World.getBlockMetadata(x, y, z);
-
+            
             int selectedType = metadata / 2;
-
+            
             int isDisabled = metadata % 2 == 1 ? 0 : 1;
-
+            
             int newMetadata = selectedType * 2 + isDisabled;
-
+            
             par1World.setBlockMetadataWithNotify(x, y, z, newMetadata, 3);
         }
         return true;
     }
-
-    /* The item dropped is based upon its metadata. This is used to drop different types of the machine when broken */
+    
+    /*
+     * The item dropped is based upon its metadata. This is used to drop
+     * different types of the machine when broken
+     */
     @Override
     public int damageDropped(int metadata) {
+    
         return metadata;
     }
-
-    /* Put the different types of the machine when enabled in the creative inventory */
+    
+    /*
+     * Put the different types of the machine when enabled in the creative
+     * inventory
+     */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public void getSubBlocks(int id, CreativeTabs par2CreativeTabs, List par3List) {
-        for (int i = 0; i < Constants.Icons.MACHINE_SIDES.length; i++) {
+    
+        for (int i = 0; i < Constants.Icons.MACHINE_SIDES.length; i++){
             par3List.add(new ItemStack(id, 1, i * 2));
         }
     }
-
+    
 }

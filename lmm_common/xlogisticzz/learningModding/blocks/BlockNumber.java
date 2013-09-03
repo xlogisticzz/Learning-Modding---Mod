@@ -14,14 +14,24 @@ import xlogisticzz.learningModding.TileEntites.TileEntityNumbers;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockNumber extends BlockContainer { 
+/**
+ * Learning Modding Mod
+ * 
+ * @author xLoGisTicZz.
+ * 
+ *         Some code may be from tutorials.
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
+public class BlockNumber extends BlockContainer {
     
-    /* Icons */
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
     
-    /* Main Constructor */
     protected BlockNumber(int id) {
+    
         super(id, Material.rock);
         setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
         setHardness(1F);
@@ -29,34 +39,34 @@ public class BlockNumber extends BlockContainer {
         setUnlocalizedName(Constants.UnLocalisedNames.NUMBER);
     }
     
-    /* Create Tile Entity when block is placed */
     @Override
     public TileEntity createNewTileEntity(World world) {
+    
         return new TileEntityNumbers();
     }
-
-    /* Register Icons */
+    
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IconRegister register) {
+    
         icons = new Icon[Constants.Misc.NUMBER_COUNT];
-        for (int i = 0; i < icons.length; i++) {
+        for (int i = 0; i < icons.length; i++){
             icons[i] = register.registerIcon(Constants.Mod.MODID + ":numbers/" + Constants.Icons.NUMBERS[i]);
         }
     }
-
-    /* Get block texture based on number variable in the tile entity */
+    
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getBlockTexture(IBlockAccess world, int x, int y, int z, int side) {
+    
         TileEntityNumbers tile = (TileEntityNumbers) world.getBlockTileEntity(x, y, z);
         return icons[tile.getNumber()];
     }
-
-    /* Default Icon */
+    
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
+    
         return icons[0];
     }
 }
