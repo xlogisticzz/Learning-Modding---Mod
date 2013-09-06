@@ -44,7 +44,7 @@ public class RenderSpaceship extends Render {
         GL11.glRotatef(180.0F - yaw, 0.0F, 1.0F, 0.0F);
         GL11.glScalef(-1.0F, -1.0F, 1.0F);
         
-        func_110777_b(spaceship);
+        bindEntityTexture(spaceship);
         
         model.render(spaceship, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
         
@@ -58,7 +58,7 @@ public class RenderSpaceship extends Render {
     }
     
     @Override
-    protected ResourceLocation func_110775_a(Entity entity) {
+    protected ResourceLocation getEntityTexture(Entity entity) {
     
         return ((EntitySpaceship) entity).isCharged() ? chargedTexture : texture;
     }

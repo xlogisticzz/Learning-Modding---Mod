@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import xlogisticzz.learningModding.Network.PacketHandler;
 
@@ -84,7 +85,7 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     }
     
     @Override
-    public boolean func_130002_c(EntityPlayer player) {
+    public boolean interactFirst(EntityPlayer player) {
     
         if (!worldObj.isRemote && riddenByEntity == null){
             player.mountEntity(this);
@@ -176,5 +177,22 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
             worldObj.spawnEntityInWorld(bomb);
             setAmmunitionAmount(getAmmunitionAmount() - 1);
         }
+    }
+    
+    @Override
+    public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
+    
+        if (!worldObj.isRemote && !isDead){
+            if (this.isEntityInvulnerable()){
+                return false;
+            }else{
+                this.setBeenAttacked();
+                
+                this.setDead();
+                
+                return true;
+            }
+        }
+        return false;
     }
 }

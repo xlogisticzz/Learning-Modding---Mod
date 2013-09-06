@@ -99,35 +99,35 @@ public class ItemDeathstone extends Item {
         
             case 0 :
                 if (par2EntityLivingBase instanceof EntityCreeper){
-                    par2EntityLivingBase.setEntityHealth(0);
+                    par2EntityLivingBase.setHealth(0);
                     return true;
                 }else{
                     return false;
                 }
             case 1 :
                 if (par2EntityLivingBase instanceof EntityEnderman){
-                    par2EntityLivingBase.setEntityHealth(0);
+                    par2EntityLivingBase.setHealth(0);
                     return true;
                 }else{
                     return false;
                 }
             case 2 :
                 if (par2EntityLivingBase instanceof EntityPig){
-                    par2EntityLivingBase.setEntityHealth(0);
+                    par2EntityLivingBase.setHealth(0);
                     return true;
                 }else{
                     return false;
                 }
             case 3 :
                 if (par2EntityLivingBase instanceof EntityPlayer){
-                    par2EntityLivingBase.setEntityHealth(0);
+                    par2EntityLivingBase.setHealth(0);
                     return true;
                 }else{
                     return false;
                 }
             case 4 :
                 if (par2EntityLivingBase instanceof EntitySkeleton){
-                    par2EntityLivingBase.setEntityHealth(0);
+                    par2EntityLivingBase.setHealth(0);
                     return true;
                 }else{
                     return false;

@@ -46,10 +46,10 @@ public class ItemWand extends Item {
     }
     
     @Override
-    public boolean func_111207_a(ItemStack stack, EntityPlayer player, EntityLivingBase target) {
+    public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer player, EntityLivingBase target) {
     
         if (target instanceof EntityCreeper){
-            ((EntityCreeper) target).setEntityHealth(0);
+            ((EntityCreeper) target).setHealth(0);
             player.addPotionEffect(new PotionEffect(Potion.confusion.id, 100, 5));
             player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 50, 5));
             if (!player.worldObj.isRemote){
@@ -60,7 +60,7 @@ public class ItemWand extends Item {
             }
             return true;
         }else if (target instanceof EntityEnderman){
-            ((EntityEnderman) target).setEntityHealth(0);
+            ((EntityEnderman) target).setHealth(0);
             player.addPotionEffect(new PotionEffect(Potion.confusion.id, 100, 5));
             player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 50, 5));
             if (!player.worldObj.isRemote){
@@ -71,7 +71,7 @@ public class ItemWand extends Item {
             }
             return true;
         }else if (target instanceof EntityPig){
-            ((EntityPig) target).setEntityHealth(0);
+            ((EntityPig) target).setHealth(0);
             player.addPotionEffect(new PotionEffect(Potion.confusion.id, 100, 5));
             player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 50, 5));
             if (!player.worldObj.isRemote){
@@ -82,7 +82,7 @@ public class ItemWand extends Item {
             }
             return true;
         }else if (target instanceof EntityPlayer){
-            ((EntityPlayer) target).setEntityHealth(0);
+            ((EntityPlayer) target).setHealth(0);
             player.addPotionEffect(new PotionEffect(Potion.confusion.id, 100, 5));
             player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 50, 5));
             if (!player.worldObj.isRemote){
@@ -93,7 +93,7 @@ public class ItemWand extends Item {
             }
             return true;
         }else if (target instanceof EntitySkeleton){
-            ((EntitySkeleton) target).setEntityHealth(0);
+            ((EntitySkeleton) target).setHealth(0);
             player.addPotionEffect(new PotionEffect(Potion.confusion.id, 100, 5));
             player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 50, 5));
             if (!player.worldObj.isRemote){
