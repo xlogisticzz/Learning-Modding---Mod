@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xlogisticzz.learningModding.LearningModdingCreativeTab;
-import xlogisticzz.learningModding.Entities.EntityBlockEntityTeleport;
+import xlogisticzz.learningModding.Entities.EntityLaunched;
 import xlogisticzz.learningModding.Lib.Constants;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -43,9 +43,9 @@ public class ItemEntityLauncher extends Item {
     public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
     
         if (!world.isRemote){
-            EntityBlockEntityTeleport launched = new EntityBlockEntityTeleport(world);
+            EntityLaunched launched = new EntityLaunched(world);
             
-            launched.setLaunchPos(x, y, z);
+            launched.setlaunchPos(x, y, z);
             
             world.spawnEntityInWorld(launched);
             
