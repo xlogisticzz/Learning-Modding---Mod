@@ -1,5 +1,7 @@
 package xlogisticzz.learningModding.Items;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -8,54 +10,48 @@ import net.minecraft.world.World;
 import xlogisticzz.learningModding.LearningModdingCreativeTab;
 import xlogisticzz.learningModding.Entities.EntityBlockEntityTeleport;
 import xlogisticzz.learningModding.Lib.Constants;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 
 /**
  * Learning Modding Mod
- * 
+ *
  * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
+ *
  */
-
-public class ItemEntityLauncher extends Item {
+public class ItemEntityBlockTeleport extends Item {
     
-    public ItemEntityLauncher(int par1) {
+    public ItemEntityBlockTeleport(int par1) {
     
         super(par1);
         
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
-        this.setUnlocalizedName(Constants.UnLocalisedNames.ENTITY_LAUNCHER);
+        this.setUnlocalizedName(Constants.UnLocalisedNames.ENTITY_BLOCK_TELEPORTER);
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        itemIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.ENTITY_LAUNCHER);
+        itemIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.ENTITY_BLOCK_TELEPORTER);
     }
+    
+    
     
     @Override
-    public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
+    public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
     
+        if (!player.capabilities.isCreativeMode){
+            --stack.stackSize;
+        }
         if (!world.isRemote){
-            EntityBlockEntityTeleport launched = new EntityBlockEntityTeleport(world);
-            
-            launched.setLaunchPos(x, y, z);
+            EntityBlockEntityTeleport launched = new EntityBlockEntityTeleport(world, player);
+
+            launched.setLaunchPos(player.posX, player.posY, player.posZ);
             
             world.spawnEntityInWorld(launched);
-            
-            if (!player.capabilities.isCreativeMode){
-                stack.stackSize--;
-            }
-            return true;
-        }else{
-            return false;
         }
+        
+        return stack;
     }
-    
 }

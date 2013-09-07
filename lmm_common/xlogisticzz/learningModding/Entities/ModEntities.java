@@ -22,6 +22,7 @@ public class ModEntities {
         EntityRegistry.registerModEntity(EntityBomb.class, "EntityBomb", 1, LearningModding.instance, 80, 3, false);
         EntityRegistry.registerModEntity(EntityLaunched.class, "EntityLaunched", 2, LearningModding.instance, 80, 3, true);
         EntityRegistry.registerModEntity(EntityPigConverter.class, "EntityPigConverter", 3, LearningModding.instance, 80, 3, true);
+        EntityRegistry.registerModEntity(EntityBlockEntityTeleport.class, "EntityBlockEntityTeleport", 4, LearningModding.instance, 80, 3, true);
     }
     
     public static void initInfo() {

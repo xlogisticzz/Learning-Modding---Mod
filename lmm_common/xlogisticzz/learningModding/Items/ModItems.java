@@ -41,6 +41,7 @@ public class ModItems {
     public static ItemSpawnSpaceship spawnSpaceship;
     public static ItemEntityLauncher entityLauncher;
     public static ItemPigConverter pigConverter;
+    public static ItemEntityBlockTeleport entityBlockTeleporter;
     
     public static EnumToolMaterial materialRuby = EnumHelper.addToolMaterial("ruby", 3, Constants.Misc.RUBY_DURABILITY, 4.1F, 3.0F, 40);
     public static EnumArmorMaterial materialArmorRuby = EnumHelper.addArmorMaterial("ruby", Constants.Misc.RUBY_DURABILITY, new int[] { Constants.Armor.RUBY_HELMET_REDUCTION, Constants.Armor.RUBY_CHESTPLATE_REDUCTION, Constants.Armor.RUBY_LEGGINGS_REDUCTION, Constants.Armor.RUBY_BOOTS_REDUCTION }, 40);
@@ -61,6 +62,7 @@ public class ModItems {
         spawnSpaceship = new ItemSpawnSpaceship(Ids.SPAWN_SPACESHIP);
         entityLauncher = new ItemEntityLauncher(Ids.ENTITY_LAUNCHER);
         pigConverter = new ItemPigConverter(Ids.PIG_CONVERTER);
+        entityBlockTeleporter = new ItemEntityBlockTeleport(Ids.ENTITY_BLOCK_TELEPORTER);
         rubyHelmet = new ItemModArmor(Ids.RUBY_HELMET, materialArmorRuby, 0, 0, "ruby", LearningModdingCreativeTab.tabLearningModding);
         rubyChestplate = new ItemModArmor(Ids.RUBY_CHESTPLATE, materialArmorRuby, 0, 1, "ruby", LearningModdingCreativeTab.tabLearningModding);
         rubyLeggings = new ItemModArmor(Ids.RUBY_LEGGINGS, materialArmorRuby, 0, 2, "ruby", LearningModdingCreativeTab.tabLearningModding);
@@ -77,6 +79,8 @@ public class ModItems {
         LanguageRegistry.addName(spawnSpaceship, Constants.ItemNames.SPAWN_SPACESHIP_NAME);
         LanguageRegistry.addName(entityLauncher, Constants.ItemNames.ENTITY_LAUNCHER_NAME);
         LanguageRegistry.addName(pigConverter, Constants.ItemNames.PIG_CONVERTER_NAME);
+        LanguageRegistry.addName(entityBlockTeleporter, Constants.ItemNames.ENTITY_BLOCK_TELEPORTER_NAME);
+
         
         LanguageRegistry.addName(rubyPickaxe, Constants.ItemNames.RUBY_PICKAXE_NAME);
         LanguageRegistry.addName(rubySpade, Constants.ItemNames.RUBY_SPADE_NAME);

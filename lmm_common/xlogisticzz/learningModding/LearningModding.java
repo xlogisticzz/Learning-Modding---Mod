@@ -2,9 +2,12 @@ package xlogisticzz.learningModding;
 
 import java.io.File;
 
+import net.minecraft.block.BlockDispenser;
+
 import xlogisticzz.learningModding.Blocks.ModBlocks;
 import xlogisticzz.learningModding.Configuration.ConfigurationHandler;
 import xlogisticzz.learningModding.Crafting.Recipies;
+import xlogisticzz.learningModding.Dispenser.DispenserBehaviourBlockEntityTeleport;
 import xlogisticzz.learningModding.Entities.ModEntities;
 import xlogisticzz.learningModding.Items.ModItems;
 import xlogisticzz.learningModding.Lib.Constants;
@@ -52,6 +55,7 @@ public class LearningModding {
         ModItems.init();
         ModBlocks.init();
         
+        
         proxy.initSounds();
         proxy.initRenderers();
         
@@ -67,6 +71,8 @@ public class LearningModding {
         Recipies.initVanilla();
         ModEntities.initInfo();
         
+        BlockDispenser.dispenseBehaviorRegistry.putObject(ModItems.entityBlockTeleporter, new DispenserBehaviourBlockEntityTeleport());
+
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabLearningModding", "en_US", "Learning Modding");
         
     }

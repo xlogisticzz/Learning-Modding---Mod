@@ -56,7 +56,8 @@ public class ConfigurationHandler {
         Ids.SPAWN_SPACESHIP = configuration.getItem(Configuration.CATEGORY_ITEM, "Spawn Spaceship ID", Ids.SPAWN_SPACESHIP_DEFAULT).getInt() - 256;
         Ids.ENTITY_LAUNCHER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Launcher ID", Ids.ENTITY_LAUNCHER_DEFAULT).getInt() - 256;
         Ids.PIG_CONVERTER = configuration.getItem(Configuration.CATEGORY_ITEM, "Pig Converter ID", Ids.PIG_CONVERTER_DEFAULT).getInt() - 256;
-        
+        Ids.ENTITY_BLOCK_TELEPORTER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Block Teleporter ID", Ids.ENTITY_BLOCK_TELEPORTER_DEFAULT).getInt() - 256;
+
         // Ruby Armor
         Ids.RUBY_HELMET = configuration.getItem("Armor", "Ruby Helmet ID", Ids.RUBY_HELMET_DEFAULT).getInt() - 256;
         Ids.RUBY_CHESTPLATE = configuration.getItem("Armor", "Ruby Chestplate ID", Ids.RUBY_CHESTPLATE_DEFAULT).getInt() - 256;

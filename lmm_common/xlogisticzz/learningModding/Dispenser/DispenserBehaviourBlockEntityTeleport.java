@@ -1,0 +1,27 @@
+package xlogisticzz.learningModding.Dispenser;
+
+import net.minecraft.dispenser.BehaviorProjectileDispense;
+import net.minecraft.dispenser.IPosition;
+import net.minecraft.entity.IProjectile;
+import net.minecraft.world.World;
+import xlogisticzz.learningModding.Entities.EntityBlockEntityTeleport;
+
+
+/**
+ * Learning Modding Mod
+ *
+ * @author xLoGisTicZz.
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
+public class DispenserBehaviourBlockEntityTeleport  extends BehaviorProjectileDispense{
+
+    @Override
+    protected IProjectile getProjectileEntity(World world, IPosition iposition) {
+    
+        EntityBlockEntityTeleport entity = new EntityBlockEntityTeleport(world, iposition.getX(), iposition.getY(), iposition.getZ());
+        entity.setLaunchPos(iposition.getX(), iposition.getY(), iposition.getZ());
+        return entity;
+    }
+    
+}

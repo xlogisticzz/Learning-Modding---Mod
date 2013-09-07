@@ -2,6 +2,7 @@ package xlogisticzz.learningModding.Proxies;
 
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import xlogisticzz.learningModding.Client.RenderSpaceship;
+import xlogisticzz.learningModding.Entities.EntityBlockEntityTeleport;
 import xlogisticzz.learningModding.Entities.EntityPigConverter;
 import xlogisticzz.learningModding.Entities.EntitySpaceship;
 import xlogisticzz.learningModding.Items.ModItems;
@@ -30,6 +31,8 @@ public class ClientProxy extends CommonProxy {
     
         RenderingRegistry.registerEntityRenderingHandler(EntitySpaceship.class, new RenderSpaceship());
         RenderingRegistry.registerEntityRenderingHandler(EntityPigConverter.class, new RenderSnowball(ModItems.pigConverter));
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlockEntityTeleport.class, new RenderSnowball(ModItems.entityBlockTeleporter));
+
     }
     
 }
