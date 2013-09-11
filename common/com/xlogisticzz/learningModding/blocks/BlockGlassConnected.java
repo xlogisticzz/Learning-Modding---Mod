@@ -90,11 +90,6 @@ public class BlockGlassConnected extends Block {
     @Override
     public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
     
-        return getConnectedBlockTexture(par1IBlockAccess, par2, par3, par4, par5, icons);
-    }
-    
-    public Icon getConnectedBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5, Icon[] icons) {
-    
         boolean isOpenUp = false, isOpenDown = false, isOpenLeft = false, isOpenRight = false;
         
         switch (par5) {
@@ -113,37 +108,6 @@ public class BlockGlassConnected extends Block {
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2 + 1, par3, par4))){
                     isOpenRight = true;
                 }
-                if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[15];
-                }else if (isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[14];
-                }else if (isOpenUp && isOpenDown && isOpenRight){
-                    return icons[13];
-                }else if (isOpenUp && isOpenDown && isOpenLeft){
-                    return icons[12];
-                }else if (isOpenDown && isOpenLeft && isOpenRight){
-                    return icons[11];
-                }else if (isOpenUp && isOpenRight){
-                    return icons[10];
-                }else if (isOpenUp && isOpenLeft){
-                    return icons[9];
-                }else if (isOpenUp && isOpenDown){
-                    return icons[8];
-                }else if (isOpenLeft && isOpenRight){
-                    return icons[7];
-                }else if (isOpenDown && isOpenRight){
-                    return icons[6];
-                }else if (isOpenDown && isOpenLeft){
-                    return icons[5];
-                }else if (isOpenUp){
-                    return icons[4];
-                }else if (isOpenRight){
-                    return icons[3];
-                }else if (isOpenLeft){
-                    return icons[2];
-                }else if (isOpenDown){
-                    return icons[1];
-                }
                 break;
             // top
             case 1 :
@@ -158,37 +122,6 @@ public class BlockGlassConnected extends Block {
                 }
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2 + 1, par3, par4))){
                     isOpenRight = true;
-                }
-                if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[15];
-                }else if (isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[14];
-                }else if (isOpenUp && isOpenDown && isOpenRight){
-                    return icons[13];
-                }else if (isOpenUp && isOpenDown && isOpenLeft){
-                    return icons[12];
-                }else if (isOpenDown && isOpenLeft && isOpenRight){
-                    return icons[11];
-                }else if (isOpenUp && isOpenRight){
-                    return icons[10];
-                }else if (isOpenUp && isOpenLeft){
-                    return icons[9];
-                }else if (isOpenUp && isOpenDown){
-                    return icons[8];
-                }else if (isOpenLeft && isOpenRight){
-                    return icons[7];
-                }else if (isOpenDown && isOpenRight){
-                    return icons[6];
-                }else if (isOpenDown && isOpenLeft){
-                    return icons[5];
-                }else if (isOpenUp){
-                    return icons[4];
-                }else if (isOpenRight){
-                    return icons[3];
-                }else if (isOpenLeft){
-                    return icons[2];
-                }else if (isOpenDown){
-                    return icons[1];
                 }
                 break;
             // north
@@ -205,37 +138,6 @@ public class BlockGlassConnected extends Block {
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2 - 1, par3, par4))){
                     isOpenRight = true;
                 }
-                if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[15];
-                }else if (isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[14];
-                }else if (isOpenUp && isOpenDown && isOpenRight){
-                    return icons[13];
-                }else if (isOpenUp && isOpenDown && isOpenLeft){
-                    return icons[12];
-                }else if (isOpenDown && isOpenLeft && isOpenRight){
-                    return icons[11];
-                }else if (isOpenUp && isOpenRight){
-                    return icons[10];
-                }else if (isOpenUp && isOpenLeft){
-                    return icons[9];
-                }else if (isOpenUp && isOpenDown){
-                    return icons[8];
-                }else if (isOpenLeft && isOpenRight){
-                    return icons[7];
-                }else if (isOpenDown && isOpenRight){
-                    return icons[6];
-                }else if (isOpenDown && isOpenLeft){
-                    return icons[5];
-                }else if (isOpenUp){
-                    return icons[4];
-                }else if (isOpenRight){
-                    return icons[3];
-                }else if (isOpenLeft){
-                    return icons[2];
-                }else if (isOpenDown){
-                    return icons[1];
-                }
                 break;
             // south
             case 3 :
@@ -250,37 +152,6 @@ public class BlockGlassConnected extends Block {
                 }
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2 + 1, par3, par4))){
                     isOpenRight = true;
-                }
-                if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[15];
-                }else if (isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[14];
-                }else if (isOpenUp && isOpenDown && isOpenRight){
-                    return icons[13];
-                }else if (isOpenUp && isOpenDown && isOpenLeft){
-                    return icons[12];
-                }else if (isOpenDown && isOpenLeft && isOpenRight){
-                    return icons[11];
-                }else if (isOpenUp && isOpenRight){
-                    return icons[10];
-                }else if (isOpenUp && isOpenLeft){
-                    return icons[9];
-                }else if (isOpenUp && isOpenDown){
-                    return icons[8];
-                }else if (isOpenLeft && isOpenRight){
-                    return icons[7];
-                }else if (isOpenDown && isOpenRight){
-                    return icons[6];
-                }else if (isOpenDown && isOpenLeft){
-                    return icons[5];
-                }else if (isOpenUp){
-                    return icons[4];
-                }else if (isOpenRight){
-                    return icons[3];
-                }else if (isOpenLeft){
-                    return icons[2];
-                }else if (isOpenDown){
-                    return icons[1];
                 }
                 break;
             // west
@@ -297,37 +168,6 @@ public class BlockGlassConnected extends Block {
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2, par3, par4 + 1))){
                     isOpenRight = true;
                 }
-                if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[15];
-                }else if (isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[14];
-                }else if (isOpenUp && isOpenDown && isOpenRight){
-                    return icons[13];
-                }else if (isOpenUp && isOpenDown && isOpenLeft){
-                    return icons[12];
-                }else if (isOpenDown && isOpenLeft && isOpenRight){
-                    return icons[11];
-                }else if (isOpenUp && isOpenRight){
-                    return icons[10];
-                }else if (isOpenUp && isOpenLeft){
-                    return icons[9];
-                }else if (isOpenUp && isOpenDown){
-                    return icons[8];
-                }else if (isOpenLeft && isOpenRight){
-                    return icons[7];
-                }else if (isOpenDown && isOpenRight){
-                    return icons[6];
-                }else if (isOpenDown && isOpenLeft){
-                    return icons[5];
-                }else if (isOpenUp){
-                    return icons[4];
-                }else if (isOpenRight){
-                    return icons[3];
-                }else if (isOpenLeft){
-                    return icons[2];
-                }else if (isOpenDown){
-                    return icons[1];
-                }
                 break;
             // east
             case 5 :
@@ -343,41 +183,42 @@ public class BlockGlassConnected extends Block {
                 if (shouldConnect(par1IBlockAccess.getBlockId(par2, par3, par4 - 1))){
                     isOpenRight = true;
                 }
-                if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[15];
-                }else if (isOpenUp && isOpenLeft && isOpenRight){
-                    return icons[14];
-                }else if (isOpenUp && isOpenDown && isOpenRight){
-                    return icons[13];
-                }else if (isOpenUp && isOpenDown && isOpenLeft){
-                    return icons[12];
-                }else if (isOpenDown && isOpenLeft && isOpenRight){
-                    return icons[11];
-                }else if (isOpenUp && isOpenRight){
-                    return icons[10];
-                }else if (isOpenUp && isOpenLeft){
-                    return icons[9];
-                }else if (isOpenUp && isOpenDown){
-                    return icons[8];
-                }else if (isOpenLeft && isOpenRight){
-                    return icons[7];
-                }else if (isOpenDown && isOpenRight){
-                    return icons[6];
-                }else if (isOpenDown && isOpenLeft){
-                    return icons[5];
-                }else if (isOpenUp){
-                    return icons[4];
-                }else if (isOpenRight){
-                    return icons[3];
-                }else if (isOpenLeft){
-                    return icons[2];
-                }else if (isOpenDown){
-                    return icons[1];
-                }
                 break;
         
         }
-        return icons[0];
+        if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
+            return icons[15];
+        }else if (isOpenUp && isOpenLeft && isOpenRight){
+            return icons[14];
+        }else if (isOpenUp && isOpenDown && isOpenRight){
+            return icons[13];
+        }else if (isOpenUp && isOpenDown && isOpenLeft){
+            return icons[12];
+        }else if (isOpenDown && isOpenLeft && isOpenRight){
+            return icons[11];
+        }else if (isOpenUp && isOpenRight){
+            return icons[10];
+        }else if (isOpenUp && isOpenLeft){
+            return icons[9];
+        }else if (isOpenUp && isOpenDown){
+            return icons[8];
+        }else if (isOpenLeft && isOpenRight){
+            return icons[7];
+        }else if (isOpenDown && isOpenRight){
+            return icons[6];
+        }else if (isOpenDown && isOpenLeft){
+            return icons[5];
+        }else if (isOpenUp){
+            return icons[4];
+        }else if (isOpenRight){
+            return icons[3];
+        }else if (isOpenLeft){
+            return icons[2];
+        }else if (isOpenDown){
+            return icons[1];
+        }else{
+            return icons[0];
+        }
     }
     
 }

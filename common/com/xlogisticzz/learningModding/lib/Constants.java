@@ -25,8 +25,8 @@ public class Constants {
     
     public class Proxies {
         
-        public static final String CLIENT = "com.xlogisticzz.learningModding.Proxies.ClientProxy";
-        public static final String COMMON = "com.xlogisticzz.learningModding.Proxies.CommonProxy";
+        public static final String CLIENT = "com.xlogisticzz.learningModding.proxies.ClientProxy";
+        public static final String COMMON = "com.xlogisticzz.learningModding.proxies.CommonProxy";
         
     }
     
