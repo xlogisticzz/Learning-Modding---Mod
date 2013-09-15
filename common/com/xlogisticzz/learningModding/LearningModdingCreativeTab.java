@@ -1,9 +1,9 @@
 package com.xlogisticzz.learningModding;
 
-import com.xlogisticzz.learningModding.items.ModItems;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+
+import com.xlogisticzz.learningModding.items.ModItems;
 
 /**
  * Learning Modding Mod

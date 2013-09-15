@@ -2,16 +2,17 @@ package com.xlogisticzz.learningModding.items;
 
 import java.util.List;
 
-import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
-import com.xlogisticzz.learningModding.client.sounds.Sounds;
-import com.xlogisticzz.learningModding.lib.Constants;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+
+import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
+import com.xlogisticzz.learningModding.client.sounds.Sounds;
+import com.xlogisticzz.learningModding.lib.Constants;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -42,9 +43,10 @@ public class ItemRubyWand extends Item {
     
     @Override
     public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase target) {
-        if (!target.worldObj.isRemote) {
+    
+        if (!target.worldObj.isRemote){
             target.motionY = 2;
-            if (isCharged(itemstack.getItemDamage())) {
+            if (isCharged(itemstack.getItemDamage())){
                 target.motionX = (target.posX - player.posX) * 2;
                 target.motionZ = (target.posZ - player.posZ) * 2;
                 
@@ -55,9 +57,8 @@ public class ItemRubyWand extends Item {
                 Sounds.WAND_USE.play(target.posX, target.posY, target.posZ, 1, 0);
             }
             
-            
         }
-    
+        
         return false;
     }
     

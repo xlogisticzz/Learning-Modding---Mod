@@ -1,9 +1,9 @@
 package com.xlogisticzz.learningModding.tileEntites;
 
+import net.minecraft.tileentity.TileEntity;
+
 import com.xlogisticzz.learningModding.lib.Constants;
 import com.xlogisticzz.learningModding.lib.Ids;
-
-import net.minecraft.tileentity.TileEntity;
 
 /**
  * Learning Modding Mod

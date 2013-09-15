@@ -1,5 +1,8 @@
 package com.xlogisticzz.learningModding.blocks;
 
+import net.minecraft.block.Block;
+import net.minecraftforge.common.MinecraftForge;
+
 import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
 import com.xlogisticzz.learningModding.items.ItemMachine;
 import com.xlogisticzz.learningModding.items.ItemMarker;
@@ -9,8 +12,6 @@ import com.xlogisticzz.learningModding.tileEntites.TileEntityBomb;
 import com.xlogisticzz.learningModding.tileEntites.TileEntityClicker;
 import com.xlogisticzz.learningModding.tileEntites.TileEntityNumbers;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -39,6 +40,7 @@ public class ModBlocks {
     public static BlockSuperBomb superBomb;
     public static BlockNumber numbers;
     public static BlockClicker clicker;
+    public static BlockPoison poisonBlock;
     
     public static void init() {
     
@@ -54,6 +56,7 @@ public class ModBlocks {
         superBomb = new BlockSuperBomb(Ids.SUPERBOMB);
         numbers = new BlockNumber(Ids.NUMBER);
         clicker = new BlockClicker(Ids.CLICKER);
+        poisonBlock = new BlockPoison(Ids.POISON);
         
     }
     
@@ -80,7 +83,6 @@ public class ModBlocks {
         GameRegistry.registerBlock(rubyblock, Constants.UnLocalisedNames.RUBY_BLOCK);
         
         // Machine Block Details
-        LanguageRegistry.addName(machineblock, Constants.BlockNames.MACHINE_BLOCK_NAME);
         MinecraftForge.setBlockHarvestLevel(machineblock, "pickaxe", 2);
         GameRegistry.registerBlock(machineblock, ItemMachine.class, Constants.UnLocalisedNames.MACHINE_BLOCK);
         
@@ -93,7 +95,6 @@ public class ModBlocks {
         GameRegistry.registerBlock(testIconBlock, Constants.UnLocalisedNames.TEST_BLOCK);
         
         // Markers
-        LanguageRegistry.addName(markerBlock, Constants.BlockNames.MARKERS_NAME);
         GameRegistry.registerBlock(markerBlock, ItemMarker.class, Constants.UnLocalisedNames.MARKERS);
         
         // Bomb
@@ -115,6 +116,10 @@ public class ModBlocks {
         LanguageRegistry.addName(clicker, Constants.BlockNames.CLICKER_NAME);
         GameRegistry.registerBlock(clicker, Constants.UnLocalisedNames.CLICKER);
         GameRegistry.registerTileEntity(TileEntityClicker.class, Constants.UnLocalisedNames.CLICKER + "TileEntity");
+        
+        // Poison
+        LanguageRegistry.addName(poisonBlock, Constants.BlockNames.POISON_NAME);
+        GameRegistry.registerBlock(poisonBlock, Constants.UnLocalisedNames.POISON);
         
     }
     

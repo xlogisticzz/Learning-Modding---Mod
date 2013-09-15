@@ -1,11 +1,11 @@
 package com.xlogisticzz.learningModding.entities;
 
-import com.xlogisticzz.learningModding.blocks.ModBlocks;
-import com.xlogisticzz.learningModding.tileEntites.TileEntityBomb;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
+import com.xlogisticzz.learningModding.blocks.ModBlocks;
+import com.xlogisticzz.learningModding.tileEntites.TileEntityBomb;
 
 /**
  * Learning Modding Mod

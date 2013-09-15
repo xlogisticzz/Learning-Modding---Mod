@@ -1,13 +1,14 @@
 package com.xlogisticzz.learningModding.items;
 
-import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
-import com.xlogisticzz.learningModding.lib.Constants;
-import com.xlogisticzz.learningModding.lib.Ids;
-
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
+
+import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
+import com.xlogisticzz.learningModding.lib.Constants;
+import com.xlogisticzz.learningModding.lib.Ids;
+
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
@@ -81,7 +82,6 @@ public class ModItems {
         LanguageRegistry.addName(entityLauncher, Constants.ItemNames.ENTITY_LAUNCHER_NAME);
         LanguageRegistry.addName(pigConverter, Constants.ItemNames.PIG_CONVERTER_NAME);
         LanguageRegistry.addName(entityBlockTeleporter, Constants.ItemNames.ENTITY_BLOCK_TELEPORTER_NAME);
-
         
         LanguageRegistry.addName(rubyPickaxe, Constants.ItemNames.RUBY_PICKAXE_NAME);
         LanguageRegistry.addName(rubySpade, Constants.ItemNames.RUBY_SPADE_NAME);
@@ -94,8 +94,8 @@ public class ModItems {
         LanguageRegistry.addName(rubyLeggings, Constants.ItemNames.RUBY_LEGGINGS_NAME);
         LanguageRegistry.addName(rubyBoots, Constants.ItemNames.RUBY_BOOTS_NAME);
         
-        for (int i = 0; i < Constants.ItemNames.CARD_NAMES.length; i++){
-            LanguageRegistry.addName(new ItemStack(card, 1, i), Constants.ItemNames.CARD_NAMES[i]);
+        for (int j = 0; j < Constants.ItemNames.CARD_NAMES.length; j++){
+            LanguageRegistry.addName(new ItemStack(card, 1, j), Constants.ItemNames.CARD_NAMES[j]);
         }
         for (int i = 0; i < Constants.ItemNames.DEATHSTONES_NAMES.length; i++){
             LanguageRegistry.addName(new ItemStack(deathstone, 1, i), Constants.ItemNames.DEATHSTONES_NAMES[i]);

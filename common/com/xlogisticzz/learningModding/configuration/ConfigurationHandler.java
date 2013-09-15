@@ -2,10 +2,10 @@ package com.xlogisticzz.learningModding.configuration;
 
 import java.io.File;
 
+import net.minecraftforge.common.Configuration;
+
 import com.xlogisticzz.learningModding.lib.Constants;
 import com.xlogisticzz.learningModding.lib.Ids;
-
-import net.minecraftforge.common.Configuration;
 
 /**
  * Learning Modding Mod
@@ -41,6 +41,7 @@ public class ConfigurationHandler {
         Ids.SUPERBOMB = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Super Bomb Id", Ids.SUPERBOMB_DEFAULT).getInt();
         Ids.NUMBER = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Numbers Id", Ids.NUMBER_DEFAULT).getInt();
         Ids.CLICKER = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Clicker Id", Ids.CLICKER_DEFAULT).getInt();
+        Ids.POISON = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Posion Id", Ids.POISON_DEFAULT).getInt();
         
         // Item IDs
         Ids.TITANIUMINGOT = configuration.getItem(Configuration.CATEGORY_ITEM, "Titanium Ingot ID", Ids.TITANIUMINGOT_DEFAULT).getInt() - 256;
@@ -58,7 +59,7 @@ public class ConfigurationHandler {
         Ids.ENTITY_LAUNCHER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Launcher ID", Ids.ENTITY_LAUNCHER_DEFAULT).getInt() - 256;
         Ids.PIG_CONVERTER = configuration.getItem(Configuration.CATEGORY_ITEM, "Pig Converter ID", Ids.PIG_CONVERTER_DEFAULT).getInt() - 256;
         Ids.ENTITY_BLOCK_TELEPORTER = configuration.getItem(Configuration.CATEGORY_ITEM, "Entity Block Teleporter ID", Ids.ENTITY_BLOCK_TELEPORTER_DEFAULT).getInt() - 256;
-
+        
         // Ruby Armor
         Ids.RUBY_HELMET = configuration.getItem("Armor", "Ruby Helmet ID", Ids.RUBY_HELMET_DEFAULT).getInt() - 256;
         Ids.RUBY_CHESTPLATE = configuration.getItem("Armor", "Ruby Chestplate ID", Ids.RUBY_CHESTPLATE_DEFAULT).getInt() - 256;

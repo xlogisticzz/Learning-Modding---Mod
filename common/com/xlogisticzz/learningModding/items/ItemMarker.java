@@ -1,6 +1,9 @@
 package com.xlogisticzz.learningModding.items;
 
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+
+import com.xlogisticzz.learningModding.lib.Constants;
 
 /**
  * Learning Modding Mod
@@ -27,4 +30,9 @@ public class ItemMarker extends ItemBlock {
         return dammage;
     }
     
+    @Override
+    public String getItemDisplayName(ItemStack par1ItemStack) {
+    
+        return Constants.BlockNames.MARKERS_NAME[par1ItemStack.getItemDamage()];
+    }
 }

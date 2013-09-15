@@ -1,13 +1,14 @@
 package com.xlogisticzz.learningModding.blocks;
 
-import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
-import com.xlogisticzz.learningModding.lib.Constants;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
+
+import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
+import com.xlogisticzz.learningModding.lib.Constants;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

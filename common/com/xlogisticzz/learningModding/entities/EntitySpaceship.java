@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteArrayDataOutput;
+import com.xlogisticzz.learningModding.client.sounds.Sounds;
 import com.xlogisticzz.learningModding.network.PacketHandler;
 
 import cpw.mods.fml.common.registry.IEntityAdditionalSpawnData;
@@ -79,6 +80,12 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     }
     
     @Override
+    public boolean canBePushed() {
+    
+        return true;
+    }
+    
+    @Override
     public boolean canBeCollidedWith() {
     
         return !isDead;
@@ -106,36 +113,57 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
         super.onUpdate();
         
         if (!worldObj.isRemote){
-            if (riddenByEntity != null){
-                motionY = 0.2;
-            }else if (worldObj.isAirBlock((int) posX, (int) posY - 1, (int) posZ)){
-                motionY = -0.2;
-            }else{
-                motionY = 0;
+            if (riddenByEntity == null && worldObj.isAirBlock((int) posX, (int) posY - 1, (int) posZ)){
+                motionY = -0.3F;
             }
-            
         }else{
             sendInfo();
         }
+        
+        motionX = motionX / 1.1;
+        motionY = motionY / 1.1;
+        motionZ = motionZ / 1.1;
         
         this.setPosition(posX + motionX, posY + motionY, posZ + motionZ);
         
     }
     
-    private boolean lastPressedState;
+    private boolean lastPressedBombState;
     
     private void sendInfo() {
     
-        boolean state = Minecraft.getMinecraft().gameSettings.keyBindJump.pressed;
-        if (state && !lastPressedState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+        boolean bombState = Minecraft.getMinecraft().gameSettings.keyBindAttack.pressed;
+        if (bombState && !lastPressedBombState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
             if (getAmmunitionAmount() == 0){
                 Minecraft.getMinecraft().thePlayer.addChatMessage("You don't have enough ammo left");
+                Sounds.OUT_OF_AMMO.play(posX, posY, posZ, 1, 0);
             }else{
                 PacketHandler.sendShipBombPacket(this);
             }
         }
+        lastPressedBombState = bombState;
         
-        lastPressedState = state;
+        boolean forwardState = Minecraft.getMinecraft().gameSettings.keyBindForward.pressed;
+        if (forwardState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+            PacketHandler.sendShipForwardPacket(this);
+        }
+        
+        boolean backwardState = Minecraft.getMinecraft().gameSettings.keyBindBack.pressed;
+        if (backwardState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+            PacketHandler.sendShipBackwardPacket(this);
+            
+        }
+        
+        boolean UpState = Minecraft.getMinecraft().gameSettings.keyBindJump.pressed;
+        if (UpState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+            PacketHandler.sendShipUpPacket(this);
+        }
+        
+        boolean DownState = Minecraft.getMinecraft().gameSettings.keyBindDrop.pressed;
+        if (DownState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+            PacketHandler.sendShipDownPacket(this);
+        }
+        
     }
     
     @Override
@@ -176,6 +204,7 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
             
             worldObj.spawnEntityInWorld(bomb);
             setAmmunitionAmount(getAmmunitionAmount() - 1);
+            Sounds.BOMB_DROP.play(posX, posY, posZ, 1, 0);
         }
     }
     
@@ -194,5 +223,83 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
             }
         }
         return false;
+    }
+    
+    public void forward() {
+    
+        float yaw = riddenByEntity.rotationYaw;
+        
+        if (yaw - 90 > 180){
+            int num = (int) (yaw - 90 - 180);
+            
+            int newnum = -180 + num;
+            
+            this.setRotation(newnum, rotationPitch);
+            
+        }else{
+            this.setRotation(yaw - 90, rotationPitch);
+        }
+        
+        System.out.println(yaw);
+        
+        if (yaw >= 0 && yaw <= 45 && motionZ < 20){
+            motionZ = motionZ + 0.1F;
+        }else if (yaw >= 45 && yaw <= 135 && motionX > -20){
+            motionX = motionX - 0.1F;
+        }else if (yaw >= 135 && yaw <= 225 && motionZ > -20){
+            motionZ = motionZ - 0.1F;
+        }else if (yaw >= 225 && yaw <= 360 && motionX > 20){
+            motionX = motionX + 0.1F;
+        }
+        
+        if (yaw <= -0 && yaw >= -45 && motionZ < 20){
+            motionZ = motionZ + 0.1F;
+        }else if (yaw <= -45 && yaw >= -135 && motionX > -20){
+            motionX = motionX - 0.1F;
+        }else if (yaw <= -135 && yaw >= -225 && motionZ > -20){
+            motionZ = motionZ - 0.1F;
+        }else if (yaw <= -225 && yaw >= -360 && motionX > 20){
+            motionX = motionX + 0.1F;
+        }
+        
+    }
+    
+    public void backward() {
+    
+        float yaw = riddenByEntity.rotationYaw;
+        
+        if (yaw >= 0 && yaw <= 45 && motionZ < 20){
+            motionZ = motionZ - 0.1F;
+        }else if (yaw >= 45 && yaw <= 135 && motionX > -20){
+            motionX = motionX + 0.1F;
+        }else if (yaw >= 135 && yaw <= 225 && motionZ > -20){
+            motionZ = motionZ + 0.1F;
+        }else if (yaw >= 225 && yaw <= 360 && motionX > 20){
+            motionX = motionX - 0.1F;
+        }
+        
+        if (yaw <= -0 && yaw >= -45 && motionZ < 20){
+            motionZ = motionZ - 0.1F;
+        }else if (yaw <= -45 && yaw >= -135 && motionX > -20){
+            motionX = motionX + 0.1F;
+        }else if (yaw <= -135 && yaw >= -225 && motionZ > -20){
+            motionZ = motionZ + 0.1F;
+        }else if (yaw <= -225 && yaw >= -360 && motionX > 20){
+            motionX = motionX - 0.1F;
+        }
+    }
+    
+    public void up() {
+    
+        if (motionZ < 20){
+            motionY = motionY + 0.1F;
+        }
+    }
+    
+    public void down() {
+    
+        if (motionZ > -20){
+            motionY = motionY - 0.1F;
+        }
     }
 }

@@ -2,13 +2,14 @@ package com.xlogisticzz.learningModding.blocks;
 
 import java.util.Random;
 
-import com.xlogisticzz.learningModding.items.ModItems;
-import com.xlogisticzz.learningModding.lib.Constants;
-
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.StepSound;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+
+import com.xlogisticzz.learningModding.items.ModItems;
+import com.xlogisticzz.learningModding.lib.Constants;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

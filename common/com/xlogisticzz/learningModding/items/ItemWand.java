@@ -1,8 +1,5 @@
 package com.xlogisticzz.learningModding.items;
 
-import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
-import com.xlogisticzz.learningModding.lib.Constants;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -14,6 +11,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+
+import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
+import com.xlogisticzz.learningModding.lib.Constants;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -1,11 +1,12 @@
 package com.xlogisticzz.learningModding.crafting;
 
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
 import com.xlogisticzz.learningModding.blocks.ModBlocks;
 import com.xlogisticzz.learningModding.items.ModItems;
 import com.xlogisticzz.learningModding.lib.Constants;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**

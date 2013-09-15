@@ -2,6 +2,8 @@ package com.xlogisticzz.learningModding;
 
 import java.io.File;
 
+import net.minecraft.block.BlockDispenser;
+
 import com.xlogisticzz.learningModding.blocks.ModBlocks;
 import com.xlogisticzz.learningModding.configuration.ConfigurationHandler;
 import com.xlogisticzz.learningModding.crafting.Recipies;
@@ -11,8 +13,6 @@ import com.xlogisticzz.learningModding.items.ModItems;
 import com.xlogisticzz.learningModding.lib.Constants;
 import com.xlogisticzz.learningModding.network.PacketHandler;
 import com.xlogisticzz.learningModding.proxies.CommonProxy;
-
-import net.minecraft.block.BlockDispenser;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -43,12 +43,9 @@ public class LearningModding {
     @Instance
     public static LearningModding instance;
     
-    
     /* Says where the client and server 'proxy' code is loaded. */
     @SidedProxy(clientSide = Constants.Proxies.CLIENT, serverSide = Constants.Proxies.COMMON)
     public static CommonProxy proxy;
-    
-    
     
     /* PreInitialization */
     @EventHandler
@@ -58,7 +55,6 @@ public class LearningModding {
         
         ModItems.init();
         ModBlocks.init();
-        
         
         proxy.initSounds();
         proxy.initRenderers();
@@ -76,7 +72,7 @@ public class LearningModding {
         ModEntities.initInfo();
         
         BlockDispenser.dispenseBehaviorRegistry.putObject(ModItems.entityBlockTeleporter, new DispenserBehaviourBlockEntityTeleport());
-
+        
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabLearningModding", "en_US", "Learning Modding");
         
     }

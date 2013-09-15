@@ -1,14 +1,15 @@
 package com.xlogisticzz.learningModding.items;
 
-import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
-import com.xlogisticzz.learningModding.entities.EntityPigConverter;
-import com.xlogisticzz.learningModding.lib.Constants;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.xlogisticzz.learningModding.LearningModdingCreativeTab;
+import com.xlogisticzz.learningModding.entities.EntityPigConverter;
+import com.xlogisticzz.learningModding.lib.Constants;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

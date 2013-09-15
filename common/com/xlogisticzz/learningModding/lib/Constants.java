@@ -36,14 +36,15 @@ public class Constants {
         public static final String RUBY_ORE_NAME = "Ruby Ore";
         public static final String TITANIUM_BLOCK_NAME = "Titanium Block";
         public static final String RUBY_BLOCK_NAME = "Ruby Block";
-        public static final String MACHINE_BLOCK_NAME = "Machine Block";
+        public static final String[] MACHINE_BLOCK_NAME = { "Machine Block", "Machine Block Disabled", "Machine Block Arrow", "Machine Block Arrow Disabled", "Machine Block Border", "Machine Block Border Disabled", "Machine Block Cross", "Machine Block Cross Disabled" };
         public static final String GLASS_CONNECTED = "Glass Connected";
         public static final String TEST_BLOCK = "Test Block";
-        public static final String MARKERS_NAME = "Marker";
+        public static final String[] MARKERS_NAME = { "Blue Marker", "Blue Marker Marked", "Brown Marker", "Brown Marker Marked", "Green Marker", "Green Marker Marked", "Grey Marker", "Grey Marker Marked", "Orange Marker", "Orange Marker Marked", "Purple Marker", "Purple Marker Marked", "Red Marker", "Red Marker Marked", "Yellow Marker", "Yellow Marker Marked" };
         public static final String BOMB_NAME = "Bomb";
         public static final String SUPER_BOMB_NAME = "Super Bomb";
         public static final String NUMBER_NAME = "Number Block";
         public static final String CLICKER_NAME = "Clicker Block";
+        public static final String POISON_NAME = "Block Of Poison";
         
     }
     
@@ -90,7 +91,6 @@ public class Constants {
         public static final String ENTITY_LAUNCHER = "entity_launcher";
         public static final String PIG_CONVERTER = "pig_converter";
         public static final String ENTITY_BLOCK_TELEPORTER = "entity_block_teleporter";
-
         
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";
@@ -110,6 +110,8 @@ public class Constants {
         public static final String[] NUMBERS = { "number_1", "number_2", "number_3", "number_4", "number_5", "number_6", "number_7", "number_8", "number_9", "number_10", "number_11", "number_12", "number_13", "number_14", "number_15", "number_16", "number_17", "number_18" };
         public static final String CLICKER = "clicker";
         public static final String CLICKER_LINKED = "clicker_linked";
+        public static final String POISON = "posion";
+
         
     }
     
@@ -135,7 +137,7 @@ public class Constants {
         public static final String ENTITY_LAUNCHER = "entityLauncher";
         public static final String PIG_CONVERTER = "pigConverter";
         public static final String ENTITY_BLOCK_TELEPORTER = "entityBlockTeleporter";
-
+        
         // Blocks
         public static final String RUBY_ORE = "rubyOre";
         public static final String RUBY_BLOCK = "rubyBlock";
@@ -149,6 +151,8 @@ public class Constants {
         public static final String SUPER_BOMB = "superBomb";
         public static final String NUMBER = "number";
         public static final String CLICKER = "clicker";
+        public static final String POISON = "poisonBlock";
+
         
     }
     

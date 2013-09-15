@@ -1,9 +1,10 @@
 package com.xlogisticzz.learningModding.items;
 
-import com.xlogisticzz.learningModding.lib.Constants;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+
+import com.xlogisticzz.learningModding.lib.Constants;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

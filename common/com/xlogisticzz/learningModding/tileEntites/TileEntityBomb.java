@@ -1,9 +1,10 @@
 package com.xlogisticzz.learningModding.tileEntites;
 
-import com.xlogisticzz.learningModding.blocks.ModBlocks;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+
+import com.xlogisticzz.learningModding.blocks.ModBlocks;
+import com.xlogisticzz.learningModding.client.sounds.Sounds;
 
 /**
  * Learning Modding Mod
@@ -63,6 +64,7 @@ public class TileEntityBomb extends TileEntity {
                 spread(xCoord, yCoord, zCoord + 1);
                 spread(xCoord, yCoord, zCoord - 1);
                 worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 3, 3);
+                Sounds.BOMB_SPREAD.play(xCoord, yCoord, zCoord, 1, 0);
             }else if (timer == SPREAD_TIME * (spreadLevel - SPREAD_LEVELS)){
                 worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 3, 3);
                 worldObj.createExplosion(null, xCoord + 0.5, yCoord + 0.5, zCoord + 0.5, 4, true);

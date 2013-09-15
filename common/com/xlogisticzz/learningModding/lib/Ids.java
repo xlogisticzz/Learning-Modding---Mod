@@ -28,7 +28,8 @@ public class Ids {
     public static int NUMBER_DEFAULT = 510;
     public static int CLICKER_DEFAULT = 511;
     public static int ENTITY_BLOCK_TELEPORTER_DEFAULT = 512;
-
+    public static int POISON_DEFAULT = 513;
+    
     // Current
     public static int TITANIUMORE;
     public static int RUBYORE;
@@ -43,7 +44,7 @@ public class Ids {
     public static int NUMBER;
     public static int CLICKER;
     public static int ENTITY_BLOCK_TELEPORTER;
-
+    public static int POISON;
     
     // Item IDs
     // Defaults
