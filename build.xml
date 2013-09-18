@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<project name="Learning Modding Mod" default="build">
+
+    <property file="build.properties" prefix="build" />
+	<property file="environment.properties" prefix="environment" />
+	<property file="private.properties" prefix="private" />
+
+    <property name="minecraftforge_src_archive" value="minecraftforge-src-${build.minecraft_version}-${build.forge_version}.zip" />
+	<property name="minecraftforge_src_archive_location" value="http://files.minecraftforge.net/minecraftforge/${minecraftforge_src_archive}" />
+
+    <target name="clean-forge">
+        <delete dir="${environment.dev_loc}/forge" />
+    </target>
+
+    <target name="download-forge">
+		<mkdir dir="${environment.dev_loc}/temp" />
+		<get src="${minecraftforge_src_archive_location}" dest="${environment.dev_loc}/temp/" verbose="true" usetimestamp="true" />
+	</target>
+    
+    <target name="uncompress-forge" depends="download-forge, clean-forge">
+		<unzip src="${environment.dev_loc}/temp/${minecraftforge_src_archive}" dest="${environment.dev_loc}" />
+		<delete dir="${environment.dev_loc}/temp" />
+	</target>
+    
+    <target name="install-forge" depends="uncompress-forge">
+		<exec dir="${environment.dev_loc}/forge/" executable="cmd.exe" osfamily="windows" failonerror="true">
+			<arg value="/c" />
+			<arg value="${environment.dev_loc}\forge\install.cmd" />
+		</exec>
+	</target>
+    
+    <target name="clean-forge-install" depends="clean-forge, install-forge" />
+
+    <target name="clean-files">
+		<delete dir="${environment.dev_loc}/temp" />
+		<delete file="${environment.mcp_loc}/src/minecraft/mcmod.info" />
+		<delete file="${environment.mcp_loc}/src/minecraft/pack.mcmeta" />
+		<delete dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" />
+		<delete dir="${environment.mcp_loc}/reobf/minecraft" />
+	</target>
+    
+    <target name="increase_build_number">
+		<propertyfile file="build.properties">
+			<entry key="build_number" type="int" operation="+" default="1" />
+		</propertyfile>
+	</target>
+    
+    <target name="copy-files">
+		<copy todir="${environment.mcp_loc}/src/minecraft">
+			<fileset dir="${environment.source_loc}/common/" />
+		</copy>
+	</target>
+    
+    <target name="replace-tokens">
+		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@VERSION@" value="${build.mod_version}" />
+		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@FINGERPRINT@" value="${private.fingerprint_signature}" />
+		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@BUILD_NUMBER@" value="${build.build_number}" />
+		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@FORGE@" value="${build.forge_version}" />
+    </target>
+    
+    <target name="recompile">
+		<exec dir="${environment.mcp_loc}" executable="cmd" osfamily="windows">
+			<arg line="/c recompile.bat" />
+		</exec>
+	</target>
+    
+    <target name="reobfuscate">
+		<exec dir="${environment.mcp_loc}" executable="cmd" osfamily="windows">
+			<arg line="/c reobfuscate_srg.bat" />
+		</exec>
+	</target>
+    
+    <target name="sign-jar">
+    
+        <!--
+        <genkey keystore="Keystore" alias="${private.keystore_user_alias}" storepass="${private.keystore_user_password}" dname="CN=Classification, OU=NAPA, O=GPC, C=US"/> 
+		-->
+        
+        <signjar keystore="Keystore" jar="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" alias="${private.keystore_user_alias}" storepass="${private.keystore_user_password}" />
+	</target>
+    
+    
+    <target name="build">
+		<!-- Prep for the build -->
+		<antcall target="clean-files" />
+		<antcall target="increase_build_number" />
+		<antcall target="copy-files" />
+		<antcall target="recompile" />
+		<antcall target="reobfuscate" />
+
+		<!-- Build the jar -->
+		<mkdir dir="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}" />
+		<jar destfile="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar">
+			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="mcmod.info" />
+			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="pack.mcmeta" />
+			<fileset dir="${environment.mcp_loc}/reobf/minecraft" />
+			<fileset dir="${environment.source_loc}/resources" excludes="**/xcf/**" />
+		</jar>
+
+		<!-- Clean up the MCP source now that we are done -->
+		<antcall target="clean-files" />
+	</target>
+    
+    <target name="release">
+		<!-- Prep for the build -->
+		<antcall target="clean-files" />
+		<antcall target="increase_build_number" />
+		<antcall target="copy-files" />
+		<antcall target="replace-tokens" />
+		<antcall target="recompile" />
+		<antcall target="reobfuscate" />
+
+		<!-- Build the jar -->
+		<mkdir dir="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}" />
+		<jar destfile="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar">
+			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="mcmod.info" />
+			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="pack.mcmeta" />
+			<fileset dir="${environment.mcp_loc}/reobf/minecraft" />
+			<fileset dir="${environment.source_loc}/resources" excludes="**/xcf/**" />
+		</jar>
+
+		<!-- Sign the finished jar -->
+		<antcall target="sign-jar" />
+
+		<!-- Clean up the MCP source now that we are done -->
+		<antcall target="clean-files" />
+	</target>
+</project>
