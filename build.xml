@@ -23,7 +23,7 @@
 	</target>
     
     <target name="install-forge" depends="uncompress-forge">
-		<exec dir="${environment.dev_loc}/forge/" executable="cmd.exe" osfamily="windows" failonerror="true">
+		<exec dir="${environment.dev_loc}/forge/" executable="cmd" osfamily="windows" failonerror="true">
 			<arg value="/c" />
 			<arg value="${environment.dev_loc}\forge\install.cmd" />
 		</exec>
@@ -55,7 +55,6 @@
 		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@VERSION@" value="${build.mod_version}" />
 		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@FINGERPRINT@" value="${private.fingerprint_signature}" />
 		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@BUILD_NUMBER@" value="${build.build_number}" />
-		<replace dir="${environment.mcp_loc}/src/minecraft/com/xlogisticzz" token="@FORGE@" value="${build.forge_version}" />
     </target>
     
     <target name="recompile">
