@@ -95,9 +95,7 @@
 		</jar>
         
         
-        <copy todir="${environment.build_loc}">
-			<fileset dir="${environment.build_loc}/MC ${build.minecraft_version}/${build.mod_version}" />
-		</copy>
+        <copy todir="${environment.build_loc}" file="${environment.build_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
         <move file="${environment.build_loc}/lmm-universal-${build.mod_version}-${build.build_number}.jar" tofile="${environment.build_loc}/lmm-universal-latest.jar"/>
 
 		<!-- Clean up the MCP source now that we are done -->
@@ -126,9 +124,7 @@
 		<antcall target="sign-jar" />
         
         
-        <copy todir="${environment.release_loc}">
-			<fileset dir="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}" />
-		</copy>
+        <copy todir="${environment.release_loc}" file="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
         <move file="${environment.release_loc}/lmm-universal-${build.mod_version}-${build.build_number}.jar" tofile="${environment.release_loc}/lmm-universal-latest.jar"/>
          
 		<!-- Clean up the MCP source now that we are done -->
