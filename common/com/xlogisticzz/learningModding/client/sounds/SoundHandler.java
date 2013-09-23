@@ -24,7 +24,7 @@ public class SoundHandler {
     
     private void addSound(SoundLoadEvent event, Sounds sound) {
     
-        event.manager.soundPoolSounds.addSound(Sounds.SOUNDS_LOCATION + ":" + sound.getName() + ".ogg");
+        event.manager.addSound(Sounds.SOUNDS_LOCATION + ":" + sound.getName() + ".ogg");
     }
     
 }

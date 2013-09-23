@@ -73,7 +73,7 @@
         <!--
         <genkey keystore="Keystore" alias="${private.keystore_user_alias}" storepass="${private.keystore_user_password}" dname="CN=Classification, OU=NAPA, O=GPC, C=US"/> 
 		-->
-	    <signjar keystore="Keystore" jar="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" alias="${private.keystore_user_alias}" storepass="${private.keystore_user_password}" />
+	    <signjar keystore="Keystore" jar="${environment.release_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" alias="${private.keystore_user_alias}" storepass="${private.keystore_user_password}" />
     </target>
     
     
@@ -86,8 +86,8 @@
 		<antcall target="reobfuscate" />
 
 		<!-- Build the jar -->
-		<mkdir dir="${environment.build_loc}/MC ${build.minecraft_version}/${build.mod_version}" />
-		<jar destfile="${environment.build_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar">
+		<mkdir dir="${environment.build_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}" />
+		<jar destfile="${environment.build_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar">
 			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="mcmod.info" />
 			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="pack.mcmeta" />
 			<fileset dir="${environment.mcp_loc}/reobf/minecraft" />
@@ -95,7 +95,7 @@
 		</jar>
         
         
-        <copy todir="${environment.build_loc}" file="${environment.build_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
+        <copy todir="${environment.build_loc}" file="${environment.build_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
         <move file="${environment.build_loc}/lmm-universal-${build.mod_version}-${build.build_number}.jar" tofile="${environment.build_loc}/lmm-universal-latest.jar"/>
 
 		<!-- Clean up the MCP source now that we are done -->
@@ -112,8 +112,8 @@
 		<antcall target="reobfuscate" />
 
 		<!-- Build the jar -->
-		<mkdir dir="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}" />
-		<jar destfile="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar">
+		<mkdir dir="${environment.release_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}" />
+		<jar destfile="${environment.release_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar">
 			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="mcmod.info" />
 			<fileset dir="${environment.mcp_loc}/src/minecraft/" includes="pack.mcmeta" />
 			<fileset dir="${environment.mcp_loc}/reobf/minecraft" />
@@ -124,10 +124,21 @@
 		<antcall target="sign-jar" />
         
         
-        <copy todir="${environment.release_loc}" file="${environment.release_loc}/MC ${build.minecraft_version}/${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
+        <copy todir="${environment.release_loc}" file="${environment.release_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
         <move file="${environment.release_loc}/lmm-universal-${build.mod_version}-${build.build_number}.jar" tofile="${environment.release_loc}/lmm-universal-latest.jar"/>
          
 		<!-- Clean up the MCP source now that we are done -->
 		<antcall target="clean-files" />
 	</target>
+    
+    <target name="recommended-release" depends = "release">
+        <copy todir="${environment.release_loc}" file="${environment.release_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
+        <move file="${environment.release_loc}/lmm-universal-${build.mod_version}-${build.build_number}.jar" tofile="${environment.release_loc}/lmm-universal-recommended-MC ${build.minecraft_version}-Build ${build.build_number}-.jar"/>
+    </target>
+    
+    <target name="recommended-build" depends = "build">
+        <copy todir="${environment.build_loc}" file="${environment.build_loc}/MC ${build.minecraft_version}/Version ${build.mod_version}/lmm-universal-${build.mod_version}-${build.build_number}.jar" />
+        <move file="${environment.build_loc}/lmm-universal-${build.mod_version}-${build.build_number}.jar" tofile="${environment.build_loc}/lmm-universal-recommended-MC ${build.minecraft_version}-Build ${build.build_number}-.jar"/>
+    </target>
+    
 </project>
