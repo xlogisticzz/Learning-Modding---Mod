@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="common"/>
+	<classpathentry kind="lib" path="Builds/lmm-universal-latest.jar"/>
+	<classpathentry kind="lib" path="Builds/lmm-universal-recommended-MC 1.6.4-Build 1-.jar"/>
+	<classpathentry kind="lib" path="Builds/MC 1.6.4/Version 1.164.1/lmm-universal-1.164.1-1.jar"/>
+	<classpathentry kind="lib" path="Releases/lmm-universal-latest.jar"/>
+	<classpathentry kind="lib" path="Releases/lmm-universal-recommended-MC 1.6.4-Build 1-.jar"/>
+	<classpathentry kind="lib" path="Releases/MC 1.6.4/Version 1.164.1/lmm-universal-1.164.1-1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Minecraft"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
