@@ -6,3 +6,6 @@ environment.properties
 .Trashes
 /bin
 Keystore
+/.git
+/.settings
+/eclipse/bin
