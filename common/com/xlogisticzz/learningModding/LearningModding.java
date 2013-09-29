@@ -13,6 +13,7 @@ import com.xlogisticzz.learningModding.items.ModItems;
 import com.xlogisticzz.learningModding.lib.Constants;
 import com.xlogisticzz.learningModding.network.PacketHandler;
 import com.xlogisticzz.learningModding.proxies.CommonProxy;
+import com.xlogisticzz.learningModding.world.WorldGenerationHandler;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -40,7 +41,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class LearningModding {
     
     /* Mod instance */
-    @Instance
+    @Instance(Constants.Mod.MODID)
     public static LearningModding instance;
     
     /* Says where the client and server 'proxy' code is loaded. */
@@ -70,6 +71,7 @@ public class LearningModding {
         ModBlocks.initInfo();
         Recipies.initVanilla();
         ModEntities.initInfo();
+        new WorldGenerationHandler();
         
         BlockDispenser.dispenseBehaviorRegistry.putObject(ModItems.entityBlockTeleporter, new DispenserBehaviourBlockEntityTeleport());
         

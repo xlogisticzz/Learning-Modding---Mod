@@ -17,7 +17,7 @@ public class Constants {
         
         public static final String MODID = "learningmodding";
         public static final String NAME = "Learning Modding";
-        public static final String VERSION = "@VERSION@ (build @BUILD_NUMBER@)"; 
+        public static final String VERSION = "@VERSION@ (build @BUILD_NUMBER@)";
         public static final String FINGERPRINT = "@FINGERPRINT@";
         public static final String CHANNEL_NAME = MODID;
     }
@@ -109,8 +109,7 @@ public class Constants {
         public static final String[] NUMBERS = { "number_1", "number_2", "number_3", "number_4", "number_5", "number_6", "number_7", "number_8", "number_9", "number_10", "number_11", "number_12", "number_13", "number_14", "number_15", "number_16", "number_17", "number_18" };
         public static final String CLICKER = "clicker";
         public static final String CLICKER_LINKED = "clicker_linked";
-        public static final String POISON = "posion";
-
+        public static final String POISON = "poison_block";
         
     }
     
@@ -151,7 +150,12 @@ public class Constants {
         public static final String NUMBER = "number";
         public static final String CLICKER = "clicker";
         public static final String POISON = "poisonBlock";
-
+        
+    }
+    
+    public class Particles {
+        
+        public static final String POISON_TEXTURE = "poison_nocolor";
         
     }
     
@@ -159,6 +163,19 @@ public class Constants {
         
         public static final int RUBY_DURABILITY = 1000;
         public static final int NUMBER_COUNT = 18;
+        
+    }
+    
+    public static class WorldGen {
+        
+        public static int RUBY_WORLD_GEN_AMOUNT;
+        public static final int RUBY_WORLD_GEN_AMOUNT_DEFAULT = 16;
+        public static int RUBY_WORLD_GEN_ITERATIONS;
+        public static final int RUBY_WORLD_GEN_ITERATIONS_DEFAULT = 20;
+        public static int RUBY_WORLD_GEN_LOWESTY;
+        public static final int RUBY_WORLD_GEN_LOWESTY_DEFAULT = 1;
+        public static int RUBY_WORLD_GEN_HIGHESTY;
+        public static final int RUBY_WORLD_GEN_HIGHESTY_DEFAULT = 128;
         
     }
     
