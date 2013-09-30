@@ -31,47 +31,47 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     private boolean charged;
     
     public EntitySpaceship(World world) {
-    
+        
         super(world);
         this.setSize(1.5F, 0.6F);
     }
     
     @Override
     protected void entityInit() {
-    
+        
         dataWatcher.addObject(15, 10);
     }
     
     public int getAmmunitionAmount() {
-    
+        
         return dataWatcher.getWatchableObjectInt(15);
         
     }
     
     public void setAmmunitionAmount(int ammo) {
-    
+        
         dataWatcher.updateObject(15, ammo);
     }
     
     public boolean isCharged() {
-    
+        
         return charged;
     }
     
     public void setCharged(boolean charge) {
-    
+        
         charged = charge;
     }
     
     @Override
     public AxisAlignedBB getBoundingBox() {
-    
+        
         return boundingBox;
     }
     
     @Override
     public AxisAlignedBB getCollisionBox(Entity entity) {
-    
+        
         if (entity != riddenByEntity){
             return entity.getBoundingBox();
         }else{
@@ -81,19 +81,19 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     public boolean canBePushed() {
-    
+        
         return true;
     }
     
     @Override
     public boolean canBeCollidedWith() {
-    
+        
         return !isDead;
     }
     
     @Override
     public boolean interactFirst(EntityPlayer player) {
-    
+        
         if (!worldObj.isRemote && riddenByEntity == null){
             player.mountEntity(this);
             
@@ -103,18 +103,20 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     public double getMountedYOffset() {
-    
+        
         return -0.15;
     }
     
     @Override
     public void onUpdate() {
-    
+        
         super.onUpdate();
         
         if (!worldObj.isRemote){
             if (riddenByEntity == null && worldObj.isAirBlock((int) posX, (int) posY - 1, (int) posZ)){
                 motionY = -0.3F;
+            }else{
+                motionY = 0F;
             }
         }else{
             sendInfo();
@@ -131,7 +133,7 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     private boolean lastPressedBombState;
     
     private void sendInfo() {
-    
+        
         boolean bombState = Minecraft.getMinecraft().gameSettings.keyBindAttack.pressed;
         if (bombState && !lastPressedBombState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
             if (getAmmunitionAmount() == 0){
@@ -168,32 +170,32 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     protected void readEntityFromNBT(NBTTagCompound compound) {
-    
+        
         charged = compound.getBoolean("charged");
         setAmmunitionAmount(compound.getByte("ammo"));
     }
     
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound) {
-    
+        
         compound.setBoolean("charged", charged);
         compound.setByte("ammo", (byte) getAmmunitionAmount());
     }
     
     @Override
     public void writeSpawnData(ByteArrayDataOutput data) {
-    
+        
         data.writeBoolean(charged);
     }
     
     @Override
     public void readSpawnData(ByteArrayDataInput data) {
-    
+        
         charged = data.readBoolean();
     }
     
     public void dropBomb() {
-    
+        
         if (getAmmunitionAmount() > 0){
             
             EntityBomb bomb = new EntityBomb(worldObj);
@@ -210,7 +212,7 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
-    
+        
         if (!worldObj.isRemote && !isDead){
             if (this.isEntityInvulnerable()){
                 return false;
@@ -226,7 +228,7 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     }
     
     public void forward() {
-    
+        
         float yaw = riddenByEntity.rotationYaw;
         
         if (yaw - 90 > 180){
@@ -240,65 +242,66 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
             this.setRotation(yaw - 90, rotationPitch);
         }
         
-        System.out.println(yaw);
-        
-        if (yaw >= 0 && yaw <= 45 && motionZ < 20){
-            motionZ = motionZ + 0.1F;
-        }else if (yaw >= 45 && yaw <= 135 && motionX > -20){
-            motionX = motionX - 0.1F;
-        }else if (yaw >= 135 && yaw <= 225 && motionZ > -20){
-            motionZ = motionZ - 0.1F;
-        }else if (yaw >= 225 && yaw <= 360 && motionX > 20){
-            motionX = motionX + 0.1F;
+        if(yaw >= 315 && yaw <= 0){
+            if (motionZ < 10){
+                motionZ = motionZ + 0.1F;
+            }
+        }else if(yaw >= 0 && yaw <= 45){
+            if (motionZ < 10){
+                motionZ = motionZ + 0.1F;
+            }
+        }else if(yaw >= 45 && yaw <= 135){
+            if (motionX > -10){
+                motionX = motionX - 0.1F;
+            }
+        }else if(yaw >= 135 && yaw <= 225){
+            if (motionZ > -10){
+                motionZ = motionZ - 0.1F;
+            }
+        }else if(yaw >= 225 && yaw <= 315){
+            if (motionX < 10){
+                motionX = motionX + 0.1F;
+            }
         }
-        
-        if (yaw <= -0 && yaw >= -45 && motionZ < 20){
-            motionZ = motionZ + 0.1F;
-        }else if (yaw <= -45 && yaw >= -135 && motionX > -20){
-            motionX = motionX - 0.1F;
-        }else if (yaw <= -135 && yaw >= -225 && motionZ > -20){
-            motionZ = motionZ - 0.1F;
-        }else if (yaw <= -225 && yaw >= -360 && motionX > 20){
-            motionX = motionX + 0.1F;
-        }
-        
     }
     
     public void backward() {
-    
+        
         float yaw = riddenByEntity.rotationYaw;
         
-        if (yaw >= 0 && yaw <= 45 && motionZ < 20){
-            motionZ = motionZ - 0.1F;
-        }else if (yaw >= 45 && yaw <= 135 && motionX > -20){
-            motionX = motionX + 0.1F;
-        }else if (yaw >= 135 && yaw <= 225 && motionZ > -20){
-            motionZ = motionZ + 0.1F;
-        }else if (yaw >= 225 && yaw <= 360 && motionX > 20){
-            motionX = motionX - 0.1F;
-        }
-        
-        if (yaw <= -0 && yaw >= -45 && motionZ < 20){
-            motionZ = motionZ - 0.1F;
-        }else if (yaw <= -45 && yaw >= -135 && motionX > -20){
-            motionX = motionX + 0.1F;
-        }else if (yaw <= -135 && yaw >= -225 && motionZ > -20){
-            motionZ = motionZ + 0.1F;
-        }else if (yaw <= -225 && yaw >= -360 && motionX > 20){
-            motionX = motionX - 0.1F;
+        if(yaw >= 315 && yaw <= 360){
+            if (motionZ > -10){
+                motionZ = motionZ - 0.1F;
+            }
+        }else if(yaw >= 0 && yaw <= 45){
+            if (motionZ > -10){
+                motionZ = motionZ - 0.1F;
+            }
+        }else if(yaw >= 45 && yaw <= 135){
+            if (motionX < 10){
+                motionX = motionX + 0.1F;
+            }
+        }else if(yaw >= 135 && yaw <= 225){
+            if (motionZ < 10){
+                motionZ = motionZ + 0.1F;
+            }
+        }else if(yaw >= 225 && yaw <= 315){
+            if (motionX > -10){
+                motionX = motionX - 0.1F;
+            }
         }
     }
     
     public void up() {
-    
-        if (motionZ < 20){
+        
+        if (motionY < 10){
             motionY = motionY + 0.1F;
         }
     }
     
     public void down() {
-    
-        if (motionZ > -20){
+        
+        if (motionY > -10){
             motionY = motionY - 0.1F;
         }
     }
