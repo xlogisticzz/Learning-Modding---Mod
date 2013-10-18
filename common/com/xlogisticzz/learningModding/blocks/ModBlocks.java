@@ -18,12 +18,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ModBlocks {
@@ -41,6 +37,7 @@ public class ModBlocks {
     public static BlockNumber numbers;
     public static BlockClicker clicker;
     public static BlockPoison poisonBlock;
+    public static BlockHeightParticle particleBlock;
     
     public static void init() {
     
@@ -57,6 +54,7 @@ public class ModBlocks {
         numbers = new BlockNumber(Ids.NUMBER);
         clicker = new BlockClicker(Ids.CLICKER);
         poisonBlock = new BlockPoison(Ids.POISON);
+        particleBlock = new BlockHeightParticle(Ids.HEIGHTPARTICLE);
         
     }
     
@@ -120,6 +118,10 @@ public class ModBlocks {
         // Poison
         LanguageRegistry.addName(poisonBlock, Constants.BlockNames.POISON_NAME);
         GameRegistry.registerBlock(poisonBlock, Constants.UnLocalisedNames.POISON);
+        
+        // Height Particle
+        LanguageRegistry.addName(particleBlock, Constants.BlockNames.HEIGHT_PARTICLE_NAME);
+        GameRegistry.registerBlock(particleBlock, Constants.UnLocalisedNames.HEIGHT_PARTICLE);
         
     }
     

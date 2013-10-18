@@ -16,12 +16,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class WorldGenerationHandler implements IWorldGenerator {
     
@@ -30,7 +26,7 @@ public class WorldGenerationHandler implements IWorldGenerator {
     public WorldGenerationHandler() {
     
         GameRegistry.registerWorldGenerator(this);
-        rubyGen = new WorldGenMinable(ModBlocks.rubyore.blockID, Constants.WorldGen.RUBY_WORLD_GEN_AMOUNT);
+        this.rubyGen = new WorldGenMinable(ModBlocks.rubyore.blockID, Constants.WorldGen.RUBY_WORLD_GEN_AMOUNT);
     }
     
     public void generateStandardOre(Random rand, int chunkX, int chunkZ, World world, int iterations, WorldGenerator gen, int lowestY, int highestY) {
@@ -48,7 +44,7 @@ public class WorldGenerationHandler implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
     
-        generateStandardOre(random, chunkX, chunkZ, world, Constants.WorldGen.RUBY_WORLD_GEN_ITERATIONS, rubyGen, Constants.WorldGen.RUBY_WORLD_GEN_LOWESTY, Constants.WorldGen.RUBY_WORLD_GEN_HIGHESTY);
+        generateStandardOre(random, chunkX, chunkZ, world, Constants.WorldGen.RUBY_WORLD_GEN_ITERATIONS, this.rubyGen, Constants.WorldGen.RUBY_WORLD_GEN_LOWESTY, Constants.WorldGen.RUBY_WORLD_GEN_HIGHESTY);
         
     }
     

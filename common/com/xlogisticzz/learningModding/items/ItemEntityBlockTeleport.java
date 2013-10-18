@@ -18,7 +18,6 @@ import cpw.mods.fml.relauncher.SideOnly;
  * 
  * @author xLoGisTicZz.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class ItemEntityBlockTeleport extends Item {
     
@@ -34,7 +33,7 @@ public class ItemEntityBlockTeleport extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        itemIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.ENTITY_BLOCK_TELEPORTER);
+        this.itemIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.ENTITY_BLOCK_TELEPORTER);
     }
     
     @Override

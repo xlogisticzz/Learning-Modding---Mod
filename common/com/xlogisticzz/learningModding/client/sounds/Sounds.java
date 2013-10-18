@@ -15,11 +15,11 @@ public enum Sounds {
     
     public String getName() {
     
-        return name;
+        return this.name;
     }
     
     public void play(double x, double y, double z, float volume, float pitch) {
     
-        Minecraft.getMinecraft().sndManager.playSound(SOUNDS_LOCATION + ":" + name, (float) x, (float) y, (float) z, volume, pitch);
+        Minecraft.getMinecraft().sndManager.playSound(SOUNDS_LOCATION + ":" + this.name, (float) x, (float) y, (float) z, volume, pitch);
     }
 }

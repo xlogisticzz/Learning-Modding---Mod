@@ -18,12 +18,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockSuperBomb extends Block {
@@ -41,7 +37,7 @@ public class BlockSuperBomb extends Block {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        blockIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.SUPER_BOMB);
+        this.blockIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.SUPER_BOMB);
         
     }
     

@@ -21,12 +21,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class BlockPoison extends Block {
     
@@ -44,14 +40,22 @@ public class BlockPoison extends Block {
     @SideOnly(Side.CLIENT)
     public Icon ParticleIcon;
     
+    /*
+     * (non-Javadoc)
+     * @see net.minecraft.block.Block#registerIcons(net.minecraft.client.renderer.texture.IconRegister)
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        blockIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.POISON);
-        ParticleIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Particles.POISON_TEXTURE);
+        this.blockIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.POISON);
+        this.ParticleIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":particles/" + Constants.Particles.POISON_TEXTURE);
     }
     
+    /*
+     * (non-Javadoc)
+     * @see net.minecraft.block.Block#randomDisplayTick(net.minecraft.world.World, int, int, int, java.util.Random)
+     */
     @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
@@ -71,6 +75,10 @@ public class BlockPoison extends Block {
         }
     }
     
+    /*
+     * (non-Javadoc)
+     * @see net.minecraft.block.Block#onBlockClicked(net.minecraft.world.World, int, int, int, net.minecraft.entity.player.EntityPlayer)
+     */
     @Override
     public void onBlockClicked(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer) {
     

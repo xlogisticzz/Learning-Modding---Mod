@@ -16,12 +16,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemEntityLauncher extends Item {
@@ -38,7 +34,7 @@ public class ItemEntityLauncher extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        itemIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.ENTITY_LAUNCHER);
+        this.itemIcon = par1IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.ENTITY_LAUNCHER);
     }
     
     @Override

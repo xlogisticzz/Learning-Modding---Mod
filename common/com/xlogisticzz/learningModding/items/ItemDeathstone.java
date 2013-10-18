@@ -23,12 +23,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemDeathstone extends Item {
@@ -53,17 +49,17 @@ public class ItemDeathstone extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        icons = new Icon[Constants.Icons.DEATHSTONES_ICONS.length];
+        this.icons = new Icon[Constants.Icons.DEATHSTONES_ICONS.length];
         
         for (int i = 0; i < Constants.Icons.DEATHSTONES_ICONS.length; i++){
-            icons[i] = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.DEATHSTONES_ICONS[i]);
+            this.icons[i] = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.DEATHSTONES_ICONS[i]);
         }
     }
     
     @Override
     public Icon getIconFromDamage(int par1) {
     
-        return icons[par1];
+        return this.icons[par1];
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })

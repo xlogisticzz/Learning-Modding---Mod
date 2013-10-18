@@ -20,12 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemCard extends Item {
@@ -52,10 +48,10 @@ public class ItemCard extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        icons = new Icon[Constants.Icons.CARD_ICONS.length];
+        this.icons = new Icon[Constants.Icons.CARD_ICONS.length];
         
-        for (int i = 0; i < icons.length; i++){
-            icons[i] = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.CARD_ICONS[i]);
+        for (int i = 0; i < this.icons.length; i++){
+            this.icons[i] = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.CARD_ICONS[i]);
             
         }
     }
@@ -64,7 +60,7 @@ public class ItemCard extends Item {
     @SideOnly(Side.CLIENT)
     public Icon getIconFromDamage(int damage) {
     
-        return icons[damage];
+        return this.icons[damage];
     }
     
     @SuppressWarnings({ "unchecked", "rawtypes" })

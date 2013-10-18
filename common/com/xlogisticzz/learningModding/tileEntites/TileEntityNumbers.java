@@ -8,12 +8,8 @@ import com.xlogisticzz.learningModding.lib.Ids;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class TileEntityNumbers extends TileEntity {
@@ -24,26 +20,26 @@ public class TileEntityNumbers extends TileEntity {
     @Override
     public void updateEntity() {
     
-        if (!worldObj.isRemote && ++tick == 20){
-            number = (number + 1) % Constants.Misc.NUMBER_COUNT;
-            worldObj.addBlockEvent(xCoord, yCoord, zCoord, Ids.NUMBER, 1, number);
-            tick = 0;
+        if (!this.worldObj.isRemote && ++this.tick == 20){
+            this.number = (this.number + 1) % Constants.Misc.NUMBER_COUNT;
+            this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, Ids.NUMBER, 1, this.number);
+            this.tick = 0;
         }
     }
     
     @Override
     public boolean receiveClientEvent(int id, int value) {
     
-        if (worldObj.isRemote && id == 1){
-            number = value;
-            worldObj.markBlockForRenderUpdate(xCoord, yCoord, zCoord);
+        if (this.worldObj.isRemote && id == 1){
+            this.number = value;
+            this.worldObj.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
         }
         return true;
     }
     
     public int getNumber() {
     
-        return number;
+        return this.number;
     }
     
 }

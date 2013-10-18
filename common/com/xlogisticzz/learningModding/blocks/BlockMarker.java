@@ -20,12 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockMarker extends Block {
@@ -44,11 +40,11 @@ public class BlockMarker extends Block {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        icons = new Icon[Constants.Icons.MARKERS.length];
+        this.icons = new Icon[Constants.Icons.MARKERS.length];
         
         for (int i = 0; i < Constants.Icons.MARKERS.length; i++){
             
-            icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":markers/" + Constants.Icons.MARKERS[i]);
+            this.icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":markers/" + Constants.Icons.MARKERS[i]);
         }
     }
     
@@ -56,7 +52,7 @@ public class BlockMarker extends Block {
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int metadata) {
     
-        return icons[metadata];
+        return this.icons[metadata];
         
     }
     

@@ -21,12 +21,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockMachine extends Block {
@@ -52,13 +48,13 @@ public class BlockMachine extends Block {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister IconRegister) {
     
-        topIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_TOP);
-        bottomIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_BOTTOM);
-        disableIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_DISABLED);
+        this.topIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_TOP);
+        this.bottomIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_BOTTOM);
+        this.disableIcon = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_DISABLED);
         
-        sideIcons = new Icon[Constants.Icons.MACHINE_SIDES.length];
+        this.sideIcons = new Icon[Constants.Icons.MACHINE_SIDES.length];
         for (int i = 0; i < Constants.Icons.MACHINE_SIDES.length; i++){
-            sideIcons[i] = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_SIDES[i]);
+            this.sideIcons[i] = IconRegister.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.MACHINE_SIDES[i]);
         }
         
     }
@@ -119,13 +115,13 @@ public class BlockMachine extends Block {
         switch (side) {
         
             case 0 :
-                return bottomIcon;
+                return this.bottomIcon;
                 
             case 1 :
-                return metadata % 2 == 1 ? disableIcon : topIcon;
+                return metadata % 2 == 1 ? this.disableIcon : this.topIcon;
                 
             default :
-                return sideIcons[metadata / 2];
+                return this.sideIcons[metadata / 2];
                 
         }
         
@@ -150,8 +146,7 @@ public class BlockMachine extends Block {
     }
     
     /*
-     * The item dropped is based upon its metadata. This is used to drop
-     * different types of the machine when broken
+     * The item dropped is based upon its metadata. This is used to drop different types of the machine when broken
      */
     @Override
     public int damageDropped(int metadata) {
@@ -160,8 +155,7 @@ public class BlockMachine extends Block {
     }
     
     /*
-     * Put the different types of the machine when enabled in the creative
-     * inventory
+     * Put the different types of the machine when enabled in the creative inventory
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override

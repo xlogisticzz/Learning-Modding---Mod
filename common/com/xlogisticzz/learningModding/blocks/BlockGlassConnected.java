@@ -15,12 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockGlassConnected extends Block {
@@ -33,7 +29,7 @@ public class BlockGlassConnected extends Block {
         super(par1, Material.glass);
         this.setStepSound(soundGlassFootstep);
         this.setCreativeTab(LearningModdingCreativeTab.tabLearningModding);
-        render = par2 ? 1 : 0;
+        this.render = par2 ? 1 : 0;
         this.setUnlocalizedName(Constants.UnLocalisedNames.GLASS_CONNECTED);
         this.setHardness(0.4f);
     }
@@ -53,20 +49,20 @@ public class BlockGlassConnected extends Block {
     @Override
     public int getRenderBlockPass() {
     
-        return render;
+        return this.render;
     }
     
     @Override
     public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
     
         int id = par1IBlockAccess.getBlockId(par2, par3, par4);
-        return id == blockID ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
+        return id == this.blockID ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
     }
     
     @Override
     public Icon getIcon(int par1, int par2) {
     
-        return icons[0];
+        return this.icons[0];
         
     }
     
@@ -74,16 +70,16 @@ public class BlockGlassConnected extends Block {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        icons = new Icon[Constants.Icons.GLASS_CONNECTED.length];
+        this.icons = new Icon[Constants.Icons.GLASS_CONNECTED.length];
         
         for (int i = 0; i < Constants.Icons.GLASS_CONNECTED.length; i++){
-            icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":glass/png/" + Constants.Icons.GLASS_CONNECTED[i]);
+            this.icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":glass/png/" + Constants.Icons.GLASS_CONNECTED[i]);
         }
     }
     
     public boolean shouldConnect(int par1) {
     
-        return par1 == blockID;
+        return par1 == this.blockID;
     }
     
     // Args: iBlockAccess, x, y, z, side(0 == bottom, 1 == top , 2 == north , 3
@@ -188,37 +184,37 @@ public class BlockGlassConnected extends Block {
         
         }
         if (isOpenDown && isOpenUp && isOpenLeft && isOpenRight){
-            return icons[15];
+            return this.icons[15];
         }else if (isOpenUp && isOpenLeft && isOpenRight){
-            return icons[14];
+            return this.icons[14];
         }else if (isOpenUp && isOpenDown && isOpenRight){
-            return icons[13];
+            return this.icons[13];
         }else if (isOpenUp && isOpenDown && isOpenLeft){
-            return icons[12];
+            return this.icons[12];
         }else if (isOpenDown && isOpenLeft && isOpenRight){
-            return icons[11];
+            return this.icons[11];
         }else if (isOpenUp && isOpenRight){
-            return icons[10];
+            return this.icons[10];
         }else if (isOpenUp && isOpenLeft){
-            return icons[9];
+            return this.icons[9];
         }else if (isOpenUp && isOpenDown){
-            return icons[8];
+            return this.icons[8];
         }else if (isOpenLeft && isOpenRight){
-            return icons[7];
+            return this.icons[7];
         }else if (isOpenDown && isOpenRight){
-            return icons[6];
+            return this.icons[6];
         }else if (isOpenDown && isOpenLeft){
-            return icons[5];
+            return this.icons[5];
         }else if (isOpenUp){
-            return icons[4];
+            return this.icons[4];
         }else if (isOpenRight){
-            return icons[3];
+            return this.icons[3];
         }else if (isOpenLeft){
-            return icons[2];
+            return this.icons[2];
         }else if (isOpenDown){
-            return icons[1];
+            return this.icons[1];
         }else{
-            return icons[0];
+            return this.icons[0];
         }
     }
     

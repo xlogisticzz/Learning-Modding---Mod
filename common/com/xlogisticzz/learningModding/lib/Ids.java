@@ -3,12 +3,8 @@ package com.xlogisticzz.learningModding.lib;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class Ids {
@@ -29,7 +25,7 @@ public class Ids {
     public static int CLICKER_DEFAULT = 511;
     public static int ENTITY_BLOCK_TELEPORTER_DEFAULT = 512;
     public static int POISON_DEFAULT = 513;
-    
+    public static int HEIGHTPARTICLE_DEFAULT = 514;
     // Current
     public static int TITANIUMORE;
     public static int RUBYORE;
@@ -45,6 +41,7 @@ public class Ids {
     public static int CLICKER;
     public static int ENTITY_BLOCK_TELEPORTER;
     public static int POISON;
+    public static int HEIGHTPARTICLE;
     
     // Item IDs
     // Defaults

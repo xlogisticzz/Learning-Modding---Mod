@@ -11,20 +11,16 @@ import com.xlogisticzz.learningModding.blocks.ModBlocks;
  * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-
-public class EntiyPosionFX extends EntityFX {
+public class EntiyHeightFX extends EntityFX {
     
-    public EntiyPosionFX(World par1World, double par2, double par4, double par6, double par8, double par10, double par12) {
+    public EntiyHeightFX(World world, double x, double y, double z, double motionX, double motionY, double motionZ) {
     
-        super(par1World, par2, par4, par6, par8, par10, par12);
+        super(world, x, y, z, motionX, motionY, motionZ);
         
-        this.setParticleIcon(ModBlocks.poisonBlock.ParticleIcon);
+        this.setParticleIcon(ModBlocks.particleBlock.ParticleIcon);
         
-        this.particleScale = this.rand.nextFloat();
-        this.particleAlpha = this.rand.nextFloat();
-        this.particleBlue = this.rand.nextFloat() * 0.5F;
-        this.particleRed = this.rand.nextFloat() * 0.5F;
-        this.particleGreen = this.rand.nextFloat() * 0.5F + 0.5F;
+        this.motionY = motionY;
+        setColor();
         
     }
     
@@ -37,7 +33,15 @@ public class EntiyPosionFX extends EntityFX {
     
         super.onUpdate();
         
-        this.particleScale = (1 - (float) this.particleAge / this.particleMaxAge) * 2;
+        setColor();
+        
+    }
+    
+    private void setColor() {
+    
+        this.particleRed = (float) Math.min(1, this.posY / 86);
+        this.particleGreen = (float) Math.max(0, Math.min(1, (this.posY - 86) / 86));
+        this.particleBlue = (float) Math.max(0, Math.min(1, (this.posY - 172) / 86));
         
     }
     
@@ -50,5 +54,4 @@ public class EntiyPosionFX extends EntityFX {
     
         return 1;
     }
-    
 }

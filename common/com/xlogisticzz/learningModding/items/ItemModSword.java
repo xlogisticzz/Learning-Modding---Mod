@@ -13,12 +13,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemModSword extends ItemSword {
@@ -32,14 +28,14 @@ public class ItemModSword extends ItemSword {
         this.setMaxDamage(par3);
         this.setMaxStackSize(1);
         this.setUnlocalizedName(par4);
-        name = par5;
+        this.name = par5;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
     
-        itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
+        this.itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + this.name);
         
     }
     

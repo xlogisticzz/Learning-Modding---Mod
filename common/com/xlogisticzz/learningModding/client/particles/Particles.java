@@ -7,15 +7,11 @@ import net.minecraft.world.World;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public enum Particles {
-    POISON;
+    POISON, HEIGHT;
     
     public void spawnParticle(World world, double x, double y, double z, double motionX, double motionY, double motionZ) {
     
@@ -42,6 +38,11 @@ public enum Particles {
             switch (this) {
                 case POISON :
                     particleEffect = new EntiyPosionFX(world, x, y, z, motionX, motionY, motionZ);
+                    break;
+                case HEIGHT :
+                    particleEffect = new EntiyHeightFX(world, x, y, z, motionX, motionY, motionZ);
+                    break;
+                default :
                     break;
             }
             

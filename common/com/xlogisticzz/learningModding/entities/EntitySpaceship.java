@@ -18,12 +18,8 @@ import cpw.mods.fml.common.registry.IEntityAdditionalSpawnData;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnData {
@@ -31,48 +27,48 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     private boolean charged;
     
     public EntitySpaceship(World world) {
-        
+    
         super(world);
         this.setSize(1.5F, 0.6F);
     }
     
     @Override
     protected void entityInit() {
-        
-        dataWatcher.addObject(15, 10);
+    
+        this.dataWatcher.addObject(15, 10);
     }
     
     public int getAmmunitionAmount() {
-        
-        return dataWatcher.getWatchableObjectInt(15);
+    
+        return this.dataWatcher.getWatchableObjectInt(15);
         
     }
     
     public void setAmmunitionAmount(int ammo) {
-        
-        dataWatcher.updateObject(15, ammo);
+    
+        this.dataWatcher.updateObject(15, ammo);
     }
     
     public boolean isCharged() {
-        
-        return charged;
+    
+        return this.charged;
     }
     
     public void setCharged(boolean charge) {
-        
-        charged = charge;
+    
+        this.charged = charge;
     }
     
     @Override
     public AxisAlignedBB getBoundingBox() {
-        
-        return boundingBox;
+    
+        return this.boundingBox;
     }
     
     @Override
     public AxisAlignedBB getCollisionBox(Entity entity) {
-        
-        if (entity != riddenByEntity){
+    
+        if (entity != this.riddenByEntity){
             return entity.getBoundingBox();
         }else{
             return null;
@@ -81,20 +77,20 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     public boolean canBePushed() {
-        
+    
         return true;
     }
     
     @Override
     public boolean canBeCollidedWith() {
-        
-        return !isDead;
+    
+        return !this.isDead;
     }
     
     @Override
     public boolean interactFirst(EntityPlayer player) {
-        
-        if (!worldObj.isRemote && riddenByEntity == null){
+    
+        if (!this.worldObj.isRemote && this.riddenByEntity == null){
             player.mountEntity(this);
             
         }
@@ -103,66 +99,66 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     public double getMountedYOffset() {
-        
+    
         return -0.15;
     }
     
     @Override
     public void onUpdate() {
-        
+    
         super.onUpdate();
         
-        if (!worldObj.isRemote){
-            if (riddenByEntity == null && worldObj.isAirBlock((int) posX, (int) posY - 1, (int) posZ)){
-                motionY = -0.3F;
+        if (!this.worldObj.isRemote){
+            if (this.riddenByEntity == null && this.worldObj.isAirBlock((int) this.posX, (int) this.posY - 1, (int) this.posZ)){
+                this.motionY = -0.3F;
             }else{
-                motionY = 0F;
+                this.motionY = 0F;
             }
         }else{
             sendInfo();
         }
         
-        motionX = motionX / 1.1;
-        motionY = motionY / 1.1;
-        motionZ = motionZ / 1.1;
+        this.motionX = this.motionX / 1.1;
+        this.motionY = this.motionY / 1.1;
+        this.motionZ = this.motionZ / 1.1;
         
-        this.setPosition(posX + motionX, posY + motionY, posZ + motionZ);
+        this.setPosition(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
         
     }
     
     private boolean lastPressedBombState;
     
     private void sendInfo() {
-        
+    
         boolean bombState = Minecraft.getMinecraft().gameSettings.keyBindAttack.pressed;
-        if (bombState && !lastPressedBombState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+        if (bombState && !this.lastPressedBombState && this.charged && this.riddenByEntity == Minecraft.getMinecraft().thePlayer){
             if (getAmmunitionAmount() == 0){
                 Minecraft.getMinecraft().thePlayer.addChatMessage("You don't have enough ammo left");
-                Sounds.OUT_OF_AMMO.play(posX, posY, posZ, 1, 0);
+                Sounds.OUT_OF_AMMO.play(this.posX, this.posY, this.posZ, 1, 0);
             }else{
                 PacketHandler.sendShipBombPacket(this);
             }
         }
-        lastPressedBombState = bombState;
+        this.lastPressedBombState = bombState;
         
         boolean forwardState = Minecraft.getMinecraft().gameSettings.keyBindForward.pressed;
-        if (forwardState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+        if (forwardState && this.charged && this.riddenByEntity == Minecraft.getMinecraft().thePlayer){
             PacketHandler.sendShipForwardPacket(this);
         }
         
         boolean backwardState = Minecraft.getMinecraft().gameSettings.keyBindBack.pressed;
-        if (backwardState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+        if (backwardState && this.charged && this.riddenByEntity == Minecraft.getMinecraft().thePlayer){
             PacketHandler.sendShipBackwardPacket(this);
             
         }
         
         boolean UpState = Minecraft.getMinecraft().gameSettings.keyBindJump.pressed;
-        if (UpState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+        if (UpState && this.charged && this.riddenByEntity == Minecraft.getMinecraft().thePlayer){
             PacketHandler.sendShipUpPacket(this);
         }
         
         boolean DownState = Minecraft.getMinecraft().gameSettings.keyBindDrop.pressed;
-        if (DownState && charged && riddenByEntity == Minecraft.getMinecraft().thePlayer){
+        if (DownState && this.charged && this.riddenByEntity == Minecraft.getMinecraft().thePlayer){
             PacketHandler.sendShipDownPacket(this);
         }
         
@@ -170,50 +166,50 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     
     @Override
     protected void readEntityFromNBT(NBTTagCompound compound) {
-        
-        charged = compound.getBoolean("charged");
+    
+        this.charged = compound.getBoolean("charged");
         setAmmunitionAmount(compound.getByte("ammo"));
     }
     
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound) {
-        
-        compound.setBoolean("charged", charged);
+    
+        compound.setBoolean("charged", this.charged);
         compound.setByte("ammo", (byte) getAmmunitionAmount());
     }
     
     @Override
     public void writeSpawnData(ByteArrayDataOutput data) {
-        
-        data.writeBoolean(charged);
+    
+        data.writeBoolean(this.charged);
     }
     
     @Override
     public void readSpawnData(ByteArrayDataInput data) {
-        
-        charged = data.readBoolean();
+    
+        this.charged = data.readBoolean();
     }
     
     public void dropBomb() {
-        
+    
         if (getAmmunitionAmount() > 0){
             
-            EntityBomb bomb = new EntityBomb(worldObj);
+            EntityBomb bomb = new EntityBomb(this.worldObj);
             
-            bomb.posX = posX;
-            bomb.posY = posY;
-            bomb.posZ = posZ;
+            bomb.posX = this.posX;
+            bomb.posY = this.posY;
+            bomb.posZ = this.posZ;
             
-            worldObj.spawnEntityInWorld(bomb);
+            this.worldObj.spawnEntityInWorld(bomb);
             setAmmunitionAmount(getAmmunitionAmount() - 1);
-            Sounds.BOMB_DROP.play(posX, posY, posZ, 1, 0);
+            Sounds.BOMB_DROP.play(this.posX, this.posY, this.posZ, 1, 0);
         }
     }
     
     @Override
     public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
-        
-        if (!worldObj.isRemote && !isDead){
+    
+        if (!this.worldObj.isRemote && !this.isDead){
             if (this.isEntityInvulnerable()){
                 return false;
             }else{
@@ -228,81 +224,81 @@ public class EntitySpaceship extends Entity implements IEntityAdditionalSpawnDat
     }
     
     public void forward() {
-        
-        float yaw = riddenByEntity.rotationYaw;
+    
+        float yaw = this.riddenByEntity.rotationYaw;
         
         if (yaw - 90 > 180){
             int num = (int) (yaw - 90 - 180);
             
             int newnum = -180 + num;
             
-            this.setRotation(newnum, rotationPitch);
+            this.setRotation(newnum, this.rotationPitch);
             
         }else{
-            this.setRotation(yaw - 90, rotationPitch);
+            this.setRotation(yaw - 90, this.rotationPitch);
         }
         
-        if(yaw >= 315 && yaw <= 0){
-            if (motionZ < 10){
-                motionZ = motionZ + 0.1F;
+        if (yaw >= 315 && yaw <= 0){
+            if (this.motionZ < 10){
+                this.motionZ = this.motionZ + 0.1F;
             }
-        }else if(yaw >= 0 && yaw <= 45){
-            if (motionZ < 10){
-                motionZ = motionZ + 0.1F;
+        }else if (yaw >= 0 && yaw <= 45){
+            if (this.motionZ < 10){
+                this.motionZ = this.motionZ + 0.1F;
             }
-        }else if(yaw >= 45 && yaw <= 135){
-            if (motionX > -10){
-                motionX = motionX - 0.1F;
+        }else if (yaw >= 45 && yaw <= 135){
+            if (this.motionX > -10){
+                this.motionX = this.motionX - 0.1F;
             }
-        }else if(yaw >= 135 && yaw <= 225){
-            if (motionZ > -10){
-                motionZ = motionZ - 0.1F;
+        }else if (yaw >= 135 && yaw <= 225){
+            if (this.motionZ > -10){
+                this.motionZ = this.motionZ - 0.1F;
             }
-        }else if(yaw >= 225 && yaw <= 315){
-            if (motionX < 10){
-                motionX = motionX + 0.1F;
+        }else if (yaw >= 225 && yaw <= 315){
+            if (this.motionX < 10){
+                this.motionX = this.motionX + 0.1F;
             }
         }
     }
     
     public void backward() {
+    
+        float yaw = this.riddenByEntity.rotationYaw;
         
-        float yaw = riddenByEntity.rotationYaw;
-        
-        if(yaw >= 315 && yaw <= 360){
-            if (motionZ > -10){
-                motionZ = motionZ - 0.1F;
+        if (yaw >= 315 && yaw <= 360){
+            if (this.motionZ > -10){
+                this.motionZ = this.motionZ - 0.1F;
             }
-        }else if(yaw >= 0 && yaw <= 45){
-            if (motionZ > -10){
-                motionZ = motionZ - 0.1F;
+        }else if (yaw >= 0 && yaw <= 45){
+            if (this.motionZ > -10){
+                this.motionZ = this.motionZ - 0.1F;
             }
-        }else if(yaw >= 45 && yaw <= 135){
-            if (motionX < 10){
-                motionX = motionX + 0.1F;
+        }else if (yaw >= 45 && yaw <= 135){
+            if (this.motionX < 10){
+                this.motionX = this.motionX + 0.1F;
             }
-        }else if(yaw >= 135 && yaw <= 225){
-            if (motionZ < 10){
-                motionZ = motionZ + 0.1F;
+        }else if (yaw >= 135 && yaw <= 225){
+            if (this.motionZ < 10){
+                this.motionZ = this.motionZ + 0.1F;
             }
-        }else if(yaw >= 225 && yaw <= 315){
-            if (motionX > -10){
-                motionX = motionX - 0.1F;
+        }else if (yaw >= 225 && yaw <= 315){
+            if (this.motionX > -10){
+                this.motionX = this.motionX - 0.1F;
             }
         }
     }
     
     public void up() {
-        
-        if (motionY < 10){
-            motionY = motionY + 0.1F;
+    
+        if (this.motionY < 10){
+            this.motionY = this.motionY + 0.1F;
         }
     }
     
     public void down() {
-        
-        if (motionY > -10){
-            motionY = motionY - 0.1F;
+    
+        if (this.motionY > -10){
+            this.motionY = this.motionY - 0.1F;
         }
     }
 }

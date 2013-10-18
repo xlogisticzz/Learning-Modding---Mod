@@ -3,12 +3,8 @@ package com.xlogisticzz.learningModding.lib;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class Constants {
@@ -44,6 +40,7 @@ public class Constants {
         public static final String NUMBER_NAME = "Number Block";
         public static final String CLICKER_NAME = "Clicker Block";
         public static final String POISON_NAME = "Block Of Poison";
+        public static final String HEIGHT_PARTICLE_NAME = "Particle Emmiter";
         
     }
     
@@ -110,6 +107,7 @@ public class Constants {
         public static final String CLICKER = "clicker";
         public static final String CLICKER_LINKED = "clicker_linked";
         public static final String POISON = "poison_block";
+        public static final String HEIGHT_PARTICLE = "height_particle_block";
         
     }
     
@@ -150,12 +148,14 @@ public class Constants {
         public static final String NUMBER = "number";
         public static final String CLICKER = "clicker";
         public static final String POISON = "poisonBlock";
+        public static final String HEIGHT_PARTICLE = "heightParticleBlock";
         
     }
     
     public class Particles {
         
         public static final String POISON_TEXTURE = "poison_nocolor";
+        public static final String HEIGHT_TEXTURE = "height_particle";
         
     }
     

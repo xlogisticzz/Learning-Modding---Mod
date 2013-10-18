@@ -6,12 +6,8 @@ import net.minecraft.tileentity.TileEntity;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class TileEntityClicker extends TileEntity {
@@ -21,64 +17,64 @@ public class TileEntityClicker extends TileEntity {
     public void attackButton(boolean isAttackButton) {
     
         if (isAttackButton){
-            clickOffset = clickOffset - 1;
+            this.clickOffset = this.clickOffset - 1;
         }else{
-            clickOffset = clickOffset + 1;
+            this.clickOffset = this.clickOffset + 1;
         }
-        if (clickOffset >= 15){
-            worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 15, 3);
-        }else if (clickOffset <= -7){
-            worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 0, 3);
+        if (this.clickOffset >= 15){
+            this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 15, 3);
+        }else if (this.clickOffset <= -7){
+            this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 0, 3);
         }
         
-        switch (clickOffset) {
+        switch (this.clickOffset) {
             case -7 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 0, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 0, 3);
                 break;
             case -6 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 1, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 1, 3);
                 break;
             case -5 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 2, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 2, 3);
                 break;
             case -4 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 3, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 3, 3);
                 break;
             case -3 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 4, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 4, 3);
                 break;
             case -2 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 5, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 5, 3);
                 break;
             case -1 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 6, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 6, 3);
                 break;
             case 0 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 7, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 7, 3);
                 break;
             case 1 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 8, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 8, 3);
                 break;
             case 2 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 9, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 9, 3);
                 break;
             case 3 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 10, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 10, 3);
                 break;
             case 4 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 11, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 11, 3);
                 break;
             case 5 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 12, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 12, 3);
                 break;
             case 6 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 13, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 13, 3);
                 break;
             case 7 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 14, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 14, 3);
                 break;
             case 8 :
-                worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 15, 3);
+                this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 15, 3);
                 break;
         
         }
@@ -90,7 +86,7 @@ public class TileEntityClicker extends TileEntity {
     
         super.writeToNBT(compound);
         
-        compound.setInteger("ClickOffset", clickOffset);
+        compound.setInteger("ClickOffset", this.clickOffset);
     }
     
     @Override
@@ -98,7 +94,7 @@ public class TileEntityClicker extends TileEntity {
     
         super.readFromNBT(compound);
         
-        clickOffset = compound.getInteger("ClickOffset");
+        this.clickOffset = compound.getInteger("ClickOffset");
         
     }
     

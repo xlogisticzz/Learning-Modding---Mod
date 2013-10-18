@@ -13,12 +13,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockModOreStorage extends BlockOreStorage {
@@ -33,14 +29,14 @@ public class BlockModOreStorage extends BlockOreStorage {
         this.setHardness(par4);
         this.setResistance(par5);
         this.setUnlocalizedName(par6);
-        name = par7;
+        this.name = par7;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
     
-        blockIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
+        this.blockIcon = reg.registerIcon(Constants.Mod.MODID + ":" + this.name);
         
     }
     

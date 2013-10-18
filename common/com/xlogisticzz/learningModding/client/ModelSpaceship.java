@@ -11,13 +11,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz / this model is part of VSWE Entities Lecture and all
- *         rights belong to him.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz / this model is part of VSWE Entities Lecture and all rights belong to him. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 @SideOnly(Side.CLIENT)
@@ -27,11 +22,11 @@ public class ModelSpaceship extends ModelBase {
     
     public ModelSpaceship() {
     
-        textureWidth = 128;
-        textureHeight = 64;
+        this.textureWidth = 128;
+        this.textureHeight = 64;
         
         ModelRenderer bot = new ModelRenderer(this, 0, 0);
-        parts.add(bot);
+        this.parts.add(bot);
         
         bot.addBox(-14, -8, -2, 28, 16, 4, 0.0F);
         
@@ -40,7 +35,7 @@ public class ModelSpaceship extends ModelBase {
         bot.rotateAngleX = (float) Math.PI / 2F;
         
         ModelRenderer side1 = new ModelRenderer(this, 0, 20);
-        parts.add(side1);
+        this.parts.add(side1);
         
         side1.addBox(-14, -1.5F, -2, 28, 3, 4, 0.0F);
         
@@ -49,7 +44,7 @@ public class ModelSpaceship extends ModelBase {
         side1.rotateAngleX = (float) Math.PI / 2F;
         
         ModelRenderer side2 = new ModelRenderer(this, 0, 20);
-        parts.add(side2);
+        this.parts.add(side2);
         
         side2.addBox(-14, -1.5F, -2, 28, 3, 4, 0.0F);
         
@@ -58,7 +53,7 @@ public class ModelSpaceship extends ModelBase {
         side2.rotateAngleX = (float) Math.PI / 2F;
         
         ModelRenderer back = new ModelRenderer(this, 0, 27);
-        parts.add(back);
+        this.parts.add(back);
         
         back.addBox(-10.5F, -1.5F, -2, 21, 3, 4, 0.0F);
         
@@ -68,21 +63,21 @@ public class ModelSpaceship extends ModelBase {
         back.rotateAngleY = (float) Math.PI / 2F;
         
         ModelRenderer wing1 = new ModelRenderer(this, 0, 34);
-        parts.add(wing1);
+        this.parts.add(wing1);
         
         wing1.addBox(-13, -0.5F, -4, 26, 1, 8, 0.0F);
         
         wing1.setRotationPoint(0, -1, -14);
         
         ModelRenderer wing2 = new ModelRenderer(this, 0, 34);
-        parts.add(wing2);
+        this.parts.add(wing2);
         
         wing2.addBox(-13, -0.5F, -4, 26, 1, 8, 0.0F);
         
         wing2.setRotationPoint(0, -1, 14);
         
         ModelRenderer front = new ModelRenderer(this, 0, 43);
-        parts.add(front);
+        this.parts.add(front);
         
         front.addBox(-7.5F, -2.5F, -3, 15, 5, 6, 0.0F);
         
@@ -92,7 +87,7 @@ public class ModelSpaceship extends ModelBase {
         front.rotateAngleY = (float) Math.PI / 2F;
         
         ModelRenderer window = new ModelRenderer(this, 0, 54);
-        parts.add(window);
+        this.parts.add(window);
         
         window.addBox(-7.5F, -0.5F, -2, 15, 1, 4, 0.0F);
         
@@ -106,7 +101,7 @@ public class ModelSpaceship extends ModelBase {
     @Override
     public void render(Entity entity, float val1, float val2, float val3, float val4, float val5, float mult) {
     
-        for (ModelRenderer part : parts){
+        for (ModelRenderer part : this.parts){
             part.render(mult);
         }
     }

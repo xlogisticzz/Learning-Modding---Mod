@@ -18,7 +18,6 @@ import cpw.mods.fml.relauncher.SideOnly;
  * 
  * @author xLoGisTicZz.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class ItemPigConverter extends Item {
     
@@ -35,7 +34,7 @@ public class ItemPigConverter extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        itemIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.PIG_CONVERTER);
+        this.itemIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.PIG_CONVERTER);
     }
     
     @Override

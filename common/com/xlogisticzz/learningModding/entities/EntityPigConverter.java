@@ -12,7 +12,6 @@ import net.minecraft.world.World;
  * 
  * @author xLoGisTicZz.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class EntityPigConverter extends EntityThrowable {
     
@@ -37,15 +36,15 @@ public class EntityPigConverter extends EntityThrowable {
     @Override
     protected void onImpact(MovingObjectPosition position) {
     
-        if (!worldObj.isRemote){
+        if (!this.worldObj.isRemote){
             if (position.entityHit != null && position.entityHit instanceof EntityPig){
                 EntityPig pig = (EntityPig) position.entityHit;
-                EntityPigZombie zombie = new EntityPigZombie(worldObj);
+                EntityPigZombie zombie = new EntityPigZombie(this.worldObj);
                 
                 zombie.setLocationAndAngles(pig.posX, pig.posY, pig.posZ, pig.rotationYaw, pig.rotationPitch);
                 
                 pig.setDead();
-                worldObj.spawnEntityInWorld(zombie);
+                this.worldObj.spawnEntityInWorld(zombie);
                 
             }
             this.setDead();

@@ -15,13 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz / this class is from VSWE's Entities lecture and this
- *         code belongs to him.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz / this class is from VSWE's Entities lecture and this code belongs to him. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 @SideOnly(Side.CLIENT)
@@ -34,8 +29,8 @@ public class RenderSpaceship extends Render {
     
     public RenderSpaceship() {
     
-        shadowSize = 0.5F;
-        model = new ModelSpaceship();
+        this.shadowSize = 0.5F;
+        this.model = new ModelSpaceship();
     }
     
     public void renderSpaceship(EntitySpaceship spaceship, double x, double y, double z, float yaw, float partialTickTime) {
@@ -47,7 +42,7 @@ public class RenderSpaceship extends Render {
         
         bindEntityTexture(spaceship);
         
-        model.render(spaceship, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+        this.model.render(spaceship, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
         
         GL11.glPopMatrix();
     }

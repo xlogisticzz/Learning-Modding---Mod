@@ -20,12 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockClicker extends BlockContainer {
@@ -83,8 +79,8 @@ public class BlockClicker extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        clicker = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.CLICKER);
-        clickerLinked = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.CLICKER_LINKED);
+        this.clicker = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.CLICKER);
+        this.clickerLinked = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.CLICKER_LINKED);
         
     }
     
@@ -92,7 +88,7 @@ public class BlockClicker extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int metadata) {
     
-        return metadata == 7 ? clickerLinked : clicker;
+        return metadata == 7 ? this.clickerLinked : this.clicker;
     }
     
     @Override

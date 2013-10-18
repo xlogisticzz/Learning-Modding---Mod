@@ -7,12 +7,8 @@ import net.minecraft.world.World;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class EntityLaunched extends Entity {
     
@@ -33,21 +29,21 @@ public class EntityLaunched extends Entity {
     @Override
     protected void readEntityFromNBT(NBTTagCompound compound) {
     
-        startPosY = compound.getInteger("StartPosY");
-        goingUp = compound.getBoolean("GoingUp");
+        this.startPosY = compound.getInteger("StartPosY");
+        this.goingUp = compound.getBoolean("GoingUp");
     }
     
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound) {
     
-        compound.setInteger("StartPosY", startPosY);
-        compound.setBoolean("GoingUp", goingUp);
+        compound.setInteger("StartPosY", this.startPosY);
+        compound.setBoolean("GoingUp", this.goingUp);
     }
     
     public void setlaunchPos(double x, double y, double z) {
     
-        startPosY = (int) y;
-        goingUp = true;
+        this.startPosY = (int) y;
+        this.goingUp = true;
         
         this.setPosition(x, y, z);
     }
@@ -57,21 +53,21 @@ public class EntityLaunched extends Entity {
     
         super.onUpdate();
         
-        if (!worldObj.isRemote){
-            if (goingUp){
-                motionY = 0.4F;
-                if (posY > startPosY + 30){
-                    goingUp = false;
+        if (!this.worldObj.isRemote){
+            if (this.goingUp){
+                this.motionY = 0.4F;
+                if (this.posY > this.startPosY + 30){
+                    this.goingUp = false;
                 }
             }else{
-                motionY = -1.8F;
-                if (posY < startPosY){
-                    worldObj.createExplosion(this, posX, posY, posZ, 6, true);
+                this.motionY = -1.8F;
+                if (this.posY < this.startPosY){
+                    this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 6, true);
                     this.setDead();
                 }
             }
             
         }
-        setPosition(posX + motionX, posY + motionY, posZ + motionZ);
+        setPosition(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
     }
 }

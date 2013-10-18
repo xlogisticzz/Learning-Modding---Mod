@@ -19,12 +19,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemRubyWand extends Item {
@@ -66,8 +62,8 @@ public class ItemRubyWand extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        itemIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.RUBY_WAND);
-        chargedIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.RUBY_WAND_CHARGED);
+        this.itemIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.RUBY_WAND);
+        this.chargedIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.RUBY_WAND_CHARGED);
     }
     
     @SuppressWarnings({ "unchecked", "rawtypes" })
@@ -100,9 +96,9 @@ public class ItemRubyWand extends Item {
     public Icon getIconFromDamage(int dmg) {
     
         if (isCharged(dmg)){
-            return chargedIcon;
+            return this.chargedIcon;
         }else{
-            return itemIcon;
+            return this.itemIcon;
         }
     }
     

@@ -13,7 +13,6 @@ import net.minecraft.world.World;
  * 
  * @author xLoGisTicZz.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class EntityBlockEntityTeleport extends EntityThrowable {
     
@@ -42,20 +41,20 @@ public class EntityBlockEntityTeleport extends EntityThrowable {
     @Override
     protected void onImpact(MovingObjectPosition position) {
     
-        if (!worldObj.isRemote){
+        if (!this.worldObj.isRemote){
             if (position.entityHit != null && position.typeOfHit == EnumMovingObjectType.ENTITY){
                 Entity entity = position.entityHit;
                 
-                entity.setPosition(launchX, launchY + 1, launchZ);
+                entity.setPosition(this.launchX, this.launchY + 1, this.launchZ);
             }else{
                 int hitX = position.blockX;
                 int hitY = position.blockY;
                 int hitZ = position.blockZ;
                 
-                int hitBlock = worldObj.getBlockId(hitX, hitY, hitZ);
+                int hitBlock = this.worldObj.getBlockId(hitX, hitY, hitZ);
                 if (!(Block.blocksList[hitBlock] == Block.bedrock)){
-                    worldObj.setBlock(hitX, hitY, hitZ, 0);
-                    Block.blocksList[hitBlock].dropBlockAsItem(worldObj, launchX, launchY + 1, launchZ, worldObj.getBlockMetadata(hitX, hitY, hitZ), 0);
+                    this.worldObj.setBlock(hitX, hitY, hitZ, 0);
+                    Block.blocksList[hitBlock].dropBlockAsItem(this.worldObj, this.launchX, this.launchY + 1, this.launchZ, this.worldObj.getBlockMetadata(hitX, hitY, hitZ), 0);
                 }
             }
             this.setDead();
@@ -64,8 +63,8 @@ public class EntityBlockEntityTeleport extends EntityThrowable {
     
     public void setLaunchPos(double posX, double posY, double posZ) {
     
-        launchX = (int) posX;
-        launchY = (int) posY;
-        launchZ = (int) posZ;
+        this.launchX = (int) posX;
+        this.launchY = (int) posY;
+        this.launchZ = (int) posZ;
     }
 }

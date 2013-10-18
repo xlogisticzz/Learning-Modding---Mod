@@ -13,12 +13,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemModPickaxe extends ItemPickaxe {
@@ -28,12 +24,12 @@ public class ItemModPickaxe extends ItemPickaxe {
     public ItemModPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial, float par3, float par4, CreativeTabs par5, String par6, String par7, int par8) {
     
         super(par1, par2EnumToolMaterial);
-        damageVsEntity = par3;
-        efficiencyOnProperMaterial = par4;
+        this.damageVsEntity = par3;
+        this.efficiencyOnProperMaterial = par4;
         this.setCreativeTab(par5);
         this.setMaxStackSize(1);
         this.setUnlocalizedName(par6);
-        name = par7;
+        this.name = par7;
         this.setMaxDamage(par8);
     }
     
@@ -41,7 +37,7 @@ public class ItemModPickaxe extends ItemPickaxe {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
     
-        itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + name);
+        this.itemIcon = reg.registerIcon(Constants.Mod.MODID + ":" + this.name);
         
     }
     

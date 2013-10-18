@@ -15,12 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class ItemModArmor extends ItemArmor {
@@ -46,23 +42,23 @@ public class ItemModArmor extends ItemArmor {
         switch (par4) {
             case 0 :
                 this.setUnlocalizedName(type + "Helmet");
-                texturePath += type + "_layer_1.png";
-                iconPath += type + "_helmet";
+                this.texturePath += type + "_layer_1.png";
+                this.iconPath += type + "_helmet";
                 break;
             case 1 :
                 this.setUnlocalizedName(type + "Chest");
-                texturePath += type + "_layer_1.png";
-                iconPath += type + "_chestplate";
+                this.texturePath += type + "_layer_1.png";
+                this.iconPath += type + "_chestplate";
                 break;
             case 2 :
                 this.setUnlocalizedName(type + "Leggings");
-                texturePath += type + "_layer_2.png";
-                iconPath += type + "_leggings";
+                this.texturePath += type + "_layer_2.png";
+                this.iconPath += type + "_leggings";
                 break;
             case 3 :
                 this.setUnlocalizedName(type + "Boots");
-                texturePath += type + "_layer_1.png";
-                iconPath += type + "_boots";
+                this.texturePath += type + "_layer_1.png";
+                this.iconPath += type + "_boots";
                 break;
         }
     }
@@ -70,13 +66,13 @@ public class ItemModArmor extends ItemArmor {
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
     
-        return texturePath;
+        return this.texturePath;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister reg) {
     
-        itemIcon = reg.registerIcon(iconPath);
+        this.itemIcon = reg.registerIcon(this.iconPath);
     }
 }

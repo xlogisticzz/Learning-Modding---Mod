@@ -10,12 +10,8 @@ import com.xlogisticzz.learningModding.tileEntites.TileEntityBomb;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class EntityBomb extends Entity {
@@ -24,7 +20,7 @@ public class EntityBomb extends Entity {
     
         super(world);
         
-        motionY = -0.6;
+        this.motionY = -0.6;
     }
     
     @Override
@@ -47,16 +43,16 @@ public class EntityBomb extends Entity {
     
         super.onUpdate();
         
-        if (!worldObj.isRemote){
-            if (worldObj.isAirBlock((int) posX, (int) posY, (int) posZ) && !worldObj.isAirBlock((int) posX, (int) posY - 1, (int) posZ)){
-                worldObj.setBlock((int) posX, (int) posY, (int) posZ, ModBlocks.bomb.blockID);
-                TileEntityBomb tile = (TileEntityBomb) worldObj.getBlockTileEntity((int) posX, (int) posY, (int) posZ);
+        if (!this.worldObj.isRemote){
+            if (this.worldObj.isAirBlock((int) this.posX, (int) this.posY, (int) this.posZ) && !this.worldObj.isAirBlock((int) this.posX, (int) this.posY - 1, (int) this.posZ)){
+                this.worldObj.setBlock((int) this.posX, (int) this.posY, (int) this.posZ, ModBlocks.bomb.blockID);
+                TileEntityBomb tile = (TileEntityBomb) this.worldObj.getBlockTileEntity((int) this.posX, (int) this.posY, (int) this.posZ);
                 tile.setActive();
                 this.setDead();
                 
             }
         }
         
-        this.setPosition(posX + motionX, posY + motionY, posZ + motionZ);
+        this.setPosition(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
     }
 }

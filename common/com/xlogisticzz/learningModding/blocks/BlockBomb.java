@@ -20,12 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockBomb extends BlockContainer {
@@ -46,8 +42,8 @@ public class BlockBomb extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister register) {
     
-        blockIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB);
-        idleIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB_IDLE);
+        this.blockIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB);
+        this.idleIcon = register.registerIcon(Constants.Mod.MODID + ":" + Constants.Icons.BOMB_IDLE);
         
     }
     
@@ -56,9 +52,9 @@ public class BlockBomb extends BlockContainer {
     public Icon getIcon(int side, int metadata) {
     
         if (metadata < 3){
-            return blockIcon;
+            return this.blockIcon;
         }else{
-            return idleIcon;
+            return this.idleIcon;
         }
     }
     
@@ -66,9 +62,9 @@ public class BlockBomb extends BlockContainer {
     public int idDropped(int meta, Random random, int fortune) {
     
         if (meta == 0){
-            return blockID;
+            return this.blockID;
         }else if (meta == 1){
-            return blockID;
+            return this.blockID;
         }else{
             return -1;
         }

@@ -15,12 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Learning Modding Mod
  * 
- * @author xLoGisTicZz.
- * 
- *         Some code may be from tutorials.
- * 
+ * @author xLoGisTicZz. Some code may be from tutorials.
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 
 public class BlockTest extends Block {
@@ -47,25 +43,25 @@ public class BlockTest extends Block {
         switch (side) {
         
             case 0 :
-                return icons[0];
+                return this.icons[0];
                 
             case 1 :
-                return icons[1];
+                return this.icons[1];
                 
             case 2 :
-                return icons[2];
+                return this.icons[2];
                 
             case 3 :
-                return icons[3];
+                return this.icons[3];
                 
             case 4 :
-                return icons[4];
+                return this.icons[4];
                 
             case 5 :
-                return icons[5];
+                return this.icons[5];
                 
             default :
-                return icons[0];
+                return this.icons[0];
         }
     }
     
@@ -76,25 +72,25 @@ public class BlockTest extends Block {
         
         // bottom
             case 0 :
-                return icons[0];
+                return this.icons[0];
                 // top
             case 1 :
-                return icons[1];
+                return this.icons[1];
                 // ?
             case 2 :
-                return icons[2];
+                return this.icons[2];
                 // ?
             case 3 :
-                return icons[3];
+                return this.icons[3];
                 // ?
             case 4 :
-                return icons[4];
+                return this.icons[4];
                 // ?
             case 5 :
-                return icons[5];
+                return this.icons[5];
             default :
                 
-                return icons[0];
+                return this.icons[0];
         }
     }
     
@@ -102,10 +98,10 @@ public class BlockTest extends Block {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
     
-        icons = new Icon[6];
+        this.icons = new Icon[6];
         
         for (int i = 0; i < Constants.Icons.TEST.length; i++){
-            icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":glass/" + Constants.Icons.TEST[i]);
+            this.icons[i] = par1IconRegister.registerIcon(Constants.Mod.MODID + ":glass/" + Constants.Icons.TEST[i]);
         }
     }
     
