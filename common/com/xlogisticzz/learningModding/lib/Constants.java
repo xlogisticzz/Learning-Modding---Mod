@@ -41,6 +41,7 @@ public class Constants {
         public static final String CLICKER_NAME = "Clicker Block";
         public static final String POISON_NAME = "Block Of Poison";
         public static final String HEIGHT_PARTICLE_NAME = "Particle Emmiter";
+        public static final String NOTE_SEQUENCER_NAME = "Note Sequencer";
         
     }
     
@@ -87,6 +88,7 @@ public class Constants {
         public static final String ENTITY_LAUNCHER = "entity_launcher";
         public static final String PIG_CONVERTER = "pig_converter";
         public static final String ENTITY_BLOCK_TELEPORTER = "entity_block_teleporter";
+
         
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";
@@ -108,6 +110,7 @@ public class Constants {
         public static final String CLICKER_LINKED = "clicker_linked";
         public static final String POISON = "poison_block";
         public static final String HEIGHT_PARTICLE = "height_particle_block";
+        public static final String NOTE_SEQUENCER = "note_sequencer";
         
     }
     
@@ -149,6 +152,7 @@ public class Constants {
         public static final String CLICKER = "clicker";
         public static final String POISON = "poisonBlock";
         public static final String HEIGHT_PARTICLE = "heightParticleBlock";
+        public static final String NOTE_SEQUENCER = "noteSequencerBlock";
         
     }
     

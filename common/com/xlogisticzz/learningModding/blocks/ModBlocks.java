@@ -10,6 +10,7 @@ import com.xlogisticzz.learningModding.lib.Constants;
 import com.xlogisticzz.learningModding.lib.Ids;
 import com.xlogisticzz.learningModding.tileEntites.TileEntityBomb;
 import com.xlogisticzz.learningModding.tileEntites.TileEntityClicker;
+import com.xlogisticzz.learningModding.tileEntites.TileEntityNoteSequencer;
 import com.xlogisticzz.learningModding.tileEntites.TileEntityNumbers;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -38,6 +39,7 @@ public class ModBlocks {
     public static BlockClicker clicker;
     public static BlockPoison poisonBlock;
     public static BlockHeightParticle particleBlock;
+    public static BlockNoteSequencer noteSequencer;
     
     public static void init() {
     
@@ -55,6 +57,7 @@ public class ModBlocks {
         clicker = new BlockClicker(Ids.CLICKER);
         poisonBlock = new BlockPoison(Ids.POISON);
         particleBlock = new BlockHeightParticle(Ids.HEIGHTPARTICLE);
+        noteSequencer = new BlockNoteSequencer(Ids.NOTE_SEQUENCER);
         
     }
     
@@ -98,12 +101,12 @@ public class ModBlocks {
         // Bomb
         LanguageRegistry.addName(bomb, Constants.BlockNames.BOMB_NAME);
         MinecraftForge.setBlockHarvestLevel(bomb, "pickaxe", 2);
-        GameRegistry.registerBlock(bomb, ItemMarker.class, Constants.UnLocalisedNames.BOMB);
+        GameRegistry.registerBlock(bomb, Constants.UnLocalisedNames.BOMB);
         GameRegistry.registerTileEntity(TileEntityBomb.class, Constants.UnLocalisedNames.BOMB + "TileEntity");
         
         // Super Bomb
         LanguageRegistry.addName(superBomb, Constants.BlockNames.SUPER_BOMB_NAME);
-        GameRegistry.registerBlock(superBomb, ItemMarker.class, Constants.UnLocalisedNames.SUPER_BOMB);
+        GameRegistry.registerBlock(superBomb, Constants.UnLocalisedNames.SUPER_BOMB);
         
         // Numbers
         LanguageRegistry.addName(numbers, Constants.BlockNames.NUMBER_NAME);
@@ -122,6 +125,12 @@ public class ModBlocks {
         // Height Particle
         LanguageRegistry.addName(particleBlock, Constants.BlockNames.HEIGHT_PARTICLE_NAME);
         GameRegistry.registerBlock(particleBlock, Constants.UnLocalisedNames.HEIGHT_PARTICLE);
+        
+        // Note Sequencer
+        LanguageRegistry.addName(noteSequencer, Constants.BlockNames.NOTE_SEQUENCER_NAME);
+        MinecraftForge.setBlockHarvestLevel(noteSequencer, "pickaxe", 2);
+        GameRegistry.registerBlock(noteSequencer, Constants.UnLocalisedNames.NOTE_SEQUENCER);
+        GameRegistry.registerTileEntity(TileEntityNoteSequencer.class, Constants.UnLocalisedNames.NOTE_SEQUENCER + "TileEntity");
         
     }
     
