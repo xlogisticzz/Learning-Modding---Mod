@@ -40,7 +40,6 @@ public class ConfigurationHandler {
         Ids.POISON = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Posion Id", Ids.POISON_DEFAULT).getInt();
         Ids.HEIGHTPARTICLE = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Height Particle Block Id", Ids.HEIGHTPARTICLE_DEFAULT).getInt();
         Ids.NOTE_SEQUENCER = configuration.getBlock(Configuration.CATEGORY_BLOCK, "Note Sequencer Block Id", Ids.NOTE_SEQUENCER_DEFAULT).getInt();
-
         
         // Item IDs
         Ids.TITANIUMINGOT = configuration.getItem(Configuration.CATEGORY_ITEM, "Titanium Ingot ID", Ids.TITANIUMINGOT_DEFAULT).getInt() - 256;

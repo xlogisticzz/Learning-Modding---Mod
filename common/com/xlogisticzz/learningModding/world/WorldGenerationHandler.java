@@ -9,6 +9,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import com.xlogisticzz.learningModding.blocks.ModBlocks;
 import com.xlogisticzz.learningModding.lib.Constants;
+import com.xlogisticzz.learningModding.world.igloo.WorldGenIgloo;
 
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -44,8 +45,29 @@ public class WorldGenerationHandler implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
     
+        switch (world.provider.dimensionId) {
+            case -1 :
+                generateNether(world, random, chunkX, chunkZ);
+            case 0 :
+                generateOverworld(world, random, chunkX, chunkZ);
+        }
+    }
+    
+    private void generateOverworld(World world, Random random, int chunkX, int chunkZ) {
+    
         generateStandardOre(random, chunkX, chunkZ, world, Constants.WorldGen.RUBY_WORLD_GEN_ITERATIONS, this.rubyGen, Constants.WorldGen.RUBY_WORLD_GEN_LOWESTY, Constants.WorldGen.RUBY_WORLD_GEN_HIGHESTY);
         
+        for (int i = 0; i < 2; i++){
+            int iglooX = chunkX * 16 + random.nextInt(16);
+            int iglooY = random.nextInt(70 - 50) + 50;
+            int iglooZ = chunkZ * 16 + random.nextInt(16);
+            
+            new WorldGenIgloo().generate(world, random, iglooX, iglooY, iglooZ);
+        }
+    }
+    
+    private void generateNether(World world, Random random, int chunkX, int chunkZ) {
+    
     }
     
 }

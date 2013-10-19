@@ -25,7 +25,6 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 
-
 public class BlockMachine extends Block {
     
     @SideOnly(Side.CLIENT)
@@ -45,7 +44,8 @@ public class BlockMachine extends Block {
         this.setUnlocalizedName(Constants.UnLocalisedNames.MACHINE_BLOCK);
     }
     
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#registerIcons(net.minecraft.client.renderer.texture.IconRegister)
      */
     @Override
@@ -70,7 +70,8 @@ public class BlockMachine extends Block {
         }
     }
     
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#onEntityWalking(net.minecraft.world.World, int, int, int, net.minecraft.entity.Entity)
      */
     @Override
@@ -82,7 +83,8 @@ public class BlockMachine extends Block {
         }
     }
     
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#onNeighborBlockChange(net.minecraft.world.World, int, int, int, int)
      */
     @Override
@@ -117,7 +119,8 @@ public class BlockMachine extends Block {
         
     }
     
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#getIcon(int, int)
      */
     @Override
@@ -139,7 +142,8 @@ public class BlockMachine extends Block {
         
     }
     
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#onBlockActivated(net.minecraft.world.World, int, int, int, net.minecraft.entity.player.EntityPlayer, int, float, float, float)
      */
     @Override
@@ -159,8 +163,8 @@ public class BlockMachine extends Block {
         return true;
     }
     
-    
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#damageDropped(int)
      */
     @Override
@@ -169,8 +173,8 @@ public class BlockMachine extends Block {
         return metadata;
     }
     
-    
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see net.minecraft.block.Block#getSubBlocks(int, net.minecraft.creativetab.CreativeTabs, java.util.List)
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })

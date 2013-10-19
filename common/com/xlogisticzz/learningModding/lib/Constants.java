@@ -88,7 +88,6 @@ public class Constants {
         public static final String ENTITY_LAUNCHER = "entity_launcher";
         public static final String PIG_CONVERTER = "pig_converter";
         public static final String ENTITY_BLOCK_TELEPORTER = "entity_block_teleporter";
-
         
         // Blocks
         public static final String RUBY_ORE = "ruby_ore";

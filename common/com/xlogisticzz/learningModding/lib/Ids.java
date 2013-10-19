@@ -27,7 +27,7 @@ public class Ids {
     public static int POISON_DEFAULT = 513;
     public static int HEIGHTPARTICLE_DEFAULT = 514;
     public static int NOTE_SEQUENCER_DEFAULT = 515;
-
+    
     // Current
     public static int TITANIUMORE;
     public static int RUBYORE;
@@ -45,7 +45,7 @@ public class Ids {
     public static int POISON;
     public static int HEIGHTPARTICLE;
     public static int NOTE_SEQUENCER;
-
+    
     // Item IDs
     // Defaults
     public static int TITANIUMINGOT_DEFAULT = 5000;
