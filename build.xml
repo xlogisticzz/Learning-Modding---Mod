@@ -80,6 +80,7 @@
     <target name="build">
 		<!-- Prep for the build -->
 		<antcall target="clean-files" />
+		<antcall target="replace-tokens" />
 		<antcall target="increase_build_number" />
 		<antcall target="copy-files" />
 		<antcall target="recompile" />
@@ -105,9 +106,9 @@
     <target name="release">
 		<!-- Prep for the build -->
 		<antcall target="clean-files" />
+        <antcall target="replace-tokens" />
 		<antcall target="increase_build_number" />
 		<antcall target="copy-files" />
-		<antcall target="replace-tokens" />
 		<antcall target="recompile" />
 		<antcall target="reobfuscate" />
 

@@ -674,7 +674,6 @@ public class WorldGenIgloo1 {
         world.setBlock(i + 9, j + 4, k + 10, 0, 0, 1);
         world.setBlock(i + 10, j + 4, k + 10, 0, 0, 1);
         world.setBlock(i + 11, j + 4, k + 10, 0, 0, 1);
-        System.out.println("Igloo spawned");
         return true;
     }
 }
